@@ -9,11 +9,20 @@ document.addEventListener("DOMContentLoaded", () => {
        ELEMENTS
     ----------------------------------------------------- */
 
-    const header = document.querySelector(".site-header");
-    const mobileMenuButton = document.querySelector(".mobile-menu-button");
-    const mainNav = document.querySelector(".main-nav");
-    const languageSelector = document.querySelector(".language-selector");
-    const languageButton = document.querySelector(".language-button");
+    const header =
+        document.querySelector(".site-header");
+
+    const mobileMenuButton =
+        document.querySelector(".mobile-menu-button");
+
+    const mainNav =
+        document.querySelector(".main-nav");
+
+    const languageSelector =
+        document.querySelector(".language-selector");
+
+    const languageButton =
+        document.querySelector(".language-button");
 
 
     /* -----------------------------------------------------
@@ -42,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* -----------------------------------------------------
-       MOBILE NAVIGATION
+       MOBILE MENU
     ----------------------------------------------------- */
 
     const closeMobileMenu = () => {
@@ -99,10 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* -----------------------------------------------------
-       CLOSE MOBILE MENU WHEN LINK CLICKED
-    ----------------------------------------------------- */
-
     if (mainNav) {
 
         const navLinks =
@@ -120,10 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* -----------------------------------------------------
-       CLOSE MOBILE MENU ON RESIZE
-    ----------------------------------------------------- */
-
     window.addEventListener(
         "resize",
         () => {
@@ -137,10 +138,149 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* -----------------------------------------------------
+       LANGUAGE SYSTEM
+    ----------------------------------------------------- */
+
+    const applyLanguage = (language) => {
+
+        if (
+            typeof translations === "undefined"
+        ) {
+            console.error(
+                "translations.js를 찾을 수 없습니다."
+            );
+
+            return;
+        }
+
+        if (
+            !supportedLanguages.includes(language)
+        ) {
+            language = defaultLanguage;
+        }
+
+        const languageData =
+            translations[language];
+
+
+        /* ---------------------------------------------
+           TEXT TRANSLATION
+        --------------------------------------------- */
+
+        const elements =
+            document.querySelectorAll(
+                "[data-i18n]"
+            );
+
+        elements.forEach((element) => {
+
+            const key =
+                element.dataset.i18n;
+
+            const value =
+                getTranslationValue(
+                    languageData,
+                    key
+                );
+
+            if (value !== undefined) {
+
+                element.innerHTML = value;
+
+            }
+
+        });
+
+
+        /* ---------------------------------------------
+           LANGUAGE BUTTON
+        --------------------------------------------- */
+
+        const languageLabels = {
+
+            ko: "KOR",
+            en: "ENG",
+            zh: "中文",
+            ja: "日本語"
+
+        };
+
+        if (languageButton) {
+
+            languageButton.textContent =
+                languageLabels[language];
+
+        }
+
+
+        /* ---------------------------------------------
+           HTML LANGUAGE
+        --------------------------------------------- */
+
+        document.documentElement.lang =
+            language;
+
+
+        /* ---------------------------------------------
+           SAVE LANGUAGE
+        --------------------------------------------- */
+
+        localStorage.setItem(
+            "gamcho-language",
+            language
+        );
+
+
+        console.log(
+            `Gamcho language changed to: ${language}`
+        );
+
+    };
+
+
+    /* -----------------------------------------------------
+       TRANSLATION VALUE FINDER
+    ----------------------------------------------------- */
+
+    const getTranslationValue = (
+        object,
+        path
+    ) => {
+
+        return path
+            .split(".")
+            .reduce(
+                (current, key) => {
+
+                    if (
+                        current &&
+                        Object.prototype.hasOwnProperty.call(
+                            current,
+                            key
+                        )
+                    ) {
+
+                        return current[key];
+
+                    }
+
+                    return undefined;
+
+                },
+                object
+            );
+
+    };
+
+
+    /* -----------------------------------------------------
        LANGUAGE SELECTOR
     ----------------------------------------------------- */
 
-    if (languageButton && languageSelector) {
+    if (
+        languageButton &&
+        languageSelector
+    ) {
 
         languageButton.addEventListener(
             "click",
@@ -159,7 +299,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* -----------------------------------------------------
-       LANGUAGE OPTION CLICK
+       LANGUAGE OPTION
     ----------------------------------------------------- */
 
     if (languageSelector) {
@@ -175,35 +315,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 "click",
                 () => {
 
-                    const selectedLanguage =
+                    const language =
                         option.dataset.lang;
 
-                    console.log(
-                        "Selected language:",
-                        selectedLanguage
-                    );
-
-                    /*
-                     * 실제 언어 변경 기능은
-                     * translations.js와 연결하는
-                     * 다음 단계에서 구현합니다.
-                     */
-
-                    if (languageButton) {
-
-                        const languageNames = {
-                            ko: "KOR",
-                            en: "ENG",
-                            zh: "中文",
-                            ja: "日本語"
-                        };
-
-                        languageButton.textContent =
-                            languageNames[
-                                selectedLanguage
-                            ] || "KOR";
-
-                    }
+                    applyLanguage(language);
 
                     languageSelector.classList.remove(
                         "is-open"
@@ -219,7 +334,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* -----------------------------------------------------
        CLOSE LANGUAGE MENU
-       WHEN CLICKING OUTSIDE
     ----------------------------------------------------- */
 
     document.addEventListener(
@@ -228,7 +342,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (
                 languageSelector &&
-                !languageSelector.contains(event.target)
+                !languageSelector.contains(
+                    event.target
+                )
             ) {
 
                 languageSelector.classList.remove(
@@ -265,5 +381,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
     );
+
+
+    /* -----------------------------------------------------
+       INITIAL LANGUAGE
+    ----------------------------------------------------- */
+
+    const savedLanguage =
+        localStorage.getItem(
+            "gamcho-language"
+        );
+
+    const initialLanguage =
+        savedLanguage &&
+        supportedLanguages.includes(
+            savedLanguage
+        )
+            ? savedLanguage
+            : defaultLanguage;
+
+
+    applyLanguage(initialLanguage);
 
 });
