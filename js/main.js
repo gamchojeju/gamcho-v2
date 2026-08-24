@@ -24,6 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const languageButton =
         document.querySelector(".language-button");
 
+    const menuPreview =
+        document.querySelector(".menu-preview");
+
 
     /* -----------------------------------------------------
        HEADER SCROLL
@@ -138,107 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* -----------------------------------------------------
-       LANGUAGE SYSTEM
-    ----------------------------------------------------- */
-
-    const applyLanguage = (language) => {
-
-        if (
-            typeof translations === "undefined"
-        ) {
-            console.error(
-                "translations.js를 찾을 수 없습니다."
-            );
-
-            return;
-        }
-
-        if (
-            !supportedLanguages.includes(language)
-        ) {
-            language = defaultLanguage;
-        }
-
-        const languageData =
-            translations[language];
-
-
-        /* ---------------------------------------------
-           TEXT TRANSLATION
-        --------------------------------------------- */
-
-        const elements =
-            document.querySelectorAll(
-                "[data-i18n]"
-            );
-
-        elements.forEach((element) => {
-
-            const key =
-                element.dataset.i18n;
-
-            const value =
-                getTranslationValue(
-                    languageData,
-                    key
-                );
-
-            if (value !== undefined) {
-
-                element.innerHTML = value;
-
-            }
-
-        });
-
-
-        /* ---------------------------------------------
-           LANGUAGE BUTTON
-        --------------------------------------------- */
-
-        const languageLabels = {
-
-            ko: "KOR",
-            en: "ENG",
-            zh: "中文",
-            ja: "日本語"
-
-        };
-
-        if (languageButton) {
-
-            languageButton.textContent =
-                languageLabels[language];
-
-        }
-
-
-        /* ---------------------------------------------
-           HTML LANGUAGE
-        --------------------------------------------- */
-
-        document.documentElement.lang =
-            language;
-
-
-        /* ---------------------------------------------
-           SAVE LANGUAGE
-        --------------------------------------------- */
-
-        localStorage.setItem(
-            "gamcho-language",
-            language
-        );
-
-
-        console.log(
-            `Gamcho language changed to: ${language}`
-        );
-
-    };
-
-
-    /* -----------------------------------------------------
        TRANSLATION VALUE FINDER
     ----------------------------------------------------- */
 
@@ -269,6 +171,260 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
                 object
             );
+
+    };
+
+
+    /* -----------------------------------------------------
+       MENU RENDERING
+    ----------------------------------------------------- */
+
+    const renderSignatureMenu = (language) => {
+
+        if (!menuPreview) return;
+
+        if (
+            typeof menuData === "undefined" ||
+            !Array.isArray(menuData)
+        ) {
+
+            console.error(
+                "menu-data.js를 찾을 수 없습니다."
+            );
+
+            return;
+
+        }
+
+
+        /* 대표 메뉴 3개 */
+
+        const signatureMenus =
+            menuData
+                .filter((menu) => menu.best)
+                .slice(0, 3);
+
+
+        menuPreview.innerHTML = "";
+
+
+        signatureMenus.forEach((menu) => {
+
+            const card =
+                document.createElement("article");
+
+            card.className =
+                "menu-preview-card";
+
+
+            /* 이미지 */
+
+            const imageWrapper =
+                document.createElement("div");
+
+            imageWrapper.className =
+                "menu-image";
+
+
+            const image =
+                document.createElement("img");
+
+            image.src =
+                menu.image;
+
+            image.alt =
+                menu.name[language] ||
+                menu.name.ko;
+
+            image.loading = "lazy";
+
+
+            imageWrapper.appendChild(image);
+
+
+            /* 정보 */
+
+            const info =
+                document.createElement("div");
+
+            info.className =
+                "menu-info";
+
+
+            const title =
+                document.createElement("h3");
+
+            title.textContent =
+                menu.name[language] ||
+                menu.name.ko;
+
+
+            const description =
+                document.createElement("p");
+
+            description.textContent =
+                menu.description[language] ||
+                menu.description.ko;
+
+
+            const price =
+                document.createElement("span");
+
+            price.className =
+                "menu-price";
+
+            price.textContent =
+                menu.price;
+
+
+            info.appendChild(title);
+            info.appendChild(description);
+            info.appendChild(price);
+
+
+            /* BEST */
+
+            if (menu.best) {
+
+                const best =
+                    document.createElement("span");
+
+                best.className =
+                    "menu-best";
+
+                best.textContent =
+                    "BEST";
+
+                card.appendChild(best);
+
+            }
+
+
+            card.appendChild(imageWrapper);
+            card.appendChild(info);
+
+            menuPreview.appendChild(card);
+
+        });
+
+    };
+
+
+    /* -----------------------------------------------------
+       LANGUAGE SYSTEM
+    ----------------------------------------------------- */
+
+    const applyLanguage = (language) => {
+
+        if (
+            typeof translations === "undefined"
+        ) {
+
+            console.error(
+                "translations.js를 찾을 수 없습니다."
+            );
+
+            return;
+
+        }
+
+
+        if (
+            !supportedLanguages.includes(language)
+        ) {
+
+            language =
+                defaultLanguage;
+
+        }
+
+
+        const languageData =
+            translations[language];
+
+
+        /* ---------------------------------------------
+           TEXT TRANSLATION
+        --------------------------------------------- */
+
+        const elements =
+            document.querySelectorAll(
+                "[data-i18n]"
+            );
+
+
+        elements.forEach((element) => {
+
+            const key =
+                element.dataset.i18n;
+
+            const value =
+                getTranslationValue(
+                    languageData,
+                    key
+                );
+
+
+            if (value !== undefined) {
+
+                element.innerHTML =
+                    value;
+
+            }
+
+        });
+
+
+        /* ---------------------------------------------
+           MENU TRANSLATION
+        --------------------------------------------- */
+
+        renderSignatureMenu(language);
+
+
+        /* ---------------------------------------------
+           LANGUAGE BUTTON
+        --------------------------------------------- */
+
+        const languageLabels = {
+
+            ko: "KOR",
+            en: "ENG",
+            zh: "中文",
+            ja: "日本語"
+
+        };
+
+
+        if (languageButton) {
+
+            languageButton.textContent =
+                languageLabels[language];
+
+        }
+
+
+        /* ---------------------------------------------
+           HTML LANGUAGE
+        --------------------------------------------- */
+
+        document.documentElement.lang =
+            language;
+
+
+        /* ---------------------------------------------
+           SAVE LANGUAGE
+        --------------------------------------------- */
+
+        localStorage.setItem(
+            "gamcho-language",
+            language
+        );
+
+
+        console.log(
+            `Gamcho language changed to: ${language}`
+        );
 
     };
 
@@ -308,6 +464,7 @@ document.addEventListener("DOMContentLoaded", () => {
             languageSelector.querySelectorAll(
                 "[data-lang]"
             );
+
 
         languageOptions.forEach((option) => {
 
@@ -391,6 +548,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.getItem(
             "gamcho-language"
         );
+
 
     const initialLanguage =
         savedLanguage &&
