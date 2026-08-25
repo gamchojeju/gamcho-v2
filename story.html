@@ -893,46 +893,7 @@ TEL 064-743-8988
 <script src="data/story-data.js"></script>
 <script src="js/story.js"></script>
 
-<script id="media-header-standard-js">
-/* HEADER + STORY LANGUAGE BUTTON DEDUPLICATION */
-window.addEventListener('scroll',()=>{
-  const header=document.getElementById('header');
-  if(header) header.classList.toggle('scrolled',window.scrollY>30);
-});
 
-(function(){
-  function keepOneLanguageSelector(){
-    const selectors=document.querySelectorAll('.media-language');
-    selectors.forEach((el,i)=>{
-      if(i>0) el.remove();
-    });
-  }
-
-  keepOneLanguageSelector();
-
-  /* story.js가 페이지 로드 후 언어 버튼을 추가하는 경우에도 중복을 막습니다. */
-  const observer=new MutationObserver(()=>{
-    const selectors=document.querySelectorAll('.media-language');
-    if(selectors.length>1) keepOneLanguageSelector();
-  });
-  observer.observe(document.body,{childList:true,subtree:true});
-
-  const buttons=document.querySelectorAll('.media-language button');
-  buttons.forEach(b=>{
-    b.addEventListener('click',()=>{
-      buttons.forEach(x=>x.classList.remove('active'));
-      b.classList.add('active');
-      try{ localStorage.setItem('gamcho-language',b.dataset.lang); }catch(e){}
-    });
-  });
-
-  try{
-    const l=localStorage.getItem('gamcho-language')||'ko';
-    const b=document.querySelector('.media-language button[data-lang="'+l+'"]');
-    if(b)b.classList.add('active');
-  }catch(e){}
-})();
-</script>
 </body>
 </html>
 
