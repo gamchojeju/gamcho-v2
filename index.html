@@ -1043,18 +1043,154 @@ footer{
 
 
 <script id="media-header-standard-js">
+/* HEADER + INDEX LANGUAGE SYSTEM */
 window.addEventListener('scroll',()=>{
- const header=document.getElementById('header');
- if(header) header.classList.toggle('scrolled',window.scrollY>30);
+  const header=document.getElementById('header');
+  if(header) header.classList.toggle('scrolled',window.scrollY>30);
 });
+
 (function(){
- const buttons=document.querySelectorAll('.media-language button');
- buttons.forEach(b=>b.addEventListener('click',()=>{
-   buttons.forEach(x=>x.classList.remove('active'));
-   b.classList.add('active');
-   try{ localStorage.setItem('gamcho-language',b.dataset.lang); }catch(e){}
- }));
- try{ const l=localStorage.getItem('gamcho-language')||'ko'; const b=document.querySelector('.media-language button[data-lang="'+l+'"]'); if(b)b.classList.add('active'); }catch(e){}
+  const translations = {
+    ko:{
+      "hero.eyebrow":"GAMCHO RESTAURANT · JEJU",
+      "hero.title":"제주에서 30년,<br>변하지 않는 한 그릇",
+      "hero.description":"어머니의 손맛으로 이어온<br>감초식당의 따뜻한 이야기",
+      "hero.menuButton":"MENU",
+      "hero.storyButton":"OUR STORY",
+      "intro.eyebrow":"ABOUT GAMCHO",
+      "intro.title":"제주에서 이어온<br>따뜻한 한 그릇",
+      "intro.description":"감초식당은 오랜 시간 한결같은 마음으로<br>제주를 찾는 분들에게 따뜻한 한 끼를 전하고 있습니다.",
+      "intro.link":"감초식당 이야기 보기 <span>→</span>",
+      "signature.eyebrow":"SIGNATURE MENU",
+      "signature.title":"감초식당의 대표 메뉴",
+      "signature.link":"전체 메뉴 보기 <span>→</span>",
+      "story.eyebrow":"OUR STORY",
+      "story.title":"한 그릇에 담긴<br>30년의 이야기",
+      "story.button":"STORY",
+      "media.eyebrow":"MEDIA",
+      "media.title":"방송과 미디어에서 만난 감초식당",
+      "media.link":"MEDIA 더보기 <span>→</span>",
+      "review.eyebrow":"REVIEW",
+      "review.title":"감초식당을 찾아주신 이야기",
+      "review.link":"REVIEW 더보기 <span>→</span>",
+      "location.eyebrow":"VISIT GAMCHO",
+      "location.title":"제주에서 만나요",
+      "location.description":"감초식당 신제주점",
+      "location.button":"LOCATION",
+      "footer.restaurant":"감초식당 신제주점",
+      "footer.country":"Jeju, Korea"
+    },
+    en:{
+      "hero.eyebrow":"GAMCHO RESTAURANT · JEJU",
+      "hero.title":"30 Years in Jeju,<br>A Bowl That Never Changes",
+      "hero.description":"Carrying on the warmth of<br>our mother's cooking at Gamcho",
+      "hero.menuButton":"MENU",
+      "hero.storyButton":"OUR STORY",
+      "intro.eyebrow":"ABOUT GAMCHO",
+      "intro.title":"A Warm Bowl<br>Rooted in Jeju",
+      "intro.description":"For many years, Gamcho has served<br>a warm and comforting meal to visitors in Jeju.",
+      "intro.link":"Discover Our Story <span>→</span>",
+      "signature.eyebrow":"SIGNATURE MENU",
+      "signature.title":"Gamcho's Signature Dishes",
+      "signature.link":"VIEW FULL MENU <span>→</span>",
+      "story.eyebrow":"OUR STORY",
+      "story.title":"30 Years of Story<br>in One Bowl",
+      "story.button":"STORY",
+      "media.eyebrow":"MEDIA",
+      "media.title":"Gamcho Restaurant in the Media",
+      "media.link":"VIEW MEDIA <span>→</span>",
+      "review.eyebrow":"REVIEW",
+      "review.title":"Stories from Our Guests",
+      "review.link":"VIEW REVIEWS <span>→</span>",
+      "location.eyebrow":"VISIT GAMCHO",
+      "location.title":"See You in Jeju",
+      "location.description":"Gamcho Restaurant, Sinjeju",
+      "location.button":"LOCATION",
+      "footer.restaurant":"Gamcho Restaurant, Sinjeju",
+      "footer.country":"Jeju, Korea"
+    },
+    zh:{
+      "hero.eyebrow":"GAMCHO RESTAURANT · JEJU",
+      "hero.title":"扎根济州30年，<br>始终如一的一碗美味",
+      "hero.description":"延续妈妈的手艺与温暖，<br>在甘草餐厅分享济州的味道",
+      "hero.menuButton":"菜单",
+      "hero.storyButton":"品牌故事",
+      "intro.eyebrow":"关于甘草餐厅",
+      "intro.title":"源自济州的<br>温暖一碗",
+      "intro.description":"多年来，我们始终用一颗真心，<br>为来到济州的客人准备温暖的一餐。",
+      "intro.link":"了解甘草餐厅的故事 <span>→</span>",
+      "signature.eyebrow":"招牌菜单",
+      "signature.title":"甘草餐厅的招牌美食",
+      "signature.link":"查看完整菜单 <span>→</span>",
+      "story.eyebrow":"品牌故事",
+      "story.title":"一碗美食里的<br>30年故事",
+      "story.button":"故事",
+      "media.eyebrow":"媒体",
+      "media.title":"媒体镜头下的甘草餐厅",
+      "media.link":"查看更多媒体内容 <span>→</span>",
+      "review.eyebrow":"顾客评价",
+      "review.title":"客人留下的温暖故事",
+      "review.link":"查看更多评价 <span>→</span>",
+      "location.eyebrow":"到访甘草餐厅",
+      "location.title":"在济州与您相见",
+      "location.description":"甘草餐厅 新济州店",
+      "location.button":"位置",
+      "footer.restaurant":"甘草餐厅 新济州店",
+      "footer.country":"济州，韩国"
+    },
+    ja:{
+      "hero.eyebrow":"GAMCHO RESTAURANT · JEJU",
+      "hero.title":"済州で30年、<br>変わらない一杯",
+      "hero.description":"母の味を受け継ぎ、<br>甘草食堂の温かい味を届けます",
+      "hero.menuButton":"メニュー",
+      "hero.storyButton":"ストーリー",
+      "intro.eyebrow":"甘草食堂について",
+      "intro.title":"済州から受け継ぐ<br>温かな一杯",
+      "intro.description":"長い年月、変わらぬ気持ちで<br>済州を訪れる皆さまに温かな一食を届けています。",
+      "intro.link":"甘草食堂の物語を見る <span>→</span>",
+      "signature.eyebrow":"おすすめメニュー",
+      "signature.title":"甘草食堂の代表メニュー",
+      "signature.link":"全メニューを見る <span>→</span>",
+      "story.eyebrow":"ストーリー",
+      "story.title":"一杯に込めた<br>30年の物語",
+      "story.button":"STORY",
+      "media.eyebrow":"メディア",
+      "media.title":"メディアで紹介された甘草食堂",
+      "media.link":"メディアを見る <span>→</span>",
+      "review.eyebrow":"レビュー",
+      "review.title":"お客様からいただいた物語",
+      "review.link":"レビューを見る <span>→</span>",
+      "location.eyebrow":"甘草食堂へ",
+      "location.title":"済州でお会いしましょう",
+      "location.description":"甘草食堂 新済州店",
+      "location.button":"LOCATION",
+      "footer.restaurant":"甘草食堂 新済州店",
+      "footer.country":"済州・韓国"
+    }
+  };
+
+  const buttons=document.querySelectorAll('.media-language button');
+
+  function applyLanguage(lang){
+    lang = translations[lang] ? lang : 'ko';
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const key=el.getAttribute('data-i18n');
+      if(translations[lang][key] !== undefined){
+        el.innerHTML=translations[lang][key];
+      }
+    });
+    buttons.forEach(x=>x.classList.toggle('active',x.dataset.lang===lang));
+    document.documentElement.lang = lang==='zh' ? 'zh-CN' : lang;
+    try{ localStorage.setItem('gamcho-language',lang); }catch(e){}
+  }
+
+  buttons.forEach(b=>{
+    b.addEventListener('click',()=>applyLanguage(b.dataset.lang));
+  });
+
+  let saved='ko';
+  try{ saved=localStorage.getItem('gamcho-language')||'ko'; }catch(e){}
+  applyLanguage(saved);
 })();
 </script>
 </body>
