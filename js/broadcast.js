@@ -1,1 +1,30 @@
-document.addEventListener("DOMContentLoaded",()=>{const buttons=document.querySelectorAll(".media-language [data-lang]");const applyLanguage=(lang)=>{if(!supportedLanguages.includes(lang))lang=defaultLanguage;const data=translations[lang];document.querySelectorAll("[data-i18n]").forEach(el=>{const v=getTranslationValue(data,el.dataset.i18n);if(v!==undefined)el.innerHTML=v;});document.documentElement.lang=lang;localStorage.setItem("gamcho-language",lang);buttons.forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));};buttons.forEach(b=>b.addEventListener("click",()=>applyLanguage(b.dataset.lang)));const saved=localStorage.getItem("gamcho-language");applyLanguage(saved||defaultLanguage);});
+/* GAMCHO MEDIA 4-LANGUAGE SYSTEM */
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".media-language [data-lang]");
+
+  const applyLanguage = (language) => {
+    if (!supportedLanguages.includes(language)) language = defaultLanguage;
+    const data = translations[language];
+
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+      const value = data[element.dataset.i18n];
+      if (value !== undefined) element.innerHTML = value;
+    });
+
+    document.documentElement.lang = language;
+    localStorage.setItem("gamcho-language", language);
+
+    buttons.forEach((button) => {
+      const active = button.dataset.lang === language;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+  });
+
+  const saved = localStorage.getItem("gamcho-language");
+  applyLanguage(saved && supportedLanguages.includes(saved) ? saved : defaultLanguage);
+});
