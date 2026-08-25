@@ -1,193 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>감초식당 신제주점 | 제주 전통 국밥</title>
-<meta name="description" content="제주에서 30년 전통을 이어온 감초식당 신제주점. 감초순대국밥과 제주식 전통 음식을 만나보세요.">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="감초식당 신제주점">
-<meta property="og:description" content="제주에서 30년 전통을 이어온 감초식당">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.gamchojeju.com/">
-
+<meta name="description" content="오래 기억되는 맛, 변하지 않는 정성. 감초식당 신제주점">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/responsive.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f0f0f;--card:#181818;--text:#f4f1eb;--sub:#b8b3aa;--gold:#d6b98a;--line:rgba(255,255,255,.1);--max:1180px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:Pretendard,sans-serif;line-height:1.8;word-break:keep-all}a{color:inherit;text-decoration:none}img{width:100%;display:block}.wrap{width:min(var(--max),92%);margin:auto}
+header{position:fixed;z-index:99;top:0;width:100%;background:rgba(15,15,15,.78);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.05);transition:.3s}header.scrolled{background:rgba(0,0,0,.96)}.head{min-height:76px;width:min(var(--max),92%);margin:auto;display:flex;align-items:center;gap:26px}.logo{display:flex;flex-direction:column;line-height:1;flex-shrink:0}.logo b{font:700 23px "Noto Serif KR",serif;letter-spacing:2px}.logo small{margin-top:7px;color:#777;font-size:8px;letter-spacing:2px}.nav{display:flex;justify-content:center;gap:24px;flex:1}.nav a{font-size:11px;letter-spacing:1px;color:#ddd}.nav a:hover{color:var(--gold)}.lang{position:relative}.lang>button{background:transparent;border:1px solid rgba(214,185,138,.5);color:var(--gold);padding:7px 10px;font-size:10px;cursor:pointer}.langmenu{display:none;position:absolute;right:0;top:38px;background:#171717;border:1px solid var(--line);padding:5px;min-width:105px}.lang.open .langmenu{display:block}.langmenu button{display:block;width:100%;padding:8px;border:0;background:transparent;color:#ddd;text-align:left;font-size:11px}.langmenu button:hover{background:#222;color:var(--gold)}.hamb{display:none;border:0;background:none}.hamb span{display:block;width:25px;height:1px;background:#fff;margin:6px}
+.hero{min-height:820px;display:flex;align-items:center;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.42)),url("images/story/story-main.png") center/cover}.hero .wrap{position:relative;padding-top:75px}.eyebrow,.label{color:var(--gold);font-size:11px;letter-spacing:3px;font-weight:600}.hero h1{font:500 clamp(48px,6vw,82px)/1.18 "Noto Serif KR",serif;letter-spacing:-2px;margin-top:20px}.hero p{color:#ddd;font-size:16px;line-height:2;margin-top:25px}.buttons{display:flex;gap:12px;margin-top:35px}.btn{display:inline-flex;justify-content:center;align-items:center;min-width:150px;padding:12px 24px;border:1px solid rgba(255,255,255,.55);font-size:11px;letter-spacing:1.5px}.gold{background:var(--gold);border-color:var(--gold);color:#15120d}.scroll{position:absolute;right:4%;bottom:40px;color:#999;font-size:8px;letter-spacing:3px}
+section{padding:110px 0}.center{text-align:center}.title{font:500 clamp(34px,4vw,55px)/1.3 "Noto Serif KR",serif;letter-spacing:-1.5px;margin-top:16px}.desc{color:var(--sub);font-size:15px;line-height:2;margin-top:22px}.link{display:inline-flex;gap:12px;color:var(--gold);font-size:11px;letter-spacing:1px;margin-top:28px}
+.intro{background:#111}.intro .desc{max-width:700px;margin-left:auto;margin-right:auto}
+.menu{background:#151515}.heading{display:flex;align-items:end;justify-content:space-between;gap:25px}.menu-card{display:grid;grid-template-columns:1.1fr .9fr;margin-top:48px;background:var(--card);border:1px solid var(--line)}.menu-img{min-height:430px;background:url("images/story/story-food.jpg") center/cover}.menu-info{padding:60px;display:flex;flex-direction:column;justify-content:center}.kicker{color:var(--gold);font-size:10px;letter-spacing:2px}.menu-name{font:500 42px "Noto Serif KR",serif;margin-top:12px}.menu-price{color:var(--gold);margin-top:22px}
+.story{min-height:620px;display:flex;align-items:center;position:relative;overflow:hidden}.story:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.8),rgba(0,0,0,.4)),url("images/story/story-main.png") center/cover}.story .wrap{position:relative}
+.twocol{display:grid;grid-template-columns:1fr 1fr}.panel{min-height:420px;padding:70px 8%;display:flex;flex-direction:column;justify-content:center}.media{background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.85)),url("media-main.jpg") center/cover}.review{background:#171717}
+.quote{text-align:center;padding:125px 20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.quote p{font:400 clamp(25px,3vw,40px)/1.8 "Noto Serif KR",serif}
+.location{text-align:center;background:#151515}.location .desc{max-width:600px;margin:22px auto 0}.location .buttons{justify-content:center}
+footer{padding:55px 0;background:#090909;border-top:1px solid var(--line)}.foot{display:flex;justify-content:space-between;gap:30px}.foot b{font:700 25px "Noto Serif KR",serif}.foot small{display:block;color:#777;margin-top:6px;letter-spacing:2px}.foot p{color:#888;font-size:11px;line-height:2;margin-top:14px}.right{text-align:right}
+@media(max-width:900px){.head{min-height:70px}.nav{position:fixed;display:none;left:0;right:0;top:70px;padding:20px 7%;background:#0b0b0b;flex-direction:column;align-items:flex-start;gap:0}.nav.open{display:flex}.nav a{width:100%;padding:12px 0;border-bottom:1px solid var(--line)}.hamb{display:block}.hero{min-height:700px}.menu-card{grid-template-columns:1fr}.menu-img{min-height:300px}.menu-info{padding:40px 28px}.twocol{grid-template-columns:1fr}.panel{min-height:350px}.foot{flex-direction:column}.right{text-align:left}}
+@media(max-width:600px){section{padding:82px 0}.hero h1{font-size:45px}.buttons{flex-direction:column;max-width:260px}.btn{width:100%}.heading{align-items:flex-start;flex-direction:column}.menu-name{font-size:34px}}
+</style>
 </head>
-
 <body>
-
-<header class="site-header">
-<div class="header-inner">
-
-<a href="index.html" class="logo">
-<span class="logo-ko">감초식당</span>
-<span class="logo-en">GAMCHO RESTAURANT</span>
-</a>
-
-<nav class="main-nav">
-<a href="index.html" data-i18n="nav.home">HOME</a>
-<a href="story.html" data-i18n="nav.story">STORY</a>
-<a href="menu.html" data-i18n="nav.menu">MENU</a>
-<a href="media.html" data-i18n="nav.media">MEDIA</a>
-<a href="review.html" data-i18n="nav.review">REVIEW</a>
-<a href="instagram.html" data-i18n="nav.instagram">INSTAGRAM</a>
-<a href="location.html" data-i18n="nav.location">LOCATION</a>
+<header id="header"><div class="head">
+<a class="logo" href="index.html"><b>감초식당</b><small>GAMCHO RESTAURANT</small></a>
+<nav class="nav" id="nav">
+<a href="index.html" data-i="nav.home">HOME</a><a href="story.html" data-i="nav.story">STORY</a><a href="menu.html" data-i="nav.menu">MENU</a><a href="broadcast.html" data-i="nav.media">MEDIA</a><a href="review.html" data-i="nav.review">REVIEW</a><a href="instagram.html" data-i="nav.instagram">INSTAGRAM</a><a href="location.html" data-i="nav.location">LOCATION</a>
 </nav>
-
-<div class="language-selector">
-<button type="button" class="language-button">KOR</button>
-<div class="language-menu">
-<button type="button" data-lang="ko">한국어</button>
-<button type="button" data-lang="en">English</button>
-<button type="button" data-lang="zh">中文</button>
-<button type="button" data-lang="ja">日本語</button>
-</div>
-</div>
-
-<button type="button" class="mobile-menu-button" aria-label="메뉴 열기">
-<span></span><span></span><span></span>
-</button>
-
-</div>
-</header>
+<div class="lang" id="lang"><button id="langBtn">KOR</button><div class="langmenu"><button data-lang="ko">한국어</button><button data-lang="en">English</button><button data-lang="zh">中文</button><button data-lang="ja">日本語</button></div></div>
+<button class="hamb" id="hamb" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+</div></header>
 
 <main>
+<section class="hero"><div class="wrap"><div class="eyebrow" data-i="hero.sub">GAMCHO RESTAURANT · JEJU</div><h1 data-i="hero.title">오랜 시간 변하지 않은<br>한 그릇의 마음</h1><p data-i="hero.desc">익숙하지만 쉽게 잊히지 않는 맛.<br>감초식당은 오늘도 변함없는 정성으로<br>따뜻한 한 그릇을 준비합니다.</p><div class="buttons"><a class="btn gold" href="menu.html" data-i="hero.menu">MENU</a><a class="btn" href="story.html" data-i="hero.story">OUR STORY</a></div></div><div class="scroll">SCROLL</div></section>
 
-<section class="hero">
-<div class="hero-background"></div>
-<div class="hero-overlay"></div>
+<section class="intro center"><div class="wrap"><div class="label" data-i="intro.label">GAMCHO RESTAURANT</div><h2 class="title" data-i="intro.title">제주에서 이어온<br>따뜻한 한 그릇</h2><p class="desc" data-i="intro.desc">감초식당은 오랜 시간 동안 한결같은 마음으로 음식을 준비해왔습니다.<br>빠르게 변하는 유행보다 오래 기억에 남는 한 끼를 더 중요하게 생각합니다.</p><a class="link" href="story.html" data-i="intro.link">감초식당 이야기 보기 <span>→</span></a></div></section>
 
-<div class="hero-content">
-<p class="hero-eyebrow" data-i18n="hero.eyebrow">GAMCHO RESTAURANT · JEJU</p>
+<section class="menu"><div class="wrap"><div class="heading"><div><div class="label" data-i="menu.label">SIGNATURE MENU</div><h2 class="title" data-i="menu.title">감초식당의 대표 한 그릇</h2></div><a class="link" href="menu.html" data-i="menu.link">전체 메뉴 보기 <span>→</span></a></div><div class="menu-card"><div class="menu-img"></div><div class="menu-info"><div class="kicker">GAMCHO SIGNATURE</div><h3 class="menu-name" data-i="menu.name">감초순대국밥</h3><p class="desc" data-i="menu.desc">오래도록 사랑받아온 감초식당의 대표 메뉴.<br>제주에서 따뜻하게 기억되는 한 그릇입니다.</p><div class="menu-price" data-i="menu.price">대표 메뉴</div></div></div></div></section>
 
-<h1 data-i18n="hero.title">제주에서 30년,<br>변하지 않는 한 그릇</h1>
+<section class="story"><div class="wrap"><div class="label" data-i="story.label">OUR STORY</div><h2 class="title" data-i="story.title">시간이 지나도<br>변하지 않는 맛</h2><p class="desc" data-i="story.desc">화려함보다 익숙하고 깊은 맛을 중요하게 생각합니다.<br>오랜 시간 한 자리를 지키며 한 그릇을 준비합니다.</p><a class="btn" href="story.html" style="margin-top:30px" data-i="story.button">STORY</a></div></section>
 
-<p class="hero-description" data-i18n="hero.description">
-어머니의 손맛으로 이어온<br>감초식당의 따뜻한 이야기
-</p>
+<div class="twocol"><section class="panel media"><div class="label" data-i="media.label">MEDIA</div><h2 class="title" data-i="media.title">방송과 미디어에서<br>만난 감초식당</h2><p class="desc" data-i="media.desc">방송과 다양한 콘텐츠 속 감초식당의 모습을 만나보세요.</p><a class="link" href="broadcast.html" data-i="media.link">MEDIA 더보기 <span>→</span></a></section><section class="panel review"><div class="label" data-i="review.label">REVIEW</div><h2 class="title" data-i="review.title">감초식당을<br>찾아주신 이야기</h2><p class="desc" data-i="review.desc">오래 사랑받아온 감초식당의 이야기와 손님들의 흔적을 만나보세요.</p><a class="link" href="review.html" data-i="review.link">REVIEW 더보기 <span>→</span></a></section></div>
 
-<div class="hero-buttons">
-<a href="menu.html" class="btn btn-primary" data-i18n="hero.menuButton">MENU</a>
-<a href="story.html" class="btn btn-outline" data-i18n="hero.storyButton">OUR STORY</a>
-</div>
-</div>
+<section class="quote"><p data-i="quote">“ 오래 기억되는 맛은<br>결국 변하지 않는 정성에서 만들어집니다. ”</p></section>
 
-<div class="hero-scroll">
-<span>SCROLL</span>
-<span class="scroll-line"></span>
-</div>
-</section>
-
-<section class="intro">
-<div class="section-inner">
-
-<p class="section-eyebrow" data-i18n="intro.eyebrow">ABOUT GAMCHO</p>
-
-<h2 data-i18n="intro.title">제주에서 이어온<br>따뜻한 한 그릇</h2>
-
-<p class="intro-text" data-i18n="intro.description">
-감초식당은 오랜 시간 한결같은 마음으로<br>
-제주를 찾는 분들에게 따뜻한 한 끼를 전하고 있습니다.
-</p>
-
-<a href="story.html" class="text-link" data-i18n="intro.link">
-감초식당 이야기 보기 <span>→</span>
-</a>
-
-</div>
-</section>
-
-<section class="signature-menu">
-<div class="section-inner">
-
-<div class="section-heading">
-<div>
-<p class="section-eyebrow" data-i18n="signature.eyebrow">SIGNATURE MENU</p>
-<h2 data-i18n="signature.title">감초식당의 대표 메뉴</h2>
-</div>
-
-<a href="menu.html" class="text-link" data-i18n="signature.link">
-전체 메뉴 보기 <span>→</span>
-</a>
-</div>
-
-<div class="menu-preview">
-<div class="menu-preview-card">
-<div class="menu-image placeholder"><span>MENU IMAGE</span></div>
-<div class="menu-info">
-<h3>감초순대국밥</h3>
-<p>기존 메뉴 설명 그대로 연결 예정</p>
-</div>
-</div>
-</div>
-
-</div>
-</section>
-
-<section class="story-cta">
-<div class="story-cta-background"></div>
-<div class="story-cta-overlay"></div>
-
-<div class="story-cta-content">
-<p class="section-eyebrow" data-i18n="story.eyebrow">OUR STORY</p>
-<h2 data-i18n="story.title">한 그릇에 담긴<br>30년의 이야기</h2>
-<a href="story.html" class="btn btn-outline" data-i18n="story.button">STORY</a>
-</div>
-</section>
-
-<section class="media-preview">
-<div class="section-inner">
-<p class="section-eyebrow" data-i18n="media.eyebrow">MEDIA</p>
-<h2 data-i18n="media.title">방송과 미디어에서 만난 감초식당</h2>
-<a href="media.html" class="text-link" data-i18n="media.link">MEDIA 더보기 <span>→</span></a>
-</div>
-</section>
-
-<section class="review-preview">
-<div class="section-inner">
-<p class="section-eyebrow" data-i18n="review.eyebrow">REVIEW</p>
-<h2 data-i18n="review.title">감초식당을 찾아주신 이야기</h2>
-<a href="review.html" class="text-link" data-i18n="review.link">REVIEW 더보기 <span>→</span></a>
-</div>
-</section>
-
-<section class="location-cta">
-<div class="section-inner">
-<p class="section-eyebrow" data-i18n="location.eyebrow">VISIT GAMCHO</p>
-<h2 data-i18n="location.title">제주에서 만나요</h2>
-<p data-i18n="location.description">감초식당 신제주점</p>
-<a href="location.html" class="btn btn-primary" data-i18n="location.button">LOCATION</a>
-</div>
-</section>
-
+<section class="location center"><div class="wrap"><div class="label" data-i="location.label">VISIT GAMCHO</div><h2 class="title" data-i="location.title">제주에서 만나요</h2><p class="desc" data-i="location.desc">감초식당 신제주점에서 오래 기억되는 한 끼를 만나보세요.</p><div class="buttons"><a class="btn gold" href="location.html" data-i="location.button">LOCATION</a><a class="btn" href="tel:0647438988" data-i="location.call">전화 문의</a></div></div></section>
 </main>
 
-<footer class="site-footer">
-<div class="footer-inner">
+<footer><div class="wrap foot"><div><b>감초식당</b><small>GAMCHO RESTAURANT</small><p data-i="footer.info">제주 로컬 국밥 전문점<br>오랜 시간 변하지 않은 한 그릇</p></div><div class="right" data-i="footer.hours">OPEN AM 11:00 - PM 23:30<br>Last Order PM 23:00<br>정기휴무 매주 수요일<br>TEL 064-743-8988</div></div></footer>
 
-<div class="footer-brand">
-<strong>감초식당</strong>
-<span>GAMCHO RESTAURANT</span>
-</div>
-
-<div class="footer-info">
-<p data-i18n="footer.restaurant">감초식당 신제주점</p>
-<p data-i18n="footer.country">Jeju, Korea</p>
-</div>
-
-<p class="copyright">© GAMCHO RESTAURANT. ALL RIGHTS RESERVED.</p>
-
-</div>
-</footer>
-
-<script src="data/translations.js"></script>
-<script src="data/menu-data.js"></script>
-<script src="js/main.js"></script>
-
+<script>
+const T={
+ko:{"nav.home":"HOME","nav.story":"STORY","nav.menu":"MENU","nav.media":"MEDIA","nav.review":"REVIEW","nav.instagram":"INSTAGRAM","nav.location":"LOCATION","hero.sub":"GAMCHO RESTAURANT · JEJU","hero.title":"오랜 시간 변하지 않은<br>한 그릇의 마음","hero.desc":"익숙하지만 쉽게 잊히지 않는 맛.<br>감초식당은 오늘도 변함없는 정성으로<br>따뜻한 한 그릇을 준비합니다.","hero.menu":"MENU","hero.story":"OUR STORY","intro.label":"GAMCHO RESTAURANT","intro.title":"제주에서 이어온<br>따뜻한 한 그릇","intro.desc":"감초식당은 오랜 시간 동안 한결같은 마음으로 음식을 준비해왔습니다.<br>빠르게 변하는 유행보다 오래 기억에 남는 한 끼를 더 중요하게 생각합니다.","intro.link":"감초식당 이야기 보기 <span>→</span>","menu.label":"SIGNATURE MENU","menu.title":"감초식당의 대표 한 그릇","menu.link":"전체 메뉴 보기 <span>→</span>","menu.name":"감초순대국밥","menu.desc":"오래도록 사랑받아온 감초식당의 대표 메뉴.<br>제주에서 따뜻하게 기억되는 한 그릇입니다.","menu.price":"대표 메뉴","story.label":"OUR STORY","story.title":"시간이 지나도<br>변하지 않는 맛","story.desc":"화려함보다 익숙하고 깊은 맛을 중요하게 생각합니다.<br>오랜 시간 한 자리를 지키며 한 그릇을 준비합니다.","story.button":"STORY","media.label":"MEDIA","media.title":"방송과 미디어에서<br>만난 감초식당","media.desc":"방송과 다양한 콘텐츠 속 감초식당의 모습을 만나보세요.","media.link":"MEDIA 더보기 <span>→</span>","review.label":"REVIEW","review.title":"감초식당을<br>찾아주신 이야기","review.desc":"오래 사랑받아온 감초식당의 이야기와 손님들의 흔적을 만나보세요.","review.link":"REVIEW 더보기 <span>→</span>","quote":"“ 오래 기억되는 맛은<br>결국 변하지 않는 정성에서 만들어집니다. ”","location.label":"VISIT GAMCHO","location.title":"제주에서 만나요","location.desc":"감초식당 신제주점에서 오래 기억되는 한 끼를 만나보세요.","location.button":"LOCATION","location.call":"전화 문의","footer.info":"제주 로컬 국밥 전문점<br>오랜 시간 변하지 않은 한 그릇","footer.hours":"OPEN AM 11:00 - PM 23:30<br>Last Order PM 23:00<br>정기휴무 매주 수요일<br>TEL 064-743-8988"},
+en:{"nav.home":"HOME","nav.story":"STORY","nav.menu":"MENU","nav.media":"MEDIA","nav.review":"REVIEW","nav.instagram":"INSTAGRAM","nav.location":"LOCATION","hero.sub":"GAMCHO RESTAURANT · JEJU","hero.title":"A Bowl of Heart,<br>Unchanged Through Time","hero.desc":"A familiar flavor that stays with you.<br>Every day, Gamcho Restaurant prepares<br>a warm bowl with the same care.","hero.menu":"MENU","hero.story":"OUR STORY","intro.label":"GAMCHO RESTAURANT","intro.title":"A Warm Bowl<br>Passed Down in Jeju","intro.desc":"For years, Gamcho Restaurant has prepared every meal with the same sincere care.<br>We value a meal that remains in your memory longer than passing trends.","intro.link":"Our Story <span>→</span>","menu.label":"SIGNATURE MENU","menu.title":"Gamcho's Signature Bowl","menu.link":"View Full Menu <span>→</span>","menu.name":"Gamcho Sundae Gukbap","menu.desc":"A signature dish loved for years.<br>A warm bowl remembered in Jeju.","menu.price":"SIGNATURE","story.label":"OUR STORY","story.title":"A Flavor That<br>Doesn't Change","story.desc":"We value familiar, deep flavors over flashy trends.<br>For years, we have stayed in one place and prepared each bowl with care.","story.button":"STORY","media.label":"MEDIA","media.title":"Gamcho Restaurant<br>Across Media","media.desc":"Meet Gamcho Restaurant through television and various content.","media.link":"MORE MEDIA <span>→</span>","review.label":"REVIEW","review.title":"Stories From<br>Our Guests","review.desc":"Discover the stories and traces of guests who have loved Gamcho Restaurant over the years.","review.link":"MORE REVIEWS <span>→</span>","quote":"“ The flavors we remember for years<br>are made with unwavering care. ”","location.label":"VISIT GAMCHO","location.title":"Meet Us in Jeju","location.desc":"Enjoy a memorable meal at Gamcho Restaurant, Sinjeju.","location.button":"LOCATION","location.call":"CALL US","footer.info":"Jeju local gukbap restaurant<br>A bowl unchanged through the years","footer.hours":"OPEN AM 11:00 - PM 23:30<br>Last Order PM 23:00<br>Closed Every Wednesday<br>TEL 064-743-8988"},
+zh:{"nav.home":"HOME","nav.story":"STORY","nav.menu":"MENU","nav.media":"MEDIA","nav.review":"REVIEW","nav.instagram":"INSTAGRAM","nav.location":"LOCATION","hero.sub":"GAMCHO RESTAURANT · JEJU","hero.title":"岁月不改的一碗心意","hero.desc":"熟悉却令人难忘的味道。<br>甘草食堂每天都以始终如一的用心，<br>准备一碗温暖的汤饭。","hero.menu":"MENU","hero.story":"OUR STORY","intro.label":"GAMCHO RESTAURANT","intro.title":"传承于济州的<br>温暖一碗","intro.desc":"多年来，甘草食堂始终以同样真诚的心准备每一餐。<br>比起短暂的潮流，我们更珍惜能够长久留在记忆中的一顿饭。","intro.link":"了解甘草食堂的故事 <span>→</span>","menu.label":"SIGNATURE MENU","menu.title":"甘草食堂的招牌一碗","menu.link":"查看完整菜单 <span>→</span>","menu.name":"甘草顺大肠汤饭","menu.desc":"多年深受喜爱的招牌菜单。<br>一碗让人记住济州温暖味道的汤饭。","menu.price":"招牌菜单","story.label":"OUR STORY","story.title":"岁月流逝<br>味道依然不变","story.desc":"比起华丽，我们更重视熟悉而深厚的味道。<br>多年守在这里，只为认真准备每一碗汤饭。","story.button":"STORY","media.label":"MEDIA","media.title":"电视与媒体中的<br>甘草食堂","media.desc":"通过电视及各种内容，了解甘草食堂。","media.link":"查看更多 MEDIA <span>→</span>","review.label":"REVIEW","review.title":"来自食客的<br>故事","review.desc":"看看多年喜爱甘草食堂的食客留下的故事与足迹。","review.link":"查看更多 REVIEW <span>→</span>","quote":"“ 能长久留在记忆中的味道，<br>总是来自始终不变的用心。 ”","location.label":"VISIT GAMCHO","location.title":"在济州与我们相遇","location.desc":"欢迎来到甘草食堂新济州店，享受一顿令人难忘的美食。","location.button":"LOCATION","location.call":"电话咨询","footer.info":"济州本地汤饭专门店<br>多年不变的一碗心意","footer.hours":"OPEN AM 11:00 - PM 23:30<br>Last Order PM 23:00<br>每周三定期休息<br>TEL 064-743-8988"},
+ja:{"nav.home":"HOME","nav.story":"STORY","nav.menu":"MENU","nav.media":"MEDIA","nav.review":"REVIEW","nav.instagram":"INSTAGRAM","nav.location":"LOCATION","hero.sub":"GAMCHO RESTAURANT · JEJU","hero.title":"長い年月、変わらない<br>一杯への想い","hero.desc":"どこか懐かしく、忘れられない味。<br>カムチョ食堂は今日も変わらない真心で<br>温かな一杯を用意しています。","hero.menu":"MENU","hero.story":"OUR STORY","intro.label":"GAMCHO RESTAURANT","intro.title":"済州で受け継ぐ<br>温かな一杯","intro.desc":"長年、変わらない気持ちで料理を準備してきたカムチョ食堂。<br>流行よりも、長く記憶に残る一食を大切にしています。","intro.link":"カムチョ食堂の物語 <span>→</span>","menu.label":"SIGNATURE MENU","menu.title":"カムチョ食堂の代表の一杯","menu.link":"メニューを見る <span>→</span>","menu.name":"カムチョ スンデクッパ","menu.desc":"長年愛されてきた代表メニュー。<br>済州で温かく記憶される一杯です。","menu.price":"代表メニュー","story.label":"OUR STORY","story.title":"時が過ぎても<br>変わらない味","story.desc":"華やかさより、馴染み深く奥行きのある味を大切にしています。<br>長年この場所で、一杯一杯を丁寧に作っています。","story.button":"STORY","media.label":"MEDIA","media.title":"テレビやメディアで<br>出会うカムチョ食堂","media.desc":"番組やさまざまなコンテンツを通してカムチョ食堂をご覧ください。","media.link":"MEDIAを見る <span>→</span>","review.label":"REVIEW","review.title":"お客様から届いた<br>物語","review.desc":"長年愛されてきたカムチョ食堂と、お客様の思い出をご紹介します。","review.link":"REVIEWを見る <span>→</span>","quote":"“ 長く心に残る味は、<br>変わらない真心から生まれます。 ”","location.label":"VISIT GAMCHO","location.title":"済州でお会いしましょう","location.desc":"カムチョ食堂 新済州店で、心に残る一食をお楽しみください。","location.button":"LOCATION","location.call":"電話で問い合わせる","footer.info":"済州ローカル クッパ専門店<br>長年変わらない一杯","footer.hours":"OPEN AM 11:00 - PM 23:30<br>Last Order PM 23:00<br>毎週水曜日定休<br>TEL 064-743-8988"}};
+const labels={ko:"KOR",en:"ENG",zh:"中文",ja:"日本語"};
+function applyLang(l){if(!T[l])l="ko";document.querySelectorAll("[data-i]").forEach(e=>{if(T[l][e.dataset.i]!==undefined)e.innerHTML=T[l][e.dataset.i]});document.documentElement.lang=l;localStorage.setItem("gamcho-index-language",l);langBtn.textContent=labels[l]}
+const lang=document.getElementById("lang"),langBtn=document.getElementById("langBtn"),nav=document.getElementById("nav"),hamb=document.getElementById("hamb");
+langBtn.onclick=e=>{e.stopPropagation();lang.classList.toggle("open")};document.querySelectorAll("[data-lang]").forEach(b=>b.onclick=()=>{applyLang(b.dataset.lang);lang.classList.remove("open")});document.onclick=e=>{if(!lang.contains(e.target))lang.classList.remove("open")};
+hamb.onclick=()=>nav.classList.toggle("open");nav.querySelectorAll("a").forEach(a=>a.onclick=()=>nav.classList.remove("open"));
+addEventListener("scroll",()=>header.classList.toggle("scrolled",scrollY>35),{passive:true});
+applyLang(localStorage.getItem("gamcho-index-language")||"ko");
+</script>
 </body>
 </html>
