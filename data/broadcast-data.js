@@ -170,4 +170,3 @@ const translations = {
 };
 const supportedLanguages = ["ko","en","zh","ja"];
 const defaultLanguage = "ko";
-const getTranslationValue = (obj,path) => path.split('.').reduce((v,k)=>v && v[k],obj);
