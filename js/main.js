@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".main-nav");
 
     const languageSelector =
-        document.querySelector(".language-selector");
+        document.querySelector(".media-language");
 
     const languageButton =
         document.querySelector(".language-button");
