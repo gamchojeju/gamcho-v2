@@ -20,11 +20,31 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/story.css">
+<style>
+
+/* GAMCHO SHARED HEADER — based on approved MEDIA header */
+header#header{position:fixed;top:0;left:0;width:100%;z-index:999;background:rgba(15,15,15,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.05);transition:0.35s;}
+header#header.scrolled{background:rgba(0,0,0,0.96);padding:2px 0;}
+header#header .container{width:min(1180px,92%);margin:auto;}
+header#header .nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:20px;transition:0.35s;}
+header#header .logo{font-family:'Noto Serif KR',serif;font-size:24px;font-weight:700;letter-spacing:1px;white-space:nowrap;}
+header#header .menu{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;}
+header#header .menu a{font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;opacity:.88;transition:.3s;position:relative;white-space:nowrap;}
+header#header .menu a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:#d6b98a;transition:.3s;}
+header#header .menu a:hover{opacity:1;}
+header#header .menu a:hover::after{width:100%;}
+header#header .media-language{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+header#header .media-language button{border:1px solid rgba(255,255,255,.12);background:transparent;color:#fff;padding:6px 9px;border-radius:999px;font-size:10px;cursor:pointer;opacity:.75;transition:.3s;}
+header#header .media-language button.active,header#header .media-language button:hover{opacity:1;border-color:#d6b98a;color:#d6b98a;}
+@media(max-width:1024px){header#header .menu{gap:16px}header#header .menu a{font-size:12px} }
+@media(max-width:768px){header#header .nav{flex-direction:column;gap:14px;padding:14px 0;}header#header .menu{gap:14px;}header#header .menu a{font-size:11px;}header#header .media-language{justify-content:center;}}
+
+</style>
 </head>
 
 <body>
 
-<header>
+<header id="header">
 
 <div class="container nav">
 
@@ -39,6 +59,12 @@
 <a href="location.html">LOCATION</a>
 <a href="instagram.html">INSTAGRAM</a>
 </nav>
+      <div class="media-language" aria-label="Language selector">
+        <button type="button" data-lang="ko">KOR</button>
+        <button type="button" data-lang="en">ENG</button>
+        <button type="button" data-lang="zh">中文</button>
+        <button type="button" data-lang="ja">日本語</button>
+      </div>
 
 </div>
 
@@ -243,6 +269,24 @@ TEL 064-743-8988
 
 <script src="data/story-data.js"></script>
 <script src="js/story.js"></script>
+
+<script>
+(function(){
+ const h=document.getElementById('header');
+ if(!h)return;
+ const sync=()=>h.classList.toggle('scrolled',window.scrollY>30);
+ window.addEventListener('scroll',sync,{passive:true}); sync();
+ const saved=localStorage.getItem('gamcho-language')||localStorage.getItem('gamchoLang');
+ const buttons=h.querySelectorAll('[data-lang]');
+ buttons.forEach(b=>{
+   if(saved===b.dataset.lang)b.classList.add('active');
+   b.addEventListener('click',()=>{
+     buttons.forEach(x=>x.classList.toggle('active',x===b));
+     localStorage.setItem('gamcho-language',b.dataset.lang);
+   });
+ });
+})();
+</script>
 </body>
 </html>
 
