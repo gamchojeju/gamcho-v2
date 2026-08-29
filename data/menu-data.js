@@ -19,7 +19,7 @@ const menuData = [
     {
         id: "gamcho-sundae-gukbap",
         category: "meal",
-        image: "images/menu/gamcho-sundae-gukbap.jpg",
+        image: "images/menu/gamcho-sundae-gukbap.jpeg",
         best: true,
 
         name: {
@@ -185,11 +185,11 @@ const menuData = [
     {
         id: "sundae-naejang-jeongol",
         category: "hotpot",
-        image: "images/menu/sundae-naejang-jeongol.jpg",
+        image: "images/menu/sundae-naejang-jeongol.png",
         best: true,
 
         name: {
-            ko: "순대내장전골",
+            ko: "가마솥 순대전골",
             en: "Sundae Hotpot",
             zh: "火锅",
             ja: "鍋"
@@ -209,11 +209,11 @@ const menuData = [
     {
         id: "dakbokkeumtang",
         category: "hotpot",
-        image: "images/menu/dakbokkeumtang.jpg",
+        image: "images/menu/chiken.png",
         best: true,
 
         name: {
-            ko: "닭볶음탕",
+            ko: "가마솥 닭볶음탕",
             en: "Spicy Chicken",
             zh: "辣鸡",
             ja: "鶏"
