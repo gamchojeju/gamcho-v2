@@ -1,144 +1,81 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="제주에서 30년 전통을 이어온 감초식당 신제주점의 메뉴입니다.">
-<meta name="robots" content="index, follow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>감초식당 신제주점 | MENU</title>
+<meta name="description" content="제주에서 30년 전통을 이어온 감초식당 신제주점의 메뉴입니다.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/responsive.css">
 <style>
-/* MENU V2 — 기존 menu.html 내용 + 현재 V2 INDEX 테마/헤더 규격 */
-:root{--menu-bg:#0f0f0f;--menu-card:#171717;--menu-text:#f5f5f5;--menu-sub:#bdbdbd;--menu-gold:#d6b98a;}
-html,body{background:var(--menu-bg)!important;color:var(--menu-text)!important;}
-body.menu-v2{font-family:'Pretendard',sans-serif;line-height:1.8;overflow-x:hidden;word-break:keep-all;}
-body.menu-v2.menu-open{overflow:hidden;}
-.menu-v2 .site-header{background:rgba(15,15,15,.82);color:#fff;border-bottom:1px solid rgba(255,255,255,.05);}
-.menu-v2 .site-header.scrolled{background:rgba(15,15,15,.96);color:#fff;}
-.menu-v2 .header-inner{width:min(calc(100% - 80px),1440px);}
-.menu-v2 .main-nav a{color:#fff;}
-.menu-v2 .main-nav a:hover,.menu-v2 .main-nav a.current{color:#fff;}
-.menu-v2 .media-language{display:flex;gap:6px;align-items:center;flex-wrap:wrap;flex-shrink:0;}
-.menu-v2 .media-language button{border:1px solid rgba(255,255,255,.12);background:transparent;color:#fff;padding:6px 9px;border-radius:999px;font-size:10px;cursor:pointer;opacity:.75;}
-.menu-v2 .media-language button.active,.menu-v2 .media-language button:hover{opacity:1;border-color:var(--menu-gold);color:var(--menu-gold);}
-.menu-v2 .menu-hero{position:relative;height:92svh;min-height:780px;overflow:hidden;color:#fff;}
-.menu-v2 .menu-hero-bg{position:absolute;inset:0;background:url('images/hero/main-hero.jpg') center/cover no-repeat;transform:scale(1.03);}
-.menu-v2 .menu-hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.32) 48%,rgba(0,0,0,.12) 100%);}
-.menu-v2 .menu-hero-content{position:absolute;left:50%;top:55%;transform:translate(-50%,-50%);width:min(92%,900px);text-align:center;z-index:2;}
-.menu-v2 .menu-hero-eyebrow{font-size:13px;letter-spacing:4px;margin-bottom:22px;color:var(--menu-gold);}
-.menu-v2 .menu-hero-title{font-family:'Noto Serif KR',serif;font-size:clamp(42px,6vw,82px);line-height:1.35;margin-bottom:24px;font-weight:600;}
-.menu-v2 .menu-hero-desc{font-size:18px;color:rgba(255,255,255,.82);max-width:760px;margin:auto;}
-.menu-v2 .menu-intro{padding:120px 0 35px;background:#0f0f0f;}
-.menu-v2 .menu-intro-inner{width:min(calc(100% - 80px),1240px);margin:auto;}
-.menu-v2 .section-label{font-size:13px;letter-spacing:3px;color:var(--menu-gold);margin-bottom:18px;font-weight:600;}
-.menu-v2 .section-title{font-family:'Noto Serif KR',serif;font-size:clamp(34px,4vw,50px);line-height:1.5;margin-bottom:24px;font-weight:600;color:#fff;}
-.menu-v2 .section-desc{font-size:18px;color:var(--menu-sub);max-width:760px;}
-.menu-v2 .lang-wrap{display:flex;justify-content:center;margin-top:42px;}
-.menu-v2 .lang-buttons{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
-.menu-v2 .lang-buttons button{padding:10px 18px;background:#181818;border:1px solid rgba(255,255,255,.08);color:#fff;border-radius:999px;cursor:pointer;font-weight:600;}
-.menu-v2 .lang-buttons button.active,.menu-v2 .lang-buttons button:hover{background:var(--menu-gold);border-color:var(--menu-gold);color:#111;}
-.menu-v2 .menu-content{width:min(calc(100% - 80px),1240px);margin:auto;}
-.menu-v2 .category-wrap{margin-top:105px;scroll-margin-top:100px;}
-.menu-v2 .category-title{font-family:'Noto Serif KR',serif;font-size:34px;margin-bottom:34px;color:#fff;}
-.menu-v2 .menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;}
-.menu-v2 .menu-card{background:var(--menu-card);border-radius:28px;overflow:hidden;transition:.4s;border:1px solid rgba(255,255,255,.05);position:relative;cursor:pointer;}
-.menu-v2 .menu-card:hover{transform:translateY(-10px);box-shadow:0 24px 50px rgba(212,175,55,.14);}
-.menu-v2 .menu-image{height:270px;overflow:hidden;position:relative;background:#111;}
-.menu-v2 .menu-image img{width:100%;height:100%;object-fit:cover;transition:.5s;}
-.menu-v2 .menu-card:hover .menu-image img{transform:scale(1.05);}
-.menu-v2 .image-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#777;font-size:13px;letter-spacing:.04em;background:linear-gradient(135deg,#151515,#202020);}
-.menu-v2 .badge{position:absolute;top:18px;left:18px;background:linear-gradient(135deg,#f3c98b,#d49d5f);color:#111;padding:6px 12px;font-size:11px;border-radius:999px;font-weight:700;letter-spacing:1px;z-index:10;}
-.menu-v2 .menu-info{padding:28px;}
-.menu-v2 .menu-info h3{font-family:'Noto Serif KR',serif;font-size:28px;line-height:1.4;margin-bottom:14px;color:#fff;}
-.menu-v2 .menu-info p{font-size:15px;color:#c9c9c9;line-height:1.8;}
-.menu-v2 .menu-info .price{margin-top:18px;font-size:20px!important;font-weight:700;color:var(--menu-gold)!important;}
-.menu-v2 .menu-note{width:min(calc(100% - 80px),1240px);margin:70px auto 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.07);color:#8d8d8d;font-size:12px;text-align:center;}
-.menu-v2 footer{background:#090909;padding:70px 0;margin-top:120px;border-top:1px solid rgba(255,255,255,.05);}
-.menu-v2 .footer-inner{width:min(calc(100% - 80px),1240px);margin:auto;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;}
-.menu-v2 .footer-logo{font-family:'Noto Serif KR',serif;font-size:30px;margin-bottom:12px;color:#fff;}
-.menu-v2 .footer-info{font-size:15px;line-height:2;color:#bdbdbd;}
-.menu-v2 .floating-call{position:fixed;right:20px;bottom:20px;z-index:999;width:64px;height:64px;border-radius:50%;background:var(--menu-gold);color:#111;display:flex;align-items:center;justify-content:center;font-size:28px;}
-.menu-v2 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;}
-.menu-v2 .modal-content{text-align:center;margin-top:4%;padding:20px;}
-.menu-v2 .modal img{max-width:88%;max-height:78vh;border-radius:24px;display:inline-block;width:auto;}
-.menu-v2 .modal p{color:#fff;margin-top:18px;font-size:22px;font-family:'Noto Serif KR',serif;}
-@media(max-width:1100px){.menu-v2 .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.menu-v2 .header-inner{width:min(calc(100% - 50px),1240px);}}
-@media(max-width:768px){
-.menu-v2 .site-header{height:68px;}
-.menu-v2 .header-inner{width:calc(100% - 40px);}
-.menu-v2 .main-nav{position:fixed;top:68px;left:0;width:100%;height:calc(100vh - 68px);padding:45px 30px;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:0;background:#0f0f0f;color:#fff;transform:translateX(100%);transition:transform .4s ease;overflow-y:auto;}
-.menu-v2 .main-nav.is-open{transform:translateX(0);}
-.menu-v2 .main-nav a{width:100%;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:13px;}
-.menu-v2 .main-nav a::after{display:none;}
-.menu-v2 .media-language{margin-left:auto;}
-.menu-v2 .mobile-menu-button{display:flex;}
-.menu-v2 .menu-hero{height:100svh;min-height:100svh;display:flex;align-items:flex-end;padding-bottom:85px;}
-.menu-v2 .menu-hero-bg{background-position:58% center;}
-.menu-v2 .menu-hero-overlay{background:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.32) 42%,rgba(0,0,0,.72) 100%);}
-.menu-v2 .menu-hero-content{position:relative;top:auto;left:auto;transform:none;width:calc(100% - 40px);padding:0;margin:auto;}
-.menu-v2 .menu-hero-eyebrow{margin-bottom:16px;font-size:9px;letter-spacing:.18em;}
-.menu-v2 .menu-hero-title{font-size:clamp(36px,10vw,48px);line-height:1.35;}
-.menu-v2 .menu-hero-desc{font-size:14px;line-height:1.8;}
-.menu-v2 .menu-intro{padding:85px 0 25px;}
-.menu-v2 .menu-intro-inner,.menu-v2 .menu-content,.menu-v2 .menu-note,.menu-v2 .footer-inner{width:calc(100% - 40px);}
-.menu-v2 .section-title{font-size:34px;}
-.menu-v2 .section-desc{font-size:14px;}
-.menu-v2 .lang-wrap{margin-top:34px;}
-.menu-v2 .lang-buttons{gap:7px;}
-.menu-v2 .lang-buttons button{padding:9px 14px;font-size:11px;}
-.menu-v2 .category-wrap{margin-top:78px;scroll-margin-top:85px;}
-.menu-v2 .category-title{font-size:27px;margin-bottom:24px;}
-.menu-v2 .menu-grid{grid-template-columns:1fr;gap:18px;}
-.menu-v2 .menu-image{height:auto;aspect-ratio:16/10;}
-.menu-v2 .menu-info{padding:22px 20px 24px;min-width:0;}
-.menu-v2 .menu-info h3{font-size:22px;line-height:1.45;margin-bottom:10px;overflow-wrap:anywhere;}
-.menu-v2 .menu-info p{font-size:13px;line-height:1.65;overflow-wrap:anywhere;}
-.menu-v2 .menu-info .price{font-size:18px!important;margin-top:14px;}
-.menu-v2 .menu-card{height:auto;}
-.menu-v2 footer{margin-top:90px;}
-.menu-v2 .footer-inner{flex-direction:column;}
-}
+/* MENU V2 — 기존 menu.html 콘텐츠를 그대로 사용하고 INDEX의 다크 테마/헤더에 맞춤 */
+:root{--bg:#0f0f0f;--card:#171717;--text:#f5f5f5;--sub:#bdbdbd;--gold:#d6b98a;}
+html,body{background:#0f0f0f!important;color:#f5f5f5!important;}
+body{word-break:keep-all;}
+.menu-page{padding-top:0;}
+.menu-page .menu-section{padding:120px 0 0;}
+.menu-page .menu-intro{padding:120px 0 30px;text-align:center;}
+.menu-page .menu-intro .section-inner{width:min(1180px,92%);margin:auto;}
+.menu-page .menu-intro h2{font-family:'Noto Serif KR',serif;font-size:clamp(34px,4vw,50px);line-height:1.5;margin-bottom:24px;}
+.menu-page .menu-intro p{font-size:18px;color:var(--sub);line-height:1.9;}
+.menu-page .lang-wrap{display:flex;justify-content:center;margin-top:50px;}
+.menu-page .media-language{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.menu-page .media-language button{border:1px solid rgba(255,255,255,.12);background:transparent;color:#fff;padding:6px 9px;border-radius:999px;font-size:10px;cursor:pointer;opacity:.75;}
+.menu-page .media-language button.active,.menu-page .media-language button:hover{opacity:1;border-color:var(--gold);color:var(--gold);}
+.menu-page .category-wrap{margin-top:110px;}
+.menu-page .category-title{font-family:'Noto Serif KR',serif;font-size:34px;margin-bottom:34px;}
+.menu-page .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.menu-page .menu-card{background:var(--card);border-radius:28px;overflow:hidden;transition:.4s;border:1px solid rgba(255,255,255,.05);position:relative;cursor:pointer;}
+.menu-page .menu-card:hover{transform:translateY(-10px);box-shadow:0 24px 50px rgba(212,175,55,.14);}
+.menu-page .menu-image{overflow:hidden;position:relative;background:#1b1b1b;min-height:270px;}
+.menu-page .menu-card img{height:270px;object-fit:cover;transition:.5s;}
+.menu-page .menu-card:hover img{transform:scale(1.05);}
+.menu-page .image-missing{height:270px;display:flex;align-items:center;justify-content:center;color:#777;font-size:12px;letter-spacing:.12em;}
+.menu-page .badge{position:absolute;top:18px;left:18px;background:linear-gradient(135deg,#f3c98b,#d49d5f);color:#111;padding:6px 12px;font-size:11px;border-radius:999px;font-weight:700;letter-spacing:1px;z-index:10;}
+.menu-page .menu-info{padding:28px;}
+.menu-page .menu-info h3{font-family:'Noto Serif KR',serif;font-size:28px;line-height:1.4;margin-bottom:14px;}
+.menu-page .menu-info p{font-size:15px;color:#c9c9c9;line-height:1.8;}
+.menu-page .menu-info .price{margin-top:18px;font-size:20px!important;font-weight:700;color:var(--gold)!important;}
+.menu-page .menu-note{text-align:center;color:#888;padding:80px 20px 0;font-size:13px;}
+.menu-page .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;}
+.menu-page .modal-content{text-align:center;margin-top:4%;padding:20px;}
+.menu-page .modal img{max-width:88%;max-height:78vh;border-radius:24px;}
+.menu-page .modal p{color:#fff;margin-top:18px;font-size:22px;font-family:'Noto Serif KR',serif;}
+@media(max-width:1024px){.menu-page .menu-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.menu-page .menu-grid{grid-template-columns:1fr;}.menu-page .menu-intro{padding:90px 0 20px}.menu-page .menu-intro p{font-size:14px}.menu-page .category-wrap{margin-top:75px}.menu-page .category-title{font-size:28px;margin-bottom:24px}.menu-page .menu-info{padding:22px 20px 24px}.menu-page .menu-info h3{font-size:22px}.menu-page .menu-info p{font-size:13px}.menu-page .menu-info .price{font-size:18px!important}.menu-page .media-language{justify-content:center}.menu-page .menu-image,.menu-page .menu-card img,.menu-page .image-missing{height:240px;min-height:240px;}}
 </style>
 </head>
-<body class="menu-v2">
-<header class="site-header" id="header">
-<div class="header-inner">
-<a href="index.html" class="logo" aria-label="감초식당 홈"><span class="logo-ko">감초식당</span><span class="logo-en">GAMCHO RESTAURANT</span></a>
-<nav class="main-nav" id="mainNav">
-<a href="index.html" data-nav="home">HOME</a><a href="menu.html" class="current" data-nav="menu">MENU</a><a href="story.html" data-nav="story">STORY</a><a href="broadcast.html" data-nav="media">MEDIA</a><a href="review.html" data-nav="review">REVIEW</a><a href="location.html" data-nav="location">LOCATION</a><a href="instagram.html" data-nav="instagram">INSTAGRAM</a>
+<body class="menu-page">
+<header id="header">
+<div class="container nav">
+<div class="logo">감초식당</div>
+<nav class="menu">
+<a href="index.html">HOME</a><a href="menu.html" class="current">MENU</a><a href="story.html">STORY</a><a href="broadcast.html">MEDIA</a><a href="review.html">REVIEW</a><a href="location.html">LOCATION</a><a href="instagram.html">INSTAGRAM</a>
 </nav>
-<div class="media-language" aria-label="Language selector"><button type="button" data-lang="ko">KOR</button><button type="button" data-lang="en">ENG</button><button type="button" data-lang="zh">中文</button><button type="button" data-lang="ja">日本語</button></div>
-<button type="button" class="mobile-menu-button" id="mobileMenuButton" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+<div class="media-language" aria-label="Language selector">
+<button type="button" data-lang="ko">KOR</button><button type="button" data-lang="en">ENG</button><button type="button" data-lang="zh">中文</button><button type="button" data-lang="ja">日本語</button>
 </div>
-</header>
+</div></header>
 <main>
-<section class="menu-hero"><div class="menu-hero-bg"></div><div class="menu-hero-overlay"></div><div class="menu-hero-content"><div class="menu-hero-eyebrow">GAMCHO MENU</div><h1 class="menu-hero-title" id="heroTitle">30년 전통 감초식당의<br>대표 메뉴</h1><p class="menu-hero-desc" id="heroDesc">1994년부터 이어온 감초식당만의 깊은 맛과 제주 로컬 감성이 담긴 메뉴를 만나보세요.</p></div></section>
-<section class="menu-intro"><div class="menu-intro-inner"><div class="section-label">MENU</div><h2 class="section-title" id="introTitle">감초식당 메뉴 안내</h2><p class="section-desc" id="introDesc">감초식당 신제주점의 대표 메뉴를 소개합니다.<br>다국어 지원으로 해외 여행객들도 편하게 확인할 수 있습니다.</p><div class="lang-wrap"><div class="lang-buttons"><button type="button" data-lang="ko">KOR</button><button type="button" data-lang="en">ENG</button><button type="button" data-lang="zh">中文</button><button type="button" data-lang="ja">日本語</button></div></div></div></section>
-<div class="menu-content" id="menuArea"></div>
-<div class="menu-note" id="menuNote">메뉴 및 가격은 매장 사정에 따라 변경될 수 있습니다.</div>
+<section class="hero">
+<img src="banner.jpg" alt="감초식당 메뉴 대표 이미지"><div class="hero-overlay"></div>
+<div class="hero-text"><div class="hero-sub">GAMCHO MENU</div><h1 class="hero-title">30년 전통 감초식당의<br>대표 메뉴</h1><p class="hero-desc">1994년부터 이어온 감초식당만의 깊은 맛과 제주 로컬 감성이 담긴 메뉴를 만나보세요.</p></div>
+</section>
+<section class="menu-intro"><div class="section-inner"><div class="section-eyebrow">MENU</div><h2>감초식당 메뉴 안내</h2><p>감초식당 신제주점의 대표 메뉴를 소개합니다.<br>다국어 지원으로 해외 여행객들도 편하게 확인할 수 있습니다.</p><div class="lang-wrap"><div class="media-language"><button type="button" data-lang="ko">KOR</button><button type="button" data-lang="en">ENG</button><button type="button" data-lang="zh">中文</button><button type="button" data-lang="ja">日本語</button></div></div><div id="menuArea"></div></div></section>
+<div id="modal" class="modal"><div class="modal-content"><img id="modalImg" alt=""><p id="modalText"></p></div></div>
 </main>
-<div id="modal" class="modal" role="dialog" aria-modal="true"><div class="modal-content"><img id="modalImg" alt=""><p id="modalText"></p></div></div>
-<footer><div class="footer-inner"><div><div class="footer-logo">감초식당</div><div class="footer-info" id="footerInfo1">제주 로컬 국밥 전문점<br>오랜 시간 변하지 않은 한 그릇</div></div><div class="footer-info" id="footerInfo2">OPEN AM 11:00 - PM 23:30<br>Last Order PM 23:00<br>정기휴무 매주 수요일<br>TEL 064-743-8988</div></div></footer>
-<a href="tel:0647438988" class="floating-call" aria-label="전화하기">☎</a>
-<script src="data/menu-page-data.js"></script><script src="data/translations.js"></script>
+<footer><div class="container footer-inner"><div><div class="footer-logo">감초식당</div><div class="footer-info">제주 로컬 국밥 전문점<br>오랜 시간 변하지 않은 한 그릇</div></div><div class="footer-info">OPEN AM 11:00 - PM 23:30<br>Last Order PM 23:00<br>정기휴무 매주 수요일<br>TEL 064-743-8988</div></div></footer>
+<a href="tel:0647438988" class="floating-call">☎</a>
+<script src="data/menu-original-v2.js"></script>
 <script>
 let currentLang=localStorage.getItem('gamcho-language')||'ko';
-const pageText={ko:{heroTitle:'30년 전통 감초식당의<br>대표 메뉴',heroDesc:'1994년부터 이어온 감초식당만의 깊은 맛과 제주 로컬 감성이 담긴 메뉴를 만나보세요.',introTitle:'감초식당 메뉴 안내',introDesc:'감초식당 신제주점의 대표 메뉴를 소개합니다.<br>다국어 지원으로 해외 여행객들도 편하게 확인할 수 있습니다.',note:'메뉴 및 가격은 매장 사정에 따라 변경될 수 있습니다.'},en:{heroTitle:"Gamcho Restaurant's<br>Signature Menu",heroDesc:'Discover the deep flavors and local Jeju spirit that Gamcho Restaurant has carried on since 1994.',introTitle:'Gamcho Restaurant Menu',introDesc:'Explore the signature dishes of Gamcho Restaurant.<br>Available in multiple languages for international travelers.',note:'Menu items and prices are subject to change depending on restaurant circumstances.'},zh:{heroTitle:'甘草食堂30年传统<br>招牌菜单',heroDesc:'一起品尝自1994年延续至今的甘草食堂深厚味道与济州本地风情。',introTitle:'甘草食堂菜单',introDesc:'介绍甘草食堂新济州店的招牌菜单。<br>支持多种语言，方便海外游客查看。',note:'菜单及价格可能根据餐厅实际情况有所调整。'},ja:{heroTitle:'30年の伝統、甘草食堂の<br>代表メニュー',heroDesc:'1994年から受け継がれてきた甘草食堂ならではの深い味わいと済州のローカルな魅力をお楽しみください。',introTitle:'甘草食堂 メニュー',introDesc:'甘草食堂 新済州店の代表メニューをご紹介します。<br>海外からのお客様にも分かりやすい多言語対応です。',note:'メニュー・価格は店舗の事情により変更される場合があります。'}};
-const navFallback={ko:{home:'HOME',menu:'MENU',story:'STORY',media:'MEDIA',review:'REVIEW',location:'LOCATION',instagram:'INSTAGRAM'},en:{home:'HOME',menu:'MENU',story:'OUR STORY',media:'MEDIA',review:'REVIEWS',location:'LOCATION',instagram:'INSTAGRAM'},zh:{home:'首页',menu:'菜单',story:'品牌故事',media:'媒体报道',review:'顾客评价',location:'位置',instagram:'Instagram'},ja:{home:'HOME',menu:'MENU',story:'STORY',media:'MEDIA',review:'REVIEW',location:'LOCATION',instagram:'INSTAGRAM'}};
-function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));}
-function val(o){return o?.[currentLang]??o?.ko??'';}
-function render(){const area=document.getElementById('menuArea');area.innerHTML='';Object.keys(categoryNames).forEach(cat=>{const items=menuData.filter(m=>m.cat===cat);if(!items.length)return;const wrap=document.createElement('section');wrap.className='category-wrap';wrap.id='cat-'+cat;wrap.innerHTML='<h2 class="category-title">'+esc(categoryNames[cat])+'</h2><div class="menu-grid"></div>';const grid=wrap.querySelector('.menu-grid');items.forEach(item=>{const card=document.createElement('article');card.className='menu-card';card.tabIndex=0;const name=val(item.name),desc=val(item.desc);card.innerHTML=(item.best?'<div class="badge">BEST</div>':'')+'<div class="menu-image"><img src="'+esc(item.img)+'" alt="'+esc(name)+'" loading="lazy"><div class="image-fallback" hidden>MENU IMAGE</div></div><div class="menu-info"><h3>'+esc(name)+'</h3><p>'+esc(desc)+'</p><p class="price">'+esc(item.price)+'</p></div>';const img=card.querySelector('img'),fallback=card.querySelector('.image-fallback');img.addEventListener('error',()=>{img.hidden=true;fallback.hidden=false;});const open=()=>openModal(item.img,name);card.addEventListener('click',open);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});grid.appendChild(card);});area.appendChild(wrap);});}
-function updateNav(){let nav=navFallback[currentLang];if(typeof translations!=='undefined'&&translations[currentLang]?.nav)nav=translations[currentLang].nav;document.querySelectorAll('[data-nav]').forEach(a=>{a.textContent=nav[a.dataset.nav]||a.dataset.nav;});}
-function setLang(lang){currentLang=lang;localStorage.setItem('gamcho-language',lang);document.documentElement.lang=lang;const t=pageText[lang]||pageText.ko;document.getElementById('heroTitle').innerHTML=t.heroTitle;document.getElementById('heroDesc').innerHTML=t.heroDesc;document.getElementById('introTitle').textContent=t.introTitle;document.getElementById('introDesc').innerHTML=t.introDesc;document.getElementById('menuNote').textContent=t.note;document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));updateNav();render();}
-function openModal(img,text){const modal=document.getElementById('modal');document.getElementById('modalImg').src=img;document.getElementById('modalImg').alt=text;document.getElementById('modalText').textContent=text;modal.style.display='block';document.body.style.overflow='hidden';}
-function closeModal(){document.getElementById('modal').style.display='none';document.body.style.overflow='';}
+const langs=['ko','en','zh','ja'];
+function renderMenu(){const area=document.getElementById('menuArea');area.innerHTML='';Object.keys(categoryNames).forEach(cat=>{const items=menuData.filter(m=>m.cat===cat);const wrap=document.createElement('div');wrap.className='category-wrap';wrap.innerHTML='<h2 class="category-title">'+categoryNames[cat]+'</h2><div class="menu-grid"></div>';const grid=wrap.querySelector('.menu-grid');items.forEach(item=>{const card=document.createElement('div');card.className='menu-card';const name=item.name[currentLang]||item.name.ko;const desc=item.desc[currentLang]||item.desc.ko;const img=item.img;const exists=['menu1.jpg','menu2.png','menu3.png','menu6.jpg','menu10.png','menu12.png','menu13.png','menu7.jpg','menu8.jpg','menu9.jpg'].includes(img);card.innerHTML=(item.best?'<div class="badge">BEST</div>':'')+'<div class="menu-image">'+(exists?'<img src="'+img+'" alt="'+name.replace(/"/g,'&quot;')+'">':'<div class="image-missing">GAMCHO MENU</div>')+'</div><div class="menu-info"><h3>'+name+'</h3><p>'+desc+'</p><p class="price">'+item.price+'</p></div>';card.onclick=()=>{if(exists){document.getElementById('modal').style.display='block';document.getElementById('modalImg').src=img;}document.getElementById('modalText').innerText=name;};grid.appendChild(card)});area.appendChild(wrap)});}
+function setLang(lang){if(!langs.includes(lang))return;currentLang=lang;localStorage.setItem('gamcho-language',lang);document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));renderMenu();}
 document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
-document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal();});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
-const header=document.getElementById('header'),mobile=document.getElementById('mobileMenuButton'),nav=document.getElementById('mainNav');window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>40),{passive:true});mobile.addEventListener('click',()=>{const open=nav.classList.toggle('is-open');mobile.classList.toggle('is-active',open);document.body.classList.toggle('menu-open',open);});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('is-open');mobile.classList.remove('is-active');document.body.classList.remove('menu-open');}));
-setLang(['ko','en','zh','ja'].includes(currentLang)?currentLang:'ko');
+document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')e.currentTarget.style.display='none'};document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('modal').style.display='none'});setLang(currentLang);
 </script>
 </body></html>
