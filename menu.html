@@ -1,1005 +1,144 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="제주공항 근처 도민 찐맛집 30년 전통 감초식당 신제주점의 대표 메뉴를 소개합니다.">
-<meta name="keywords" content="감초식당, 신제주점, 제주맛집, 연동맛집, 제주한식, 제주공항근처식당">
+<meta name="description" content="제주에서 30년 전통을 이어온 감초식당 신제주점의 메뉴입니다.">
 <meta name="robots" content="index, follow">
-
-<meta property="og:title" content="감초식당 신제주점 | MENU">
-<meta property="og:description" content="30년 전통 감초식당의 대표 메뉴">
-<meta property="og:image" content="https://www.gamchojeju.com/menu1.jpg">
-<meta property="og:url" content="https://www.gamchojeju.com/menu.html">
-<meta property="og:type" content="website">
-
 <title>감초식당 신제주점 | MENU</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/responsive.css">
-
 <style>
-/* =========================================================
-   GAMCHO RESTAURANT V2 — MENU
-   디자인은 V2에 맞추고, 메뉴 내용은 업로드된 기존 menu.html 기준
-   ========================================================= */
-
-:root{
-    --gm-bg:#f7f3ee;
-    --gm-paper:#fffdf9;
-    --gm-ink:#243b35;
-    --gm-green:#2f5d50;
-    --gm-gold:#b58b52;
-    --gm-muted:#77736d;
-    --gm-line:rgba(47,93,80,.14);
-    --gm-shadow:0 18px 45px rgba(38,52,46,.10);
-}
-
-body.menu-v2{
-    background:var(--gm-bg);
-    color:var(--gm-ink);
-    overflow-x:hidden;
-}
-
-/* HEADER */
-.menu-v2 .site-menu-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
-    background:rgba(247,243,238,.92);
-    border-bottom:1px solid rgba(47,93,80,.10);
-    backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);
-}
-
-.menu-v2 .menu-header-inner{
-    width:min(1180px,92%);
-    min-height:78px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:30px;
-}
-
-.menu-v2 .menu-logo{
-    color:var(--gm-green);
-    font-family:"Noto Serif KR",serif;
-    font-size:23px;
-    font-weight:700;
-    white-space:nowrap;
-}
-
-.menu-v2 .menu-main-nav{
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    gap:24px;
-    flex-wrap:wrap;
-}
-
-.menu-v2 .menu-main-nav a{
-    position:relative;
-    color:var(--gm-green);
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:.07em;
-    opacity:.78;
-    transition:.3s;
-}
-
-.menu-v2 .menu-main-nav a:hover,
-.menu-v2 .menu-main-nav a.current{
-    opacity:1;
-}
-
-.menu-v2 .menu-main-nav a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:-7px;
-    height:1px;
-    background:var(--gm-gold);
-    transform:scaleX(0);
-    transform-origin:center;
-    transition:.3s;
-}
-
-.menu-v2 .menu-main-nav a:hover::after,
-.menu-v2 .menu-main-nav a.current::after{
-    transform:scaleX(1);
-}
-
-/* HERO */
-.menu-v2 .menu-hero{
-    position:relative;
-    min-height:620px;
-    height:74svh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
-    text-align:center;
-}
-
-.menu-v2 .menu-hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-        linear-gradient(180deg,rgba(20,35,30,.18),rgba(20,35,30,.70)),
-        url("banner.jpg") center/cover no-repeat;
-}
-
-.menu-v2 .menu-hero-inner{
-    position:relative;
-    z-index:1;
-    width:min(900px,92%);
-    padding-top:70px;
-}
-
-.menu-v2 .menu-eyebrow{
-    margin-bottom:18px;
-    color:#e5c995;
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:.30em;
-}
-
-.menu-v2 .menu-hero h1{
-    margin:0 0 22px;
-    color:#fff;
-    font-family:"Noto Serif KR",serif;
-    font-size:clamp(42px,6vw,72px);
-    line-height:1.38;
-    font-weight:600;
-}
-
-.menu-v2 .menu-hero p{
-    max-width:700px;
-    margin:auto;
-    color:rgba(255,255,255,.86);
-    font-size:16px;
-    line-height:1.9;
-}
-
-/* INTRO */
-.menu-v2 .menu-intro{
-    padding:105px 0 60px;
-    text-align:center;
-}
-
-.menu-v2 .menu-intro-inner{
-    width:min(860px,92%);
-    margin:auto;
-}
-
-.menu-v2 .menu-label{
-    margin-bottom:13px;
-    color:var(--gm-gold);
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:.25em;
-}
-
-.menu-v2 .menu-intro h2{
-    margin-bottom:20px;
-    color:var(--gm-green);
-    font-family:"Noto Serif KR",serif;
-    font-size:clamp(30px,4vw,46px);
-    line-height:1.5;
-}
-
-.menu-v2 .menu-intro p{
-    color:var(--gm-muted);
-    font-size:15px;
-    line-height:1.9;
-}
-
-/* LANGUAGE */
-.menu-v2 .language-switch{
-    display:flex;
-    justify-content:center;
-    margin-top:32px;
-}
-
-.menu-v2 .language-buttons{
-    display:flex;
-    gap:5px;
-    padding:5px;
-    background:#eee7dd;
-    border:1px solid var(--gm-line);
-    border-radius:999px;
-}
-
-.menu-v2 .language-buttons button{
-    min-width:58px;
-    padding:9px 13px;
-    border-radius:999px;
-    color:#706c65;
-    background:transparent;
-    font-size:11px;
-    font-weight:800;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.menu-v2 .language-buttons button:hover,
-.menu-v2 .language-buttons button.active{
-    background:var(--gm-green);
-    color:#fff;
-}
-
-/* CATEGORY BAR */
-.menu-v2 .category-bar{
-    position:sticky;
-    top:78px;
-    z-index:100;
-    background:rgba(247,243,238,.94);
-    border-top:1px solid var(--gm-line);
-    border-bottom:1px solid var(--gm-line);
-    backdrop-filter:blur(12px);
-    -webkit-backdrop-filter:blur(12px);
-}
-
-.menu-v2 .category-list{
-    width:min(1180px,92%);
-    margin:auto;
-    display:flex;
-    justify-content:center;
-    gap:8px;
-    overflow-x:auto;
-    padding:12px 0;
-    scrollbar-width:none;
-}
-
-.menu-v2 .category-list::-webkit-scrollbar{display:none}
-
-.menu-v2 .category-list button{
-    flex:0 0 auto;
-    padding:10px 17px;
-    border:1px solid transparent;
-    border-radius:999px;
-    background:transparent;
-    color:#77736d;
-    font-size:12px;
-    font-weight:700;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.menu-v2 .category-list button:hover,
-.menu-v2 .category-list button.active{
-    color:var(--gm-green);
-    background:#fffdf9;
-    border-color:var(--gm-line);
-}
-
-/* MENU SECTIONS */
-.menu-v2 .menu-section{
-    padding:100px 0 15px;
-    scroll-margin-top:145px;
-}
-
-.menu-v2 .menu-section-inner{
-    width:min(1180px,92%);
-    margin:auto;
-}
-
-.menu-v2 .category-heading{
-    display:flex;
-    align-items:flex-end;
-    justify-content:space-between;
-    gap:20px;
-    margin-bottom:28px;
-}
-
-.menu-v2 .category-heading-main{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.menu-v2 .category-number{
-    color:var(--gm-gold);
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:.14em;
-}
-
-.menu-v2 .category-heading h2{
-    color:var(--gm-green);
-    font-family:"Noto Serif KR",serif;
-    font-size:clamp(27px,3vw,36px);
-    line-height:1.4;
-}
-
-.menu-v2 .category-count{
-    color:#9a958e;
-    font-size:11px;
-    font-weight:700;
-    letter-spacing:.1em;
-    white-space:nowrap;
-}
-
-/* GRID */
-.menu-v2 .menu-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-}
-
-/* CARD */
-.menu-v2 .menu-card{
-    position:relative;
-    overflow:hidden;
-    background:var(--gm-paper);
-    border:1px solid var(--gm-line);
-    border-radius:20px;
-    box-shadow:0 4px 18px rgba(38,52,46,.035);
-    cursor:pointer;
-    transition:.4s ease;
-}
-
-.menu-v2 .menu-card:hover{
-    transform:translateY(-6px);
-    box-shadow:var(--gm-shadow);
-}
-
-.menu-v2 .menu-card:focus-visible{
-    outline:2px solid var(--gm-gold);
-    outline-offset:3px;
-}
-
-.menu-v2 .menu-image{
-    position:relative;
-    aspect-ratio:4/3;
-    overflow:hidden;
-    background:#ebe5dd;
-}
-
-.menu-v2 .menu-image img{
-    width:100%;
-    height:100%;
-    display:block;
-    object-fit:cover;
-    transition:transform .6s ease;
-}
-
-.menu-v2 .menu-card:hover .menu-image img{
-    transform:scale(1.045);
-}
-
-.menu-v2 .best-badge{
-    position:absolute;
-    top:14px;
-    left:14px;
-    z-index:2;
-    padding:6px 10px;
-    border-radius:999px;
-    background:#e4c894;
-    color:#28362f;
-    font-size:9px;
-    font-weight:800;
-    letter-spacing:.1em;
-}
-
-.menu-v2 .menu-info{
-    padding:21px 21px 23px;
-}
-
-.menu-v2 .menu-title-row{
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-    gap:12px;
-    margin-bottom:9px;
-}
-
-.menu-v2 .menu-name{
-    color:var(--gm-green);
-    font-family:"Noto Serif KR",serif;
-    font-size:21px;
-    line-height:1.45;
-    font-weight:600;
-}
-
-.menu-v2 .menu-price{
-    flex:0 0 auto;
-    color:var(--gm-gold);
-    font-size:16px;
-    font-weight:800;
-    white-space:nowrap;
-}
-
-.menu-v2 .menu-desc{
-    color:#77736d;
-    font-size:13px;
-    line-height:1.75;
-    min-height:46px;
-}
-
-.menu-v2 .menu-view{
-    display:inline-flex;
-    align-items:center;
-    gap:7px;
-    margin-top:14px;
-    color:#9b958c;
-    font-size:9px;
-    font-weight:800;
-    letter-spacing:.13em;
-    transition:.3s;
-}
-
-.menu-v2 .menu-card:hover .menu-view{
-    color:var(--gm-green);
-}
-
-.menu-v2 .menu-view-arrow{
-    font-size:14px;
-    line-height:1;
-}
-
-/* NOTE */
-.menu-v2 .menu-note{
-    width:min(1180px,92%);
-    margin:65px auto 105px;
-    padding:22px 26px;
-    text-align:center;
-    color:#88827a;
-    background:rgba(255,253,249,.55);
-    border:1px solid var(--gm-line);
-    border-radius:16px;
-    font-size:12px;
-    line-height:1.8;
-}
-
-/* MODAL */
-.menu-v2 .menu-modal{
-    position:fixed;
-    inset:0;
-    z-index:9999;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:25px;
-    background:rgba(17,27,23,.92);
-}
-
-.menu-v2 .menu-modal.open{
-    display:flex;
-}
-
-.menu-v2 .menu-modal-inner{
-    position:relative;
-    width:min(900px,100%);
-    text-align:center;
-}
-
-.menu-v2 .menu-modal img{
-    max-width:100%;
-    max-height:76vh;
-    object-fit:contain;
-    border-radius:18px;
-}
-
-.menu-v2 .modal-title{
-    margin-top:16px;
-    color:#fff;
-    font-family:"Noto Serif KR",serif;
-    font-size:21px;
-}
-
-.menu-v2 .modal-close{
-    position:absolute;
-    top:-13px;
-    right:-5px;
-    width:42px;
-    height:42px;
-    border:1px solid rgba(255,255,255,.25);
-    border-radius:50%;
-    background:rgba(0,0,0,.55);
-    color:#fff;
-    font-size:23px;
-    line-height:1;
-    cursor:pointer;
-}
-
-/* FOOTER */
-.menu-v2 .menu-footer{
-    margin-top:0;
-    background:#294d43;
-    color:#fff;
-}
-
-.menu-v2 .menu-footer-inner{
-    width:min(1180px,92%);
-    margin:auto;
-    padding:65px 0;
-    display:flex;
-    justify-content:space-between;
-    gap:40px;
-}
-
-.menu-v2 .menu-footer-logo{
-    margin-bottom:10px;
-    font-family:"Noto Serif KR",serif;
-    font-size:27px;
-}
-
-.menu-v2 .menu-footer-info{
-    color:rgba(255,255,255,.72);
-    font-size:13px;
-    line-height:2;
-}
-
-/* MOBILE */
-@media(max-width:1024px){
-    .menu-v2 .menu-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
+/* MENU V2 — 기존 menu.html 내용 + 현재 V2 INDEX 테마/헤더 규격 */
+:root{--menu-bg:#0f0f0f;--menu-card:#171717;--menu-text:#f5f5f5;--menu-sub:#bdbdbd;--menu-gold:#d6b98a;}
+html,body{background:var(--menu-bg)!important;color:var(--menu-text)!important;}
+body.menu-v2{font-family:'Pretendard',sans-serif;line-height:1.8;overflow-x:hidden;word-break:keep-all;}
+body.menu-v2.menu-open{overflow:hidden;}
+.menu-v2 .site-header{background:rgba(15,15,15,.82);color:#fff;border-bottom:1px solid rgba(255,255,255,.05);}
+.menu-v2 .site-header.scrolled{background:rgba(15,15,15,.96);color:#fff;}
+.menu-v2 .header-inner{width:min(calc(100% - 80px),1440px);}
+.menu-v2 .main-nav a{color:#fff;}
+.menu-v2 .main-nav a:hover,.menu-v2 .main-nav a.current{color:#fff;}
+.menu-v2 .media-language{display:flex;gap:6px;align-items:center;flex-wrap:wrap;flex-shrink:0;}
+.menu-v2 .media-language button{border:1px solid rgba(255,255,255,.12);background:transparent;color:#fff;padding:6px 9px;border-radius:999px;font-size:10px;cursor:pointer;opacity:.75;}
+.menu-v2 .media-language button.active,.menu-v2 .media-language button:hover{opacity:1;border-color:var(--menu-gold);color:var(--menu-gold);}
+.menu-v2 .menu-hero{position:relative;height:92svh;min-height:780px;overflow:hidden;color:#fff;}
+.menu-v2 .menu-hero-bg{position:absolute;inset:0;background:url('images/hero/main-hero.jpg') center/cover no-repeat;transform:scale(1.03);}
+.menu-v2 .menu-hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.32) 48%,rgba(0,0,0,.12) 100%);}
+.menu-v2 .menu-hero-content{position:absolute;left:50%;top:55%;transform:translate(-50%,-50%);width:min(92%,900px);text-align:center;z-index:2;}
+.menu-v2 .menu-hero-eyebrow{font-size:13px;letter-spacing:4px;margin-bottom:22px;color:var(--menu-gold);}
+.menu-v2 .menu-hero-title{font-family:'Noto Serif KR',serif;font-size:clamp(42px,6vw,82px);line-height:1.35;margin-bottom:24px;font-weight:600;}
+.menu-v2 .menu-hero-desc{font-size:18px;color:rgba(255,255,255,.82);max-width:760px;margin:auto;}
+.menu-v2 .menu-intro{padding:120px 0 35px;background:#0f0f0f;}
+.menu-v2 .menu-intro-inner{width:min(calc(100% - 80px),1240px);margin:auto;}
+.menu-v2 .section-label{font-size:13px;letter-spacing:3px;color:var(--menu-gold);margin-bottom:18px;font-weight:600;}
+.menu-v2 .section-title{font-family:'Noto Serif KR',serif;font-size:clamp(34px,4vw,50px);line-height:1.5;margin-bottom:24px;font-weight:600;color:#fff;}
+.menu-v2 .section-desc{font-size:18px;color:var(--menu-sub);max-width:760px;}
+.menu-v2 .lang-wrap{display:flex;justify-content:center;margin-top:42px;}
+.menu-v2 .lang-buttons{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+.menu-v2 .lang-buttons button{padding:10px 18px;background:#181818;border:1px solid rgba(255,255,255,.08);color:#fff;border-radius:999px;cursor:pointer;font-weight:600;}
+.menu-v2 .lang-buttons button.active,.menu-v2 .lang-buttons button:hover{background:var(--menu-gold);border-color:var(--menu-gold);color:#111;}
+.menu-v2 .menu-content{width:min(calc(100% - 80px),1240px);margin:auto;}
+.menu-v2 .category-wrap{margin-top:105px;scroll-margin-top:100px;}
+.menu-v2 .category-title{font-family:'Noto Serif KR',serif;font-size:34px;margin-bottom:34px;color:#fff;}
+.menu-v2 .menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;}
+.menu-v2 .menu-card{background:var(--menu-card);border-radius:28px;overflow:hidden;transition:.4s;border:1px solid rgba(255,255,255,.05);position:relative;cursor:pointer;}
+.menu-v2 .menu-card:hover{transform:translateY(-10px);box-shadow:0 24px 50px rgba(212,175,55,.14);}
+.menu-v2 .menu-image{height:270px;overflow:hidden;position:relative;background:#111;}
+.menu-v2 .menu-image img{width:100%;height:100%;object-fit:cover;transition:.5s;}
+.menu-v2 .menu-card:hover .menu-image img{transform:scale(1.05);}
+.menu-v2 .image-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#777;font-size:13px;letter-spacing:.04em;background:linear-gradient(135deg,#151515,#202020);}
+.menu-v2 .badge{position:absolute;top:18px;left:18px;background:linear-gradient(135deg,#f3c98b,#d49d5f);color:#111;padding:6px 12px;font-size:11px;border-radius:999px;font-weight:700;letter-spacing:1px;z-index:10;}
+.menu-v2 .menu-info{padding:28px;}
+.menu-v2 .menu-info h3{font-family:'Noto Serif KR',serif;font-size:28px;line-height:1.4;margin-bottom:14px;color:#fff;}
+.menu-v2 .menu-info p{font-size:15px;color:#c9c9c9;line-height:1.8;}
+.menu-v2 .menu-info .price{margin-top:18px;font-size:20px!important;font-weight:700;color:var(--menu-gold)!important;}
+.menu-v2 .menu-note{width:min(calc(100% - 80px),1240px);margin:70px auto 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.07);color:#8d8d8d;font-size:12px;text-align:center;}
+.menu-v2 footer{background:#090909;padding:70px 0;margin-top:120px;border-top:1px solid rgba(255,255,255,.05);}
+.menu-v2 .footer-inner{width:min(calc(100% - 80px),1240px);margin:auto;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.menu-v2 .footer-logo{font-family:'Noto Serif KR',serif;font-size:30px;margin-bottom:12px;color:#fff;}
+.menu-v2 .footer-info{font-size:15px;line-height:2;color:#bdbdbd;}
+.menu-v2 .floating-call{position:fixed;right:20px;bottom:20px;z-index:999;width:64px;height:64px;border-radius:50%;background:var(--menu-gold);color:#111;display:flex;align-items:center;justify-content:center;font-size:28px;}
+.menu-v2 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;}
+.menu-v2 .modal-content{text-align:center;margin-top:4%;padding:20px;}
+.menu-v2 .modal img{max-width:88%;max-height:78vh;border-radius:24px;display:inline-block;width:auto;}
+.menu-v2 .modal p{color:#fff;margin-top:18px;font-size:22px;font-family:'Noto Serif KR',serif;}
+@media(max-width:1100px){.menu-v2 .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.menu-v2 .header-inner{width:min(calc(100% - 50px),1240px);}}
 @media(max-width:768px){
-    .menu-v2 .menu-header-inner{
-        min-height:auto;
-        width:94%;
-        padding:12px 0;
-        flex-direction:column;
-        gap:10px;
-    }
-
-    .menu-v2 .menu-logo{
-        font-size:20px;
-    }
-
-    .menu-v2 .menu-main-nav{
-        justify-content:center;
-        gap:10px 15px;
-    }
-
-    .menu-v2 .menu-main-nav a{
-        font-size:9px;
-    }
-
-    .menu-v2 .menu-hero{
-        min-height:570px;
-        height:70svh;
-    }
-
-    .menu-v2 .menu-hero-inner{
-        padding-top:95px;
-    }
-
-    .menu-v2 .menu-hero h1{
-        font-size:41px;
-    }
-
-    .menu-v2 .menu-hero p{
-        font-size:13px;
-        line-height:1.8;
-    }
-
-    .menu-v2 .menu-intro{
-        padding:75px 0 48px;
-    }
-
-    .menu-v2 .menu-intro p{
-        font-size:13px;
-    }
-
-    .menu-v2 .category-bar{
-        top:0;
-    }
-
-    .menu-v2 .category-list{
-        width:100%;
-        justify-content:flex-start;
-        padding:10px 4%;
-    }
-
-    .menu-v2 .category-list button{
-        padding:9px 14px;
-        font-size:11px;
-    }
-
-    .menu-v2 .menu-section{
-        padding:72px 0 10px;
-        scroll-margin-top:58px;
-    }
-
-    .menu-v2 .menu-section-inner{
-        width:92%;
-    }
-
-    .menu-v2 .category-heading{
-        margin-bottom:20px;
-    }
-
-    .menu-v2 .category-heading-main{
-        gap:10px;
-    }
-
-    .menu-v2 .category-heading h2{
-        font-size:26px;
-    }
-
-    .menu-v2 .category-count{
-        font-size:9px;
-    }
-
-    .menu-v2 .menu-grid{
-        grid-template-columns:1fr;
-        gap:16px;
-    }
-
-    .menu-v2 .menu-card{
-        border-radius:17px;
-    }
-
-    .menu-v2 .menu-image{
-        aspect-ratio:16/10;
-    }
-
-    .menu-v2 .menu-info{
-        padding:18px 17px 20px;
-    }
-
-    .menu-v2 .menu-name{
-        font-size:19px;
-    }
-
-    .menu-v2 .menu-price{
-        font-size:15px;
-    }
-
-    .menu-v2 .menu-desc{
-        min-height:0;
-        font-size:12px;
-    }
-
-    .menu-v2 .menu-note{
-        margin:48px auto 70px;
-        padding:18px;
-        font-size:11px;
-    }
-
-    .menu-v2 .menu-footer-inner{
-        padding:50px 0;
-        flex-direction:column;
-        gap:25px;
-    }
-
-    .menu-v2 .menu-modal{
-        padding:15px;
-    }
+.menu-v2 .site-header{height:68px;}
+.menu-v2 .header-inner{width:calc(100% - 40px);}
+.menu-v2 .main-nav{position:fixed;top:68px;left:0;width:100%;height:calc(100vh - 68px);padding:45px 30px;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:0;background:#0f0f0f;color:#fff;transform:translateX(100%);transition:transform .4s ease;overflow-y:auto;}
+.menu-v2 .main-nav.is-open{transform:translateX(0);}
+.menu-v2 .main-nav a{width:100%;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:13px;}
+.menu-v2 .main-nav a::after{display:none;}
+.menu-v2 .media-language{margin-left:auto;}
+.menu-v2 .mobile-menu-button{display:flex;}
+.menu-v2 .menu-hero{height:100svh;min-height:100svh;display:flex;align-items:flex-end;padding-bottom:85px;}
+.menu-v2 .menu-hero-bg{background-position:58% center;}
+.menu-v2 .menu-hero-overlay{background:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.32) 42%,rgba(0,0,0,.72) 100%);}
+.menu-v2 .menu-hero-content{position:relative;top:auto;left:auto;transform:none;width:calc(100% - 40px);padding:0;margin:auto;}
+.menu-v2 .menu-hero-eyebrow{margin-bottom:16px;font-size:9px;letter-spacing:.18em;}
+.menu-v2 .menu-hero-title{font-size:clamp(36px,10vw,48px);line-height:1.35;}
+.menu-v2 .menu-hero-desc{font-size:14px;line-height:1.8;}
+.menu-v2 .menu-intro{padding:85px 0 25px;}
+.menu-v2 .menu-intro-inner,.menu-v2 .menu-content,.menu-v2 .menu-note,.menu-v2 .footer-inner{width:calc(100% - 40px);}
+.menu-v2 .section-title{font-size:34px;}
+.menu-v2 .section-desc{font-size:14px;}
+.menu-v2 .lang-wrap{margin-top:34px;}
+.menu-v2 .lang-buttons{gap:7px;}
+.menu-v2 .lang-buttons button{padding:9px 14px;font-size:11px;}
+.menu-v2 .category-wrap{margin-top:78px;scroll-margin-top:85px;}
+.menu-v2 .category-title{font-size:27px;margin-bottom:24px;}
+.menu-v2 .menu-grid{grid-template-columns:1fr;gap:18px;}
+.menu-v2 .menu-image{height:auto;aspect-ratio:16/10;}
+.menu-v2 .menu-info{padding:22px 20px 24px;min-width:0;}
+.menu-v2 .menu-info h3{font-size:22px;line-height:1.45;margin-bottom:10px;overflow-wrap:anywhere;}
+.menu-v2 .menu-info p{font-size:13px;line-height:1.65;overflow-wrap:anywhere;}
+.menu-v2 .menu-info .price{font-size:18px!important;margin-top:14px;}
+.menu-v2 .menu-card{height:auto;}
+.menu-v2 footer{margin-top:90px;}
+.menu-v2 .footer-inner{flex-direction:column;}
 }
 </style>
 </head>
-
 <body class="menu-v2">
-
-<header class="site-menu-header">
-    <div class="menu-header-inner">
-        <a href="index.html" class="menu-logo">감초식당</a>
-
-        <nav class="menu-main-nav" aria-label="주요 메뉴">
-            <a href="index.html" data-nav="home">HOME</a>
-            <a href="story.html" data-nav="story">STORY</a>
-            <a href="menu.html" class="current" data-nav="menu">MENU</a>
-            <a href="broadcast.html" data-nav="media">MEDIA</a>
-            <a href="review.html" data-nav="review">REVIEW</a>
-            <a href="instagram.html" data-nav="instagram">INSTAGRAM</a>
-            <a href="location.html" data-nav="location">LOCATION</a>
-        </nav>
-    </div>
-</header>
-
-<main>
-    <section class="menu-hero">
-        <div class="menu-hero-inner">
-            <div class="menu-eyebrow">GAMCHO RESTAURANT · MENU</div>
-            <h1 id="heroTitle">30년 전통 감초식당의<br>대표 메뉴</h1>
-            <p id="heroDesc">
-                1994년부터 이어온 감초식당만의 깊은 맛과 제주 로컬 감성이 담긴 메뉴를 만나보세요.
-            </p>
-        </div>
-    </section>
-
-    <section class="menu-intro">
-        <div class="menu-intro-inner">
-            <div class="menu-label">OUR MENU</div>
-            <h2 id="introTitle">감초식당 메뉴 안내</h2>
-            <p id="introDesc">
-                감초식당 신제주점의 대표 메뉴를 소개합니다.<br>
-                다국어 지원으로 해외 여행객들도 편하게 확인할 수 있습니다.
-            </p>
-
-            <div class="language-switch">
-                <div class="language-buttons">
-                    <button type="button" data-lang="ko">KOR</button>
-                    <button type="button" data-lang="en">ENG</button>
-                    <button type="button" data-lang="zh">中文</button>
-                    <button type="button" data-lang="ja">日本語</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <nav class="category-bar" aria-label="메뉴 카테고리">
-        <div class="category-list" id="categoryList"></div>
-    </nav>
-
-    <div id="menuArea"></div>
-
-    <div class="menu-note" id="menuNote">
-        메뉴 및 가격은 매장 사정에 따라 변경될 수 있습니다.
-    </div>
-</main>
-
-<div class="menu-modal" id="menuModal" role="dialog" aria-modal="true">
-    <div class="menu-modal-inner">
-        <button type="button" class="modal-close" id="modalClose" aria-label="닫기">×</button>
-        <img id="modalImage" src="" alt="">
-        <div class="modal-title" id="modalTitle"></div>
-    </div>
+<header class="site-header" id="header">
+<div class="header-inner">
+<a href="index.html" class="logo" aria-label="감초식당 홈"><span class="logo-ko">감초식당</span><span class="logo-en">GAMCHO RESTAURANT</span></a>
+<nav class="main-nav" id="mainNav">
+<a href="index.html" data-nav="home">HOME</a><a href="menu.html" class="current" data-nav="menu">MENU</a><a href="story.html" data-nav="story">STORY</a><a href="broadcast.html" data-nav="media">MEDIA</a><a href="review.html" data-nav="review">REVIEW</a><a href="location.html" data-nav="location">LOCATION</a><a href="instagram.html" data-nav="instagram">INSTAGRAM</a>
+</nav>
+<div class="media-language" aria-label="Language selector"><button type="button" data-lang="ko">KOR</button><button type="button" data-lang="en">ENG</button><button type="button" data-lang="zh">中文</button><button type="button" data-lang="ja">日本語</button></div>
+<button type="button" class="mobile-menu-button" id="mobileMenuButton" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
 </div>
-
-<footer class="menu-footer">
-    <div class="menu-footer-inner">
-        <div>
-            <div class="menu-footer-logo">감초식당 신제주점</div>
-            <div class="menu-footer-info" id="footerLine1">
-                제주 로컬 국밥 전문점<br>오랜 시간 변하지 않은 한 그릇
-            </div>
-        </div>
-        <div class="menu-footer-info" id="footerLine2">
-            OPEN AM 11:00 - PM 23:30<br>
-            Last Order PM 23:00<br>
-            정기휴무 매주 수요일<br>
-            TEL 064-743-8988
-        </div>
-    </div>
-</footer>
-
+</header>
+<main>
+<section class="menu-hero"><div class="menu-hero-bg"></div><div class="menu-hero-overlay"></div><div class="menu-hero-content"><div class="menu-hero-eyebrow">GAMCHO MENU</div><h1 class="menu-hero-title" id="heroTitle">30년 전통 감초식당의<br>대표 메뉴</h1><p class="menu-hero-desc" id="heroDesc">1994년부터 이어온 감초식당만의 깊은 맛과 제주 로컬 감성이 담긴 메뉴를 만나보세요.</p></div></section>
+<section class="menu-intro"><div class="menu-intro-inner"><div class="section-label">MENU</div><h2 class="section-title" id="introTitle">감초식당 메뉴 안내</h2><p class="section-desc" id="introDesc">감초식당 신제주점의 대표 메뉴를 소개합니다.<br>다국어 지원으로 해외 여행객들도 편하게 확인할 수 있습니다.</p><div class="lang-wrap"><div class="lang-buttons"><button type="button" data-lang="ko">KOR</button><button type="button" data-lang="en">ENG</button><button type="button" data-lang="zh">中文</button><button type="button" data-lang="ja">日本語</button></div></div></div></section>
+<div class="menu-content" id="menuArea"></div>
+<div class="menu-note" id="menuNote">메뉴 및 가격은 매장 사정에 따라 변경될 수 있습니다.</div>
+</main>
+<div id="modal" class="modal" role="dialog" aria-modal="true"><div class="modal-content"><img id="modalImg" alt=""><p id="modalText"></p></div></div>
+<footer><div class="footer-inner"><div><div class="footer-logo">감초식당</div><div class="footer-info" id="footerInfo1">제주 로컬 국밥 전문점<br>오랜 시간 변하지 않은 한 그릇</div></div><div class="footer-info" id="footerInfo2">OPEN AM 11:00 - PM 23:30<br>Last Order PM 23:00<br>정기휴무 매주 수요일<br>TEL 064-743-8988</div></div></footer>
 <a href="tel:0647438988" class="floating-call" aria-label="전화하기">☎</a>
-
-<script src="data/menu-v2-data.js"></script>
-<script src="data/translations.js"></script>
-
+<script src="data/menu-page-data.js"></script><script src="data/translations.js"></script>
 <script>
-(() => {
-    "use strict";
-
-    let currentLang = localStorage.getItem("gamcho-language") || "ko";
-    const langs = ["ko","en","zh","ja"];
-
-    const pageText = {
-        ko:{
-            heroTitle:"30년 전통 감초식당의<br>대표 메뉴",
-            heroDesc:"1994년부터 이어온 감초식당만의 깊은 맛과 제주 로컬 감성이 담긴 메뉴를 만나보세요.",
-            introTitle:"감초식당 메뉴 안내",
-            introDesc:"감초식당 신제주점의 대표 메뉴를 소개합니다.<br>다국어 지원으로 해외 여행객들도 편하게 확인할 수 있습니다.",
-            view:"MENU VIEW",
-            count:"메뉴",
-            note:"메뉴 및 가격은 매장 사정에 따라 변경될 수 있습니다.",
-            close:"닫기"
-        },
-        en:{
-            heroTitle:"Gamcho Restaurant's<br>Signature Menu",
-            heroDesc:"Discover the deep flavors and local Jeju spirit that Gamcho Restaurant has carried on since 1994.",
-            introTitle:"Gamcho Restaurant Menu",
-            introDesc:"Explore the signature dishes of Gamcho Restaurant Sinjeju.<br>Available in multiple languages for international travelers.",
-            view:"MENU VIEW",
-            count:"ITEMS",
-            note:"Menu items and prices are subject to change depending on restaurant circumstances.",
-            close:"Close"
-        },
-        zh:{
-            heroTitle:"甘草食堂30年传统<br>招牌菜单",
-            heroDesc:"一起品尝自1994年延续至今的甘草食堂深厚味道与济州本地风情。",
-            introTitle:"甘草食堂菜单",
-            introDesc:"介绍甘草食堂新济州店的招牌菜单。<br>支持多种语言，方便海外游客查看。",
-            view:"查看菜单",
-            count:"道菜",
-            note:"菜单及价格可能根据餐厅实际情况有所调整。",
-            close:"关闭"
-        },
-        ja:{
-            heroTitle:"30年の伝統、甘草食堂の<br>代表メニュー",
-            heroDesc:"1994年から受け継がれてきた甘草食堂ならではの深い味わいと済州のローカルな魅力をお楽しみください。",
-            introTitle:"甘草食堂 メニュー",
-            introDesc:"甘草食堂 新済州店の代表メニューをご紹介します。<br>海外からのお客様にも分かりやすい多言語対応です。",
-            view:"MENUを見る",
-            count:"品",
-            note:"メニュー・価格は店舗の事情により変更される場合があります。",
-            close:"閉じる"
-        }
-    };
-
-    const fallbackNav = {
-        ko:{home:"HOME",story:"STORY",menu:"MENU",media:"MEDIA",review:"REVIEW",instagram:"INSTAGRAM",location:"LOCATION"},
-        en:{home:"HOME",story:"STORY",menu:"MENU",media:"MEDIA",review:"REVIEW",instagram:"INSTAGRAM",location:"LOCATION"},
-        zh:{home:"首页",story:"品牌故事",menu:"菜单",media:"媒体报道",review:"顾客评价",instagram:"Instagram",location:"位置"},
-        ja:{home:"HOME",story:"STORY",menu:"MENU",media:"MEDIA",review:"REVIEW",instagram:"INSTAGRAM",location:"LOCATION"}
-    };
-
-    function text(obj){
-        return obj?.[currentLang] ?? obj?.ko ?? "";
-    }
-
-    function safe(value){
-        return String(value ?? "").replace(/[&<>"']/g, c => ({
-            "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
-        }[c]));
-    }
-
-    function renderCategoryList(){
-        const list = document.getElementById("categoryList");
-        list.innerHTML = "";
-
-        Object.entries(categoryNames).forEach(([key,name],index) => {
-            const button = document.createElement("button");
-            button.type = "button";
-            button.dataset.target = key;
-            button.textContent = text(name);
-
-            button.addEventListener("click", () => {
-                const target = document.getElementById("category-" + key);
-                if(target){
-                    target.scrollIntoView({behavior:"smooth", block:"start"});
-                }
-                list.querySelectorAll("button").forEach(b => b.classList.remove("active"));
-                button.classList.add("active");
-            });
-
-            list.appendChild(button);
-        });
-
-        list.querySelector("button")?.classList.add("active");
-    }
-
-    function renderMenu(){
-        const area = document.getElementById("menuArea");
-        area.innerHTML = "";
-
-        Object.entries(categoryNames).forEach(([category,categoryName],index) => {
-            const items = menuData.filter(item => item.cat === category);
-            if(!items.length) return;
-
-            const section = document.createElement("section");
-            section.className = "menu-section";
-            section.id = "category-" + category;
-
-            section.innerHTML = `
-                <div class="menu-section-inner">
-                    <div class="category-heading">
-                        <div class="category-heading-main">
-                            <span class="category-number">0${index+1}</span>
-                            <h2>${safe(text(categoryName))}</h2>
-                        </div>
-                        <span class="category-count">${items.length} ${pageText[currentLang].count}</span>
-                    </div>
-                    <div class="menu-grid"></div>
-                </div>
-            `;
-
-            const grid = section.querySelector(".menu-grid");
-
-            items.forEach(item => {
-                const name = text(item.name);
-                const desc = text(item.desc);
-
-                const card = document.createElement("article");
-                card.className = "menu-card";
-                card.tabIndex = 0;
-
-                card.innerHTML = `
-                    ${item.best ? '<span class="best-badge">BEST</span>' : ""}
-                    <div class="menu-image">
-                        <img src="${safe(item.img)}" alt="${safe(name)}" loading="lazy">
-                    </div>
-                    <div class="menu-info">
-                        <div class="menu-title-row">
-                            <h3 class="menu-name">${safe(name)}</h3>
-                            <span class="menu-price">${safe(item.price)}</span>
-                        </div>
-                        <p class="menu-desc">${safe(desc)}</p>
-                        <span class="menu-view">${pageText[currentLang].view}<span class="menu-view-arrow">→</span></span>
-                    </div>
-                `;
-
-                const open = () => openModal(item.img,name);
-                card.addEventListener("click",open);
-                card.addEventListener("keydown",e => {
-                    if(e.key === "Enter" || e.key === " "){
-                        e.preventDefault();
-                        open();
-                    }
-                });
-
-                grid.appendChild(card);
-            });
-
-            area.appendChild(section);
-        });
-    }
-
-    function updateNav(){
-        let nav = fallbackNav[currentLang];
-
-        if(typeof translations !== "undefined" &&
-           translations[currentLang] &&
-           translations[currentLang].nav){
-            nav = translations[currentLang].nav;
-        }
-
-        document.querySelectorAll("[data-nav]").forEach(link => {
-            const key = link.dataset.nav;
-            link.textContent = nav[key] || fallbackNav[currentLang][key] || key;
-        });
-    }
-
-    function applyLanguage(lang){
-        currentLang = langs.includes(lang) ? lang : "ko";
-        localStorage.setItem("gamcho-language",currentLang);
-        document.documentElement.lang = currentLang;
-
-        const t = pageText[currentLang];
-
-        document.getElementById("heroTitle").innerHTML = t.heroTitle;
-        document.getElementById("heroDesc").innerHTML = t.heroDesc;
-        document.getElementById("introTitle").textContent = t.introTitle;
-        document.getElementById("introDesc").innerHTML = t.introDesc;
-        document.getElementById("menuNote").textContent = t.note;
-        document.getElementById("modalClose").setAttribute("aria-label",t.close);
-
-        document.querySelectorAll("[data-lang]").forEach(button => {
-            button.classList.toggle("active",button.dataset.lang === currentLang);
-        });
-
-        updateNav();
-        renderCategoryList();
-        renderMenu();
-    }
-
-    function openModal(image,title){
-        document.getElementById("modalImage").src = image;
-        document.getElementById("modalImage").alt = title;
-        document.getElementById("modalTitle").textContent = title;
-        document.getElementById("menuModal").classList.add("open");
-        document.body.style.overflow = "hidden";
-    }
-
-    function closeModal(){
-        document.getElementById("menuModal").classList.remove("open");
-        document.body.style.overflow = "";
-    }
-
-    document.querySelectorAll("[data-lang]").forEach(button => {
-        button.addEventListener("click",() => applyLanguage(button.dataset.lang));
-    });
-
-    document.getElementById("modalClose").addEventListener("click",closeModal);
-
-    document.getElementById("menuModal").addEventListener("click",e => {
-        if(e.target.id === "menuModal") closeModal();
-    });
-
-    document.addEventListener("keydown",e => {
-        if(e.key === "Escape") closeModal();
-    });
-
-    applyLanguage(currentLang);
-})();
+let currentLang=localStorage.getItem('gamcho-language')||'ko';
+const pageText={ko:{heroTitle:'30년 전통 감초식당의<br>대표 메뉴',heroDesc:'1994년부터 이어온 감초식당만의 깊은 맛과 제주 로컬 감성이 담긴 메뉴를 만나보세요.',introTitle:'감초식당 메뉴 안내',introDesc:'감초식당 신제주점의 대표 메뉴를 소개합니다.<br>다국어 지원으로 해외 여행객들도 편하게 확인할 수 있습니다.',note:'메뉴 및 가격은 매장 사정에 따라 변경될 수 있습니다.'},en:{heroTitle:"Gamcho Restaurant's<br>Signature Menu",heroDesc:'Discover the deep flavors and local Jeju spirit that Gamcho Restaurant has carried on since 1994.',introTitle:'Gamcho Restaurant Menu',introDesc:'Explore the signature dishes of Gamcho Restaurant.<br>Available in multiple languages for international travelers.',note:'Menu items and prices are subject to change depending on restaurant circumstances.'},zh:{heroTitle:'甘草食堂30年传统<br>招牌菜单',heroDesc:'一起品尝自1994年延续至今的甘草食堂深厚味道与济州本地风情。',introTitle:'甘草食堂菜单',introDesc:'介绍甘草食堂新济州店的招牌菜单。<br>支持多种语言，方便海外游客查看。',note:'菜单及价格可能根据餐厅实际情况有所调整。'},ja:{heroTitle:'30年の伝統、甘草食堂の<br>代表メニュー',heroDesc:'1994年から受け継がれてきた甘草食堂ならではの深い味わいと済州のローカルな魅力をお楽しみください。',introTitle:'甘草食堂 メニュー',introDesc:'甘草食堂 新済州店の代表メニューをご紹介します。<br>海外からのお客様にも分かりやすい多言語対応です。',note:'メニュー・価格は店舗の事情により変更される場合があります。'}};
+const navFallback={ko:{home:'HOME',menu:'MENU',story:'STORY',media:'MEDIA',review:'REVIEW',location:'LOCATION',instagram:'INSTAGRAM'},en:{home:'HOME',menu:'MENU',story:'OUR STORY',media:'MEDIA',review:'REVIEWS',location:'LOCATION',instagram:'INSTAGRAM'},zh:{home:'首页',menu:'菜单',story:'品牌故事',media:'媒体报道',review:'顾客评价',location:'位置',instagram:'Instagram'},ja:{home:'HOME',menu:'MENU',story:'STORY',media:'MEDIA',review:'REVIEW',location:'LOCATION',instagram:'INSTAGRAM'}};
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));}
+function val(o){return o?.[currentLang]??o?.ko??'';}
+function render(){const area=document.getElementById('menuArea');area.innerHTML='';Object.keys(categoryNames).forEach(cat=>{const items=menuData.filter(m=>m.cat===cat);if(!items.length)return;const wrap=document.createElement('section');wrap.className='category-wrap';wrap.id='cat-'+cat;wrap.innerHTML='<h2 class="category-title">'+esc(categoryNames[cat])+'</h2><div class="menu-grid"></div>';const grid=wrap.querySelector('.menu-grid');items.forEach(item=>{const card=document.createElement('article');card.className='menu-card';card.tabIndex=0;const name=val(item.name),desc=val(item.desc);card.innerHTML=(item.best?'<div class="badge">BEST</div>':'')+'<div class="menu-image"><img src="'+esc(item.img)+'" alt="'+esc(name)+'" loading="lazy"><div class="image-fallback" hidden>MENU IMAGE</div></div><div class="menu-info"><h3>'+esc(name)+'</h3><p>'+esc(desc)+'</p><p class="price">'+esc(item.price)+'</p></div>';const img=card.querySelector('img'),fallback=card.querySelector('.image-fallback');img.addEventListener('error',()=>{img.hidden=true;fallback.hidden=false;});const open=()=>openModal(item.img,name);card.addEventListener('click',open);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});grid.appendChild(card);});area.appendChild(wrap);});}
+function updateNav(){let nav=navFallback[currentLang];if(typeof translations!=='undefined'&&translations[currentLang]?.nav)nav=translations[currentLang].nav;document.querySelectorAll('[data-nav]').forEach(a=>{a.textContent=nav[a.dataset.nav]||a.dataset.nav;});}
+function setLang(lang){currentLang=lang;localStorage.setItem('gamcho-language',lang);document.documentElement.lang=lang;const t=pageText[lang]||pageText.ko;document.getElementById('heroTitle').innerHTML=t.heroTitle;document.getElementById('heroDesc').innerHTML=t.heroDesc;document.getElementById('introTitle').textContent=t.introTitle;document.getElementById('introDesc').innerHTML=t.introDesc;document.getElementById('menuNote').textContent=t.note;document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));updateNav();render();}
+function openModal(img,text){const modal=document.getElementById('modal');document.getElementById('modalImg').src=img;document.getElementById('modalImg').alt=text;document.getElementById('modalText').textContent=text;modal.style.display='block';document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('modal').style.display='none';document.body.style.overflow='';}
+document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal();});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+const header=document.getElementById('header'),mobile=document.getElementById('mobileMenuButton'),nav=document.getElementById('mainNav');window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>40),{passive:true});mobile.addEventListener('click',()=>{const open=nav.classList.toggle('is-open');mobile.classList.toggle('is-active',open);document.body.classList.toggle('menu-open',open);});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('is-open');mobile.classList.remove('is-active');document.body.classList.remove('menu-open');}));
+setLang(['ko','en','zh','ja'].includes(currentLang)?currentLang:'ko');
 </script>
-
-</body>
-</html>
+</body></html>
