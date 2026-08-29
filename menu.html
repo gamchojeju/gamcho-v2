@@ -1,103 +1,127 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="감초식당 신제주점의 메뉴를 만나보세요. 제주에서 30년 동안 이어온 따뜻한 한 그릇과 정성스러운 요리를 소개합니다.">
+<meta name="description" content="제주공항 근처 도민 찐맛집 30년 전통 감초식당 신제주점의 대표 메뉴를 소개합니다.">
+<meta name="keywords" content="감초식당, 신제주점, 제주맛집, 연동맛집, 제주한식, 제주공항근처식당">
 <meta name="robots" content="index, follow">
+
 <meta property="og:title" content="감초식당 신제주점 | MENU">
-<meta property="og:description" content="30년 동안 이어온 감초식당의 메뉴">
-<meta property="og:type" content="website">
+<meta property="og:description" content="30년 전통 감초식당의 대표 메뉴">
+<meta property="og:image" content="https://www.gamchojeju.com/menu1.jpg">
 <meta property="og:url" content="https://www.gamchojeju.com/menu.html">
+<meta property="og:type" content="website">
+
 <title>감초식당 신제주점 | MENU</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/responsive.css">
 
 <style>
 /* =========================================================
-   GAMCHO V2 — MENU PAGE
-   기존 메뉴판의 데이터를 유지하고 V2 디자인 시스템에 맞춰 재구성
+   GAMCHO RESTAURANT V2 — MENU
+   디자인은 V2에 맞추고, 메뉴 내용은 업로드된 기존 menu.html 기준
    ========================================================= */
 
 :root{
-    --menu-bg:#0f0f0f;
-    --menu-card:#171717;
-    --menu-card-2:#141414;
-    --menu-text:#f5f5f5;
-    --menu-sub:#aaa49c;
-    --menu-gold:#d6b98a;
-    --menu-line:rgba(255,255,255,.09);
+    --gm-bg:#f7f3ee;
+    --gm-paper:#fffdf9;
+    --gm-ink:#243b35;
+    --gm-green:#2f5d50;
+    --gm-gold:#b58b52;
+    --gm-muted:#77736d;
+    --gm-line:rgba(47,93,80,.14);
+    --gm-shadow:0 18px 45px rgba(38,52,46,.10);
 }
 
-/* PAGE */
-body.menu-page{
-    background:var(--menu-bg);
-    color:var(--menu-text);
+body.menu-v2{
+    background:var(--gm-bg);
+    color:var(--gm-ink);
+    overflow-x:hidden;
 }
 
 /* HEADER */
-.menu-page header{
-    background:rgba(15,15,15,.88);
-    backdrop-filter:blur(16px);
-    -webkit-backdrop-filter:blur(16px);
+.menu-v2 .site-menu-header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(247,243,238,.92);
+    border-bottom:1px solid rgba(47,93,80,.10);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
 }
 
-.menu-page .menu-header-inner{
+.menu-v2 .menu-header-inner{
     width:min(1180px,92%);
+    min-height:78px;
     margin:auto;
-}
-
-.menu-page .nav{
-    min-height:88px;
-}
-
-.menu-page .menu-nav{
     display:flex;
     align-items:center;
-    justify-content:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.menu-v2 .menu-logo{
+    color:var(--gm-green);
+    font-family:"Noto Serif KR",serif;
+    font-size:23px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+.menu-v2 .menu-main-nav{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
     gap:24px;
     flex-wrap:wrap;
 }
 
-.menu-page .menu-nav a{
+.menu-v2 .menu-main-nav a{
     position:relative;
-    font-size:13px;
-    font-weight:600;
-    letter-spacing:.08em;
-    opacity:.82;
+    color:var(--gm-green);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.07em;
+    opacity:.78;
     transition:.3s;
 }
 
-.menu-page .menu-nav a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-7px;
-    width:0;
-    height:1px;
-    background:var(--menu-gold);
-    transition:.3s;
-}
-
-.menu-page .menu-nav a:hover,
-.menu-page .menu-nav a.current{
+.menu-v2 .menu-main-nav a:hover,
+.menu-v2 .menu-main-nav a.current{
     opacity:1;
 }
 
-.menu-page .menu-nav a:hover::after,
-.menu-page .menu-nav a.current::after{
-    width:100%;
+.menu-v2 .menu-main-nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:-7px;
+    height:1px;
+    background:var(--gm-gold);
+    transform:scaleX(0);
+    transform-origin:center;
+    transition:.3s;
+}
+
+.menu-v2 .menu-main-nav a:hover::after,
+.menu-v2 .menu-main-nav a.current::after{
+    transform:scaleX(1);
 }
 
 /* HERO */
-.menu-hero{
+.menu-v2 .menu-hero{
     position:relative;
     min-height:620px;
-    height:76svh;
+    height:74svh;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -105,532 +129,601 @@ body.menu-page{
     text-align:center;
 }
 
-.menu-hero::before{
+.menu-v2 .menu-hero::before{
     content:"";
     position:absolute;
     inset:0;
     background:
-        linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.82)),
+        linear-gradient(180deg,rgba(20,35,30,.18),rgba(20,35,30,.70)),
         url("banner.jpg") center/cover no-repeat;
-    transform:scale(1.02);
 }
 
-.menu-hero-content{
+.menu-v2 .menu-hero-inner{
     position:relative;
     z-index:1;
     width:min(900px,92%);
     padding-top:70px;
 }
 
-.menu-eyebrow{
-    color:var(--menu-gold);
+.menu-v2 .menu-eyebrow{
+    margin-bottom:18px;
+    color:#e5c995;
     font-size:12px;
     font-weight:700;
-    letter-spacing:.28em;
-    margin-bottom:22px;
+    letter-spacing:.30em;
 }
 
-.menu-hero h1{
+.menu-v2 .menu-hero h1{
+    margin:0 0 22px;
+    color:#fff;
     font-family:"Noto Serif KR",serif;
-    font-size:clamp(42px,6vw,76px);
-    line-height:1.35;
+    font-size:clamp(42px,6vw,72px);
+    line-height:1.38;
     font-weight:600;
-    margin-bottom:24px;
 }
 
-.menu-hero p{
+.menu-v2 .menu-hero p{
     max-width:700px;
-    margin:0 auto;
-    color:rgba(255,255,255,.78);
-    font-size:17px;
-    line-height:1.9;
-}
-
-/* INTRO */
-.menu-intro{
-    padding:110px 0 70px;
-    text-align:center;
-}
-
-.menu-intro-inner{
-    width:min(900px,92%);
     margin:auto;
-}
-
-.menu-intro .section-eyebrow{
-    color:var(--menu-gold);
-}
-
-.menu-intro h2{
-    font-family:"Noto Serif KR",serif;
-    font-size:clamp(30px,4vw,48px);
-    line-height:1.5;
-    margin-bottom:22px;
-}
-
-.menu-intro p{
-    color:var(--menu-sub);
+    color:rgba(255,255,255,.86);
     font-size:16px;
     line-height:1.9;
 }
 
-/* LANGUAGE */
-.menu-language{
-    display:flex;
-    justify-content:center;
-    margin-top:36px;
+/* INTRO */
+.menu-v2 .menu-intro{
+    padding:105px 0 60px;
+    text-align:center;
 }
 
-.menu-language-inner{
+.menu-v2 .menu-intro-inner{
+    width:min(860px,92%);
+    margin:auto;
+}
+
+.menu-v2 .menu-label{
+    margin-bottom:13px;
+    color:var(--gm-gold);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.25em;
+}
+
+.menu-v2 .menu-intro h2{
+    margin-bottom:20px;
+    color:var(--gm-green);
+    font-family:"Noto Serif KR",serif;
+    font-size:clamp(30px,4vw,46px);
+    line-height:1.5;
+}
+
+.menu-v2 .menu-intro p{
+    color:var(--gm-muted);
+    font-size:15px;
+    line-height:1.9;
+}
+
+/* LANGUAGE */
+.menu-v2 .language-switch{
     display:flex;
-    gap:6px;
+    justify-content:center;
+    margin-top:32px;
+}
+
+.menu-v2 .language-buttons{
+    display:flex;
+    gap:5px;
     padding:5px;
-    border:1px solid var(--menu-line);
-    background:#151515;
+    background:#eee7dd;
+    border:1px solid var(--gm-line);
     border-radius:999px;
 }
 
-.menu-language button{
+.menu-v2 .language-buttons button{
     min-width:58px;
     padding:9px 13px;
     border-radius:999px;
-    color:#aaa;
+    color:#706c65;
+    background:transparent;
     font-size:11px;
-    font-weight:700;
-    letter-spacing:.06em;
+    font-weight:800;
+    cursor:pointer;
     transition:.3s;
 }
 
-.menu-language button:hover,
-.menu-language button.active{
-    background:var(--menu-gold);
-    color:#111;
+.menu-v2 .language-buttons button:hover,
+.menu-v2 .language-buttons button.active{
+    background:var(--gm-green);
+    color:#fff;
 }
 
-/* CATEGORY NAV */
-.category-nav{
+/* CATEGORY BAR */
+.menu-v2 .category-bar{
     position:sticky;
-    top:88px;
-    z-index:50;
-    background:rgba(15,15,15,.94);
-    border-top:1px solid var(--menu-line);
-    border-bottom:1px solid var(--menu-line);
-    backdrop-filter:blur(16px);
-    -webkit-backdrop-filter:blur(16px);
+    top:78px;
+    z-index:100;
+    background:rgba(247,243,238,.94);
+    border-top:1px solid var(--gm-line);
+    border-bottom:1px solid var(--gm-line);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
 }
 
-.category-nav-inner{
+.menu-v2 .category-list{
     width:min(1180px,92%);
     margin:auto;
     display:flex;
     justify-content:center;
-    gap:10px;
+    gap:8px;
     overflow-x:auto;
-    scrollbar-width:none;
     padding:12px 0;
+    scrollbar-width:none;
 }
 
-.category-nav-inner::-webkit-scrollbar{display:none}
+.menu-v2 .category-list::-webkit-scrollbar{display:none}
 
-.category-nav button{
+.menu-v2 .category-list button{
     flex:0 0 auto;
-    padding:10px 18px;
+    padding:10px 17px;
     border:1px solid transparent;
     border-radius:999px;
-    color:#aaa49c;
-    font-size:13px;
+    background:transparent;
+    color:#77736d;
+    font-size:12px;
+    font-weight:700;
+    cursor:pointer;
     transition:.3s;
 }
 
-.category-nav button:hover,
-.category-nav button.active{
-    color:var(--menu-gold);
-    border-color:rgba(214,185,138,.28);
-    background:rgba(214,185,138,.06);
+.menu-v2 .category-list button:hover,
+.menu-v2 .category-list button.active{
+    color:var(--gm-green);
+    background:#fffdf9;
+    border-color:var(--gm-line);
 }
 
-/* MENU AREA */
-.menu-section{
-    padding:110px 0 30px;
+/* MENU SECTIONS */
+.menu-v2 .menu-section{
+    padding:100px 0 15px;
     scroll-margin-top:145px;
 }
 
-.menu-section-inner{
+.menu-v2 .menu-section-inner{
     width:min(1180px,92%);
     margin:auto;
 }
 
-.category-heading{
+.menu-v2 .category-heading{
     display:flex;
     align-items:flex-end;
     justify-content:space-between;
-    gap:30px;
-    margin-bottom:34px;
-    padding-bottom:18px;
-    border-bottom:1px solid var(--menu-line);
+    gap:20px;
+    margin-bottom:28px;
 }
 
-.category-heading .number{
-    color:var(--menu-gold);
+.menu-v2 .category-heading-main{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.menu-v2 .category-number{
+    color:var(--gm-gold);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.14em;
+}
+
+.menu-v2 .category-heading h2{
+    color:var(--gm-green);
+    font-family:"Noto Serif KR",serif;
+    font-size:clamp(27px,3vw,36px);
+    line-height:1.4;
+}
+
+.menu-v2 .category-count{
+    color:#9a958e;
     font-size:11px;
     font-weight:700;
-    letter-spacing:.16em;
-    margin-bottom:8px;
-}
-
-.category-heading h2{
-    font-family:"Noto Serif KR",serif;
-    font-size:clamp(28px,3vw,38px);
-    line-height:1.4;
-    font-weight:600;
-}
-
-.category-heading .count{
-    color:#777;
-    font-size:12px;
+    letter-spacing:.1em;
     white-space:nowrap;
 }
 
 /* GRID */
-.menu-grid{
+.menu-v2 .menu-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:24px;
+    gap:22px;
 }
 
 /* CARD */
-.menu-card{
+.menu-v2 .menu-card{
     position:relative;
     overflow:hidden;
-    background:var(--menu-card);
-    border:1px solid var(--menu-line);
-    border-radius:22px;
-    transition:transform .4s ease, border-color .4s ease, box-shadow .4s ease;
+    background:var(--gm-paper);
+    border:1px solid var(--gm-line);
+    border-radius:20px;
+    box-shadow:0 4px 18px rgba(38,52,46,.035);
+    cursor:pointer;
+    transition:.4s ease;
 }
 
-.menu-card:hover{
-    transform:translateY(-7px);
-    border-color:rgba(214,185,138,.28);
-    box-shadow:0 22px 50px rgba(0,0,0,.32);
+.menu-v2 .menu-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--gm-shadow);
 }
 
-.menu-image{
+.menu-v2 .menu-card:focus-visible{
+    outline:2px solid var(--gm-gold);
+    outline-offset:3px;
+}
+
+.menu-v2 .menu-image{
     position:relative;
     aspect-ratio:4/3;
     overflow:hidden;
-    background:#111;
+    background:#ebe5dd;
 }
 
-.menu-image img{
+.menu-v2 .menu-image img{
     width:100%;
     height:100%;
+    display:block;
     object-fit:cover;
     transition:transform .6s ease;
 }
 
-.menu-card:hover .menu-image img{
+.menu-v2 .menu-card:hover .menu-image img{
     transform:scale(1.045);
 }
 
-.menu-best{
+.menu-v2 .best-badge{
     position:absolute;
-    z-index:3;
-    top:16px;
-    left:16px;
-    padding:7px 11px;
+    top:14px;
+    left:14px;
+    z-index:2;
+    padding:6px 10px;
     border-radius:999px;
-    background:var(--menu-gold);
-    color:#111;
-    font-size:10px;
+    background:#e4c894;
+    color:#28362f;
+    font-size:9px;
     font-weight:800;
     letter-spacing:.1em;
 }
 
-.menu-info{
-    padding:24px 24px 26px;
+.menu-v2 .menu-info{
+    padding:21px 21px 23px;
 }
 
-.menu-title-row{
+.menu-v2 .menu-title-row{
     display:flex;
-    justify-content:space-between;
     align-items:flex-start;
-    gap:16px;
-    margin-bottom:10px;
+    justify-content:space-between;
+    gap:12px;
+    margin-bottom:9px;
 }
 
-.menu-title{
+.menu-v2 .menu-name{
+    color:var(--gm-green);
     font-family:"Noto Serif KR",serif;
-    font-size:23px;
-    line-height:1.4;
+    font-size:21px;
+    line-height:1.45;
     font-weight:600;
 }
 
-.menu-price{
+.menu-v2 .menu-price{
     flex:0 0 auto;
-    color:var(--menu-gold);
-    font-size:17px;
-    font-weight:700;
+    color:var(--gm-gold);
+    font-size:16px;
+    font-weight:800;
     white-space:nowrap;
 }
 
-.menu-description{
-    min-height:50px;
-    color:#aaa49c;
-    font-size:14px;
+.menu-v2 .menu-desc{
+    color:#77736d;
+    font-size:13px;
     line-height:1.75;
+    min-height:46px;
 }
 
-.menu-more{
+.menu-v2 .menu-view{
     display:inline-flex;
     align-items:center;
-    gap:8px;
-    margin-top:17px;
-    color:#777;
-    font-size:10px;
-    font-weight:700;
-    letter-spacing:.1em;
-    text-transform:uppercase;
+    gap:7px;
+    margin-top:14px;
+    color:#9b958c;
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:.13em;
     transition:.3s;
 }
 
-.menu-card:hover .menu-more{
-    color:var(--menu-gold);
+.menu-v2 .menu-card:hover .menu-view{
+    color:var(--gm-green);
 }
 
-.menu-more span{
-    font-size:15px;
+.menu-v2 .menu-view-arrow{
+    font-size:14px;
     line-height:1;
 }
 
 /* NOTE */
-.menu-note{
+.menu-v2 .menu-note{
     width:min(1180px,92%);
-    margin:70px auto 100px;
-    padding:26px 30px;
-    border:1px solid var(--menu-line);
-    border-radius:18px;
-    background:var(--menu-card-2);
-    color:#858078;
-    font-size:13px;
-    line-height:1.8;
+    margin:65px auto 105px;
+    padding:22px 26px;
     text-align:center;
-}
-
-/* FOOTER */
-.menu-page footer{
-    margin-top:0;
+    color:#88827a;
+    background:rgba(255,253,249,.55);
+    border:1px solid var(--gm-line);
+    border-radius:16px;
+    font-size:12px;
+    line-height:1.8;
 }
 
 /* MODAL */
-.menu-modal{
-    display:none;
+.menu-v2 .menu-modal{
     position:fixed;
     inset:0;
     z-index:9999;
-    padding:30px;
-    background:rgba(0,0,0,.94);
+    display:none;
     align-items:center;
     justify-content:center;
+    padding:25px;
+    background:rgba(17,27,23,.92);
 }
 
-.menu-modal.is-open{
+.menu-v2 .menu-modal.open{
     display:flex;
 }
 
-.menu-modal-inner{
+.menu-v2 .menu-modal-inner{
     position:relative;
     width:min(900px,100%);
     text-align:center;
 }
 
-.menu-modal img{
+.menu-v2 .menu-modal img{
     max-width:100%;
     max-height:76vh;
     object-fit:contain;
     border-radius:18px;
 }
 
-.menu-modal-title{
-    margin-top:18px;
+.menu-v2 .modal-title{
+    margin-top:16px;
     color:#fff;
     font-family:"Noto Serif KR",serif;
-    font-size:22px;
+    font-size:21px;
 }
 
-.menu-modal-close{
+.menu-v2 .modal-close{
     position:absolute;
-    top:-12px;
-    right:-4px;
+    top:-13px;
+    right:-5px;
     width:42px;
     height:42px;
-    border:1px solid rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.25);
     border-radius:50%;
-    background:rgba(0,0,0,.65);
+    background:rgba(0,0,0,.55);
     color:#fff;
-    font-size:24px;
+    font-size:23px;
     line-height:1;
+    cursor:pointer;
+}
+
+/* FOOTER */
+.menu-v2 .menu-footer{
+    margin-top:0;
+    background:#294d43;
+    color:#fff;
+}
+
+.menu-v2 .menu-footer-inner{
+    width:min(1180px,92%);
+    margin:auto;
+    padding:65px 0;
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.menu-v2 .menu-footer-logo{
+    margin-bottom:10px;
+    font-family:"Noto Serif KR",serif;
+    font-size:27px;
+}
+
+.menu-v2 .menu-footer-info{
+    color:rgba(255,255,255,.72);
+    font-size:13px;
+    line-height:2;
 }
 
 /* MOBILE */
 @media(max-width:1024px){
-    .menu-grid{
+    .menu-v2 .menu-grid{
         grid-template-columns:repeat(2,1fr);
     }
 }
 
 @media(max-width:768px){
-    .menu-page .nav{
+    .menu-v2 .menu-header-inner{
         min-height:auto;
-    }
-
-    .menu-page .menu-header-inner{
         width:94%;
+        padding:12px 0;
+        flex-direction:column;
+        gap:10px;
     }
 
-    .menu-page .menu-nav{
-        gap:12px 16px;
-    }
-
-    .menu-page .menu-nav a{
-        font-size:10px;
-    }
-
-    .menu-hero{
-        min-height:590px;
-        height:72svh;
-    }
-
-    .menu-hero-content{
-        padding-top:85px;
-    }
-
-    .menu-hero h1{
-        font-size:42px;
-    }
-
-    .menu-hero p{
-        font-size:14px;
-    }
-
-    .menu-intro{
-        padding:80px 0 50px;
-    }
-
-    .menu-intro p{
-        font-size:14px;
-    }
-
-    .category-nav{
-        top:0;
-    }
-
-    .category-nav-inner{
-        justify-content:flex-start;
-        padding:10px 3%;
-    }
-
-    .menu-section{
-        padding:76px 0 20px;
-        scroll-margin-top:55px;
-    }
-
-    .menu-section-inner{
-        width:92%;
-    }
-
-    .category-heading{
-        margin-bottom:24px;
-    }
-
-    .category-heading h2{
-        font-size:27px;
-    }
-
-    .menu-grid{
-        grid-template-columns:1fr;
-        gap:18px;
-    }
-
-    .menu-card{
-        border-radius:18px;
-    }
-
-    .menu-image{
-        aspect-ratio:16/10;
-    }
-
-    .menu-info{
-        padding:19px 18px 21px;
-    }
-
-    .menu-title{
+    .menu-v2 .menu-logo{
         font-size:20px;
     }
 
-    .menu-price{
-        font-size:16px;
+    .menu-v2 .menu-main-nav{
+        justify-content:center;
+        gap:10px 15px;
     }
 
-    .menu-description{
-        min-height:0;
+    .menu-v2 .menu-main-nav a{
+        font-size:9px;
+    }
+
+    .menu-v2 .menu-hero{
+        min-height:570px;
+        height:70svh;
+    }
+
+    .menu-v2 .menu-hero-inner{
+        padding-top:95px;
+    }
+
+    .menu-v2 .menu-hero h1{
+        font-size:41px;
+    }
+
+    .menu-v2 .menu-hero p{
+        font-size:13px;
+        line-height:1.8;
+    }
+
+    .menu-v2 .menu-intro{
+        padding:75px 0 48px;
+    }
+
+    .menu-v2 .menu-intro p{
         font-size:13px;
     }
 
-    .menu-note{
-        margin:50px auto 70px;
-        padding:20px;
+    .menu-v2 .category-bar{
+        top:0;
+    }
+
+    .menu-v2 .category-list{
+        width:100%;
+        justify-content:flex-start;
+        padding:10px 4%;
+    }
+
+    .menu-v2 .category-list button{
+        padding:9px 14px;
+        font-size:11px;
+    }
+
+    .menu-v2 .menu-section{
+        padding:72px 0 10px;
+        scroll-margin-top:58px;
+    }
+
+    .menu-v2 .menu-section-inner{
+        width:92%;
+    }
+
+    .menu-v2 .category-heading{
+        margin-bottom:20px;
+    }
+
+    .menu-v2 .category-heading-main{
+        gap:10px;
+    }
+
+    .menu-v2 .category-heading h2{
+        font-size:26px;
+    }
+
+    .menu-v2 .category-count{
+        font-size:9px;
+    }
+
+    .menu-v2 .menu-grid{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+
+    .menu-v2 .menu-card{
+        border-radius:17px;
+    }
+
+    .menu-v2 .menu-image{
+        aspect-ratio:16/10;
+    }
+
+    .menu-v2 .menu-info{
+        padding:18px 17px 20px;
+    }
+
+    .menu-v2 .menu-name{
+        font-size:19px;
+    }
+
+    .menu-v2 .menu-price{
+        font-size:15px;
+    }
+
+    .menu-v2 .menu-desc{
+        min-height:0;
         font-size:12px;
     }
 
-    .menu-modal{
+    .menu-v2 .menu-note{
+        margin:48px auto 70px;
         padding:18px;
+        font-size:11px;
+    }
+
+    .menu-v2 .menu-footer-inner{
+        padding:50px 0;
+        flex-direction:column;
+        gap:25px;
+    }
+
+    .menu-v2 .menu-modal{
+        padding:15px;
     }
 }
 </style>
 </head>
 
-<body class="menu-page">
+<body class="menu-v2">
 
-<header>
+<header class="site-menu-header">
     <div class="menu-header-inner">
-        <div class="nav">
-            <a href="index.html" class="logo" aria-label="감초식당 홈">감초식당</a>
+        <a href="index.html" class="menu-logo">감초식당</a>
 
-            <nav class="menu-nav" aria-label="주요 메뉴">
-                <a href="index.html" data-nav="home">HOME</a>
-                <a href="story.html" data-nav="story">STORY</a>
-                <a href="menu.html" class="current" data-nav="menu">MENU</a>
-                <a href="broadcast.html" data-nav="media">MEDIA</a>
-                <a href="review.html" data-nav="review">REVIEW</a>
-                <a href="instagram.html" data-nav="instagram">INSTAGRAM</a>
-                <a href="location.html" data-nav="location">LOCATION</a>
-            </nav>
-        </div>
+        <nav class="menu-main-nav" aria-label="주요 메뉴">
+            <a href="index.html" data-nav="home">HOME</a>
+            <a href="story.html" data-nav="story">STORY</a>
+            <a href="menu.html" class="current" data-nav="menu">MENU</a>
+            <a href="broadcast.html" data-nav="media">MEDIA</a>
+            <a href="review.html" data-nav="review">REVIEW</a>
+            <a href="instagram.html" data-nav="instagram">INSTAGRAM</a>
+            <a href="location.html" data-nav="location">LOCATION</a>
+        </nav>
     </div>
 </header>
 
 <main>
     <section class="menu-hero">
-        <div class="menu-hero-content">
+        <div class="menu-hero-inner">
             <div class="menu-eyebrow">GAMCHO RESTAURANT · MENU</div>
-            <h1 id="heroTitle">제주에서 30년,<br>변하지 않는 한 그릇</h1>
-            <p id="heroDescription">
-                어머니의 손맛으로 이어온 감초식당의 메뉴를 만나보세요.
+            <h1 id="heroTitle">30년 전통 감초식당의<br>대표 메뉴</h1>
+            <p id="heroDesc">
+                1994년부터 이어온 감초식당만의 깊은 맛과 제주 로컬 감성이 담긴 메뉴를 만나보세요.
             </p>
         </div>
     </section>
 
     <section class="menu-intro">
         <div class="menu-intro-inner">
-            <div class="section-eyebrow">OUR MENU</div>
-            <h2 id="menuTitle">감초식당의 따뜻한 한 그릇</h2>
-            <p id="menuDescription">
-                제주에서 오랜 시간 사랑받아온 메뉴부터 함께 나누기 좋은 전골과 요리까지,<br>
-                감초식당이 준비한 메뉴를 천천히 만나보세요.
+            <div class="menu-label">OUR MENU</div>
+            <h2 id="introTitle">감초식당 메뉴 안내</h2>
+            <p id="introDesc">
+                감초식당 신제주점의 대표 메뉴를 소개합니다.<br>
+                다국어 지원으로 해외 여행객들도 편하게 확인할 수 있습니다.
             </p>
 
-            <div class="menu-language" aria-label="언어 선택">
-                <div class="menu-language-inner">
+            <div class="language-switch">
+                <div class="language-buttons">
                     <button type="button" data-lang="ko">KOR</button>
                     <button type="button" data-lang="en">ENG</button>
                     <button type="button" data-lang="zh">中文</button>
@@ -640,8 +733,8 @@ body.menu-page{
         </div>
     </section>
 
-    <nav class="category-nav" aria-label="메뉴 카테고리">
-        <div class="category-nav-inner" id="categoryNav"></div>
+    <nav class="category-bar" aria-label="메뉴 카테고리">
+        <div class="category-list" id="categoryList"></div>
     </nav>
 
     <div id="menuArea"></div>
@@ -651,23 +744,23 @@ body.menu-page{
     </div>
 </main>
 
-<div class="menu-modal" id="menuModal" role="dialog" aria-modal="true" aria-label="메뉴 이미지 확대">
+<div class="menu-modal" id="menuModal" role="dialog" aria-modal="true">
     <div class="menu-modal-inner">
-        <button type="button" class="menu-modal-close" id="modalClose" aria-label="닫기">×</button>
+        <button type="button" class="modal-close" id="modalClose" aria-label="닫기">×</button>
         <img id="modalImage" src="" alt="">
-        <div class="menu-modal-title" id="modalTitle"></div>
+        <div class="modal-title" id="modalTitle"></div>
     </div>
 </div>
 
-<footer>
-    <div class="section-inner footer-inner">
+<footer class="menu-footer">
+    <div class="menu-footer-inner">
         <div>
-            <div class="footer-logo">감초식당 신제주점</div>
-            <div class="footer-info" id="footerRestaurant">
-                Jeju, Korea
+            <div class="menu-footer-logo">감초식당 신제주점</div>
+            <div class="menu-footer-info" id="footerLine1">
+                제주 로컬 국밥 전문점<br>오랜 시간 변하지 않은 한 그릇
             </div>
         </div>
-        <div class="footer-info">
+        <div class="menu-footer-info" id="footerLine2">
             OPEN AM 11:00 - PM 23:30<br>
             Last Order PM 23:00<br>
             정기휴무 매주 수요일<br>
@@ -676,9 +769,9 @@ body.menu-page{
     </div>
 </footer>
 
-<a href="tel:0647438988" class="floating-call" aria-label="감초식당 전화하기">☎</a>
+<a href="tel:0647438988" class="floating-call" aria-label="전화하기">☎</a>
 
-<script src="data/menu-data.js"></script>
+<script src="data/menu-v2-data.js"></script>
 <script src="data/translations.js"></script>
 
 <script>
@@ -686,102 +779,113 @@ body.menu-page{
     "use strict";
 
     let currentLang = localStorage.getItem("gamcho-language") || "ko";
-    const supported = ["ko", "en", "zh", "ja"];
+    const langs = ["ko","en","zh","ja"];
 
-    const ui = {
-        ko: {
-            heroTitle: "제주에서 30년,<br>변하지 않는 한 그릇",
-            heroDescription: "어머니의 손맛으로 이어온 감초식당의 메뉴를 만나보세요.",
-            menuTitle: "감초식당의 따뜻한 한 그릇",
-            menuDescription: "제주에서 오랜 시간 사랑받아온 메뉴부터 함께 나누기 좋은 전골과 요리까지,<br>감초식당이 준비한 메뉴를 천천히 만나보세요.",
-            note: "메뉴 및 가격은 매장 사정에 따라 변경될 수 있습니다.",
-            view: "VIEW MENU",
-            close: "닫기"
+    const pageText = {
+        ko:{
+            heroTitle:"30년 전통 감초식당의<br>대표 메뉴",
+            heroDesc:"1994년부터 이어온 감초식당만의 깊은 맛과 제주 로컬 감성이 담긴 메뉴를 만나보세요.",
+            introTitle:"감초식당 메뉴 안내",
+            introDesc:"감초식당 신제주점의 대표 메뉴를 소개합니다.<br>다국어 지원으로 해외 여행객들도 편하게 확인할 수 있습니다.",
+            view:"MENU VIEW",
+            count:"메뉴",
+            note:"메뉴 및 가격은 매장 사정에 따라 변경될 수 있습니다.",
+            close:"닫기"
         },
-        en: {
-            heroTitle: "30 Years in Jeju,<br>A Bowl That Never Changes",
-            heroDescription: "Discover the dishes that have carried on Gamcho Restaurant's warm, honest taste.",
-            menuTitle: "A Warm Bowl from Gamcho",
-            menuDescription: "From beloved Jeju meals to hearty hotpots and dishes made to share,<br>take a closer look at what Gamcho Restaurant serves.",
-            note: "Menu items and prices are subject to change depending on restaurant circumstances.",
-            view: "VIEW MENU",
-            close: "Close"
+        en:{
+            heroTitle:"Gamcho Restaurant's<br>Signature Menu",
+            heroDesc:"Discover the deep flavors and local Jeju spirit that Gamcho Restaurant has carried on since 1994.",
+            introTitle:"Gamcho Restaurant Menu",
+            introDesc:"Explore the signature dishes of Gamcho Restaurant Sinjeju.<br>Available in multiple languages for international travelers.",
+            view:"MENU VIEW",
+            count:"ITEMS",
+            note:"Menu items and prices are subject to change depending on restaurant circumstances.",
+            close:"Close"
         },
-        zh: {
-            heroTitle: "扎根济州30年，<br>始终如一的一碗美味",
-            heroDescription: "一起品尝传承母亲手艺的甘草食堂温暖味道。",
-            menuTitle: "甘草食堂的温暖一碗",
-            menuDescription: "从深受喜爱的济州美食，到适合分享的火锅与料理，<br>慢慢了解甘草食堂为您准备的菜单。",
-            note: "菜单及价格可能根据餐厅实际情况有所调整。",
-            view: "查看菜单",
-            close: "关闭"
+        zh:{
+            heroTitle:"甘草食堂30年传统<br>招牌菜单",
+            heroDesc:"一起品尝自1994年延续至今的甘草食堂深厚味道与济州本地风情。",
+            introTitle:"甘草食堂菜单",
+            introDesc:"介绍甘草食堂新济州店的招牌菜单。<br>支持多种语言，方便海外游客查看。",
+            view:"查看菜单",
+            count:"道菜",
+            note:"菜单及价格可能根据餐厅实际情况有所调整。",
+            close:"关闭"
         },
-        ja: {
-            heroTitle: "済州で30年、<br>変わらない一杯",
-            heroDescription: "母の味を受け継いできた甘草食堂の温かな料理をお楽しみください。",
-            menuTitle: "甘草食堂の温かな一杯",
-            menuDescription: "長く愛されてきた済州の味から、みんなで楽しめる鍋や料理まで、<br>甘草食堂のメニューをゆっくりご覧ください。",
-            note: "メニュー・価格は店舗の事情により変更される場合があります。",
-            view: "MENUを見る",
-            close: "閉じる"
+        ja:{
+            heroTitle:"30年の伝統、甘草食堂の<br>代表メニュー",
+            heroDesc:"1994年から受け継がれてきた甘草食堂ならではの深い味わいと済州のローカルな魅力をお楽しみください。",
+            introTitle:"甘草食堂 メニュー",
+            introDesc:"甘草食堂 新済州店の代表メニューをご紹介します。<br>海外からのお客様にも分かりやすい多言語対応です。",
+            view:"MENUを見る",
+            count:"品",
+            note:"メニュー・価格は店舗の事情により変更される場合があります。",
+            close:"閉じる"
         }
     };
 
-    const navFallback = {
+    const fallbackNav = {
         ko:{home:"HOME",story:"STORY",menu:"MENU",media:"MEDIA",review:"REVIEW",instagram:"INSTAGRAM",location:"LOCATION"},
-        en:{home:"HOME",story:"OUR STORY",menu:"MENU",media:"MEDIA",review:"REVIEWS",instagram:"INSTAGRAM",location:"LOCATION"},
+        en:{home:"HOME",story:"STORY",menu:"MENU",media:"MEDIA",review:"REVIEW",instagram:"INSTAGRAM",location:"LOCATION"},
         zh:{home:"首页",story:"品牌故事",menu:"菜单",media:"媒体报道",review:"顾客评价",instagram:"Instagram",location:"位置"},
         ja:{home:"HOME",story:"STORY",menu:"MENU",media:"MEDIA",review:"REVIEW",instagram:"INSTAGRAM",location:"LOCATION"}
     };
 
-    const esc = (value) => String(value ?? "").replace(/[&<>"']/g, c => ({
-        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
-    }[c]));
+    function text(obj){
+        return obj?.[currentLang] ?? obj?.ko ?? "";
+    }
 
-    function renderCategoryNav() {
-        const nav = document.getElementById("categoryNav");
-        nav.innerHTML = "";
+    function safe(value){
+        return String(value ?? "").replace(/[&<>"']/g, c => ({
+            "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+        }[c]));
+    }
 
-        Object.entries(menuCategories).forEach(([key, data], index) => {
+    function renderCategoryList(){
+        const list = document.getElementById("categoryList");
+        list.innerHTML = "";
+
+        Object.entries(categoryNames).forEach(([key,name],index) => {
             const button = document.createElement("button");
             button.type = "button";
             button.dataset.target = key;
-            button.textContent = `${String(index + 1).padStart(2,"0")}  ${data[currentLang] || data.ko}`;
-            nav.appendChild(button);
-        });
+            button.textContent = text(name);
 
-        nav.querySelector("button")?.classList.add("active");
-
-        nav.querySelectorAll("button").forEach(button => {
             button.addEventListener("click", () => {
-                const target = document.getElementById(`category-${button.dataset.target}`);
-                if (target) target.scrollIntoView({behavior:"smooth", block:"start"});
-                nav.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+                const target = document.getElementById("category-" + key);
+                if(target){
+                    target.scrollIntoView({behavior:"smooth", block:"start"});
+                }
+                list.querySelectorAll("button").forEach(b => b.classList.remove("active"));
                 button.classList.add("active");
             });
+
+            list.appendChild(button);
         });
+
+        list.querySelector("button")?.classList.add("active");
     }
 
-    function renderMenu() {
+    function renderMenu(){
         const area = document.getElementById("menuArea");
         area.innerHTML = "";
 
-        Object.entries(menuCategories).forEach(([category, categoryData], categoryIndex) => {
-            const items = menuData.filter(item => item.category === category);
-            if (!items.length) return;
+        Object.entries(categoryNames).forEach(([category,categoryName],index) => {
+            const items = menuData.filter(item => item.cat === category);
+            if(!items.length) return;
 
             const section = document.createElement("section");
             section.className = "menu-section";
-            section.id = `category-${category}`;
+            section.id = "category-" + category;
 
             section.innerHTML = `
                 <div class="menu-section-inner">
                     <div class="category-heading">
-                        <div>
-                            <div class="number">MENU ${String(categoryIndex + 1).padStart(2,"0")}</div>
-                            <h2>${esc(categoryData[currentLang] || categoryData.ko)}</h2>
+                        <div class="category-heading-main">
+                            <span class="category-number">0${index+1}</span>
+                            <h2>${safe(text(categoryName))}</h2>
                         </div>
-                        <div class="count">${items.length} ITEMS</div>
+                        <span class="category-count">${items.length} ${pageText[currentLang].count}</span>
                     </div>
                     <div class="menu-grid"></div>
                 </div>
@@ -790,32 +894,32 @@ body.menu-page{
             const grid = section.querySelector(".menu-grid");
 
             items.forEach(item => {
+                const name = text(item.name);
+                const desc = text(item.desc);
+
                 const card = document.createElement("article");
                 card.className = "menu-card";
                 card.tabIndex = 0;
 
-                const name = item.name[currentLang] || item.name.ko;
-                const description = item.description[currentLang] || item.description.ko;
-
                 card.innerHTML = `
-                    ${item.best ? '<span class="menu-best">BEST</span>' : ''}
+                    ${item.best ? '<span class="best-badge">BEST</span>' : ""}
                     <div class="menu-image">
-                        <img src="${esc(item.image)}" alt="${esc(name)}" loading="lazy">
+                        <img src="${safe(item.img)}" alt="${safe(name)}" loading="lazy">
                     </div>
                     <div class="menu-info">
                         <div class="menu-title-row">
-                            <h3 class="menu-title">${esc(name)}</h3>
-                            <span class="menu-price">${esc(item.price)}</span>
+                            <h3 class="menu-name">${safe(name)}</h3>
+                            <span class="menu-price">${safe(item.price)}</span>
                         </div>
-                        <p class="menu-description">${esc(description)}</p>
-                        <span class="menu-more">${esc(ui[currentLang].view)} <span>→</span></span>
+                        <p class="menu-desc">${safe(desc)}</p>
+                        <span class="menu-view">${pageText[currentLang].view}<span class="menu-view-arrow">→</span></span>
                     </div>
                 `;
 
-                const open = () => openModal(item.image, name);
-                card.addEventListener("click", open);
-                card.addEventListener("keydown", e => {
-                    if (e.key === "Enter" || e.key === " ") {
+                const open = () => openModal(item.img,name);
+                card.addEventListener("click",open);
+                card.addEventListener("keydown",e => {
+                    if(e.key === "Enter" || e.key === " "){
                         e.preventDefault();
                         open();
                     }
@@ -828,58 +932,69 @@ body.menu-page{
         });
     }
 
-    function applyLanguage(lang) {
-        currentLang = supported.includes(lang) ? lang : "ko";
-        localStorage.setItem("gamcho-language", currentLang);
+    function updateNav(){
+        let nav = fallbackNav[currentLang];
 
-        const t = ui[currentLang];
+        if(typeof translations !== "undefined" &&
+           translations[currentLang] &&
+           translations[currentLang].nav){
+            nav = translations[currentLang].nav;
+        }
 
-        document.documentElement.lang = currentLang;
-        document.getElementById("heroTitle").innerHTML = t.heroTitle;
-        document.getElementById("heroDescription").innerHTML = t.heroDescription;
-        document.getElementById("menuTitle").innerHTML = t.menuTitle;
-        document.getElementById("menuDescription").innerHTML = t.menuDescription;
-        document.getElementById("menuNote").textContent = t.note;
-        document.getElementById("modalClose").setAttribute("aria-label", t.close);
-
-        const translationNav = (typeof translations !== "undefined" && translations[currentLang]?.nav) || navFallback[currentLang];
         document.querySelectorAll("[data-nav]").forEach(link => {
             const key = link.dataset.nav;
-            link.textContent = translationNav[key] || navFallback[currentLang][key] || key;
+            link.textContent = nav[key] || fallbackNav[currentLang][key] || key;
         });
+    }
+
+    function applyLanguage(lang){
+        currentLang = langs.includes(lang) ? lang : "ko";
+        localStorage.setItem("gamcho-language",currentLang);
+        document.documentElement.lang = currentLang;
+
+        const t = pageText[currentLang];
+
+        document.getElementById("heroTitle").innerHTML = t.heroTitle;
+        document.getElementById("heroDesc").innerHTML = t.heroDesc;
+        document.getElementById("introTitle").textContent = t.introTitle;
+        document.getElementById("introDesc").innerHTML = t.introDesc;
+        document.getElementById("menuNote").textContent = t.note;
+        document.getElementById("modalClose").setAttribute("aria-label",t.close);
 
         document.querySelectorAll("[data-lang]").forEach(button => {
-            button.classList.toggle("active", button.dataset.lang === currentLang);
+            button.classList.toggle("active",button.dataset.lang === currentLang);
         });
 
-        renderCategoryNav();
+        updateNav();
+        renderCategoryList();
         renderMenu();
     }
 
-    function openModal(image, title) {
+    function openModal(image,title){
         document.getElementById("modalImage").src = image;
         document.getElementById("modalImage").alt = title;
         document.getElementById("modalTitle").textContent = title;
-        document.getElementById("menuModal").classList.add("is-open");
+        document.getElementById("menuModal").classList.add("open");
         document.body.style.overflow = "hidden";
     }
 
-    function closeModal() {
-        document.getElementById("menuModal").classList.remove("is-open");
+    function closeModal(){
+        document.getElementById("menuModal").classList.remove("open");
         document.body.style.overflow = "";
     }
 
     document.querySelectorAll("[data-lang]").forEach(button => {
-        button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+        button.addEventListener("click",() => applyLanguage(button.dataset.lang));
     });
 
-    document.getElementById("modalClose").addEventListener("click", closeModal);
-    document.getElementById("menuModal").addEventListener("click", e => {
-        if (e.target.id === "menuModal") closeModal();
+    document.getElementById("modalClose").addEventListener("click",closeModal);
+
+    document.getElementById("menuModal").addEventListener("click",e => {
+        if(e.target.id === "menuModal") closeModal();
     });
 
-    document.addEventListener("keydown", e => {
-        if (e.key === "Escape") closeModal();
+    document.addEventListener("keydown",e => {
+        if(e.key === "Escape") closeModal();
     });
 
     applyLanguage(currentLang);
