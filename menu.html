@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
 <meta charset="utf-8">
@@ -29,499 +30,1352 @@
   --menu-line:rgba(255,255,255,.06);
 }
 
-html,body{background:var(--menu-bg)!important;color:var(--menu-text)!important;}
-body{overflow-x:hidden;word-break:keep-all;}
+html,body{
+  background:var(--menu-bg)!important;
+  color:var(--menu-text)!important;
+}
 
-/* Header: INDEX와 동일한 1180px / nav 구조 */
-#header{position:fixed;top:0;left:0;width:100%;z-index:999;background:rgba(15,15,15,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.05);}
-.menu-v2-nav{width:min(1180px,92%);margin:auto;display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:20px;}
-.menu-v2-logo{font-family:'Noto Serif KR',serif;font-size:24px;font-weight:700;white-space:nowrap;}
-.menu-v2-links{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;}
-.menu-v2-links a{font-size:13px;font-weight:600;letter-spacing:1px;position:relative;opacity:.88;}
-.menu-v2-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--menu-gold);transition:.3s;}
-.menu-v2-links a:hover::after,.menu-v2-links a.current::after{width:100%;}
-.menu-v2-language{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
-.menu-v2-language button{border:1px solid rgba(255,255,255,.12);background:transparent;color:#fff;padding:6px 9px;border-radius:999px;font-size:10px;cursor:pointer;opacity:.75;}
-.menu-v2-language button.active,.menu-v2-language button:hover{opacity:1;border-color:var(--menu-gold);color:var(--menu-gold);}
+body{
+  overflow-x:hidden;
+  word-break:keep-all;
+}
+
+/* Header */
+#header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:999;
+  background:rgba(15,15,15,.82);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.menu-v2-nav{
+  width:min(1180px,92%);
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 0;
+  gap:20px;
+}
+
+.menu-v2-logo{
+  font-family:'Noto Serif KR',serif;
+  font-size:24px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.menu-v2-links{
+  display:flex;
+  gap:24px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.menu-v2-links a{
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:1px;
+  position:relative;
+  opacity:.88;
+}
+
+.menu-v2-links a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:1px;
+  background:var(--menu-gold);
+  transition:.3s;
+}
+
+.menu-v2-links a:hover::after,
+.menu-v2-links a.current::after{
+  width:100%;
+}
+
+.menu-v2-language{
+  display:flex;
+  gap:6px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.menu-v2-language button{
+  border:1px solid rgba(255,255,255,.12);
+  background:transparent;
+  color:#fff;
+  padding:6px 9px;
+  border-radius:999px;
+  font-size:10px;
+  cursor:pointer;
+  opacity:.75;
+}
+
+.menu-v2-language button.active,
+.menu-v2-language button:hover{
+  opacity:1;
+  border-color:var(--menu-gold);
+  color:var(--menu-gold);
+}
 
 @media(max-width:1100px){
-  .menu-v2-nav{flex-wrap:wrap;justify-content:center;}
-  .menu-v2-logo{width:100%;text-align:center;}
+  .menu-v2-nav{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .menu-v2-logo{
+    width:100%;
+    text-align:center;
+  }
 }
 
 @media(max-width:768px){
-  .menu-v2-nav{flex-direction:column;gap:12px;padding:14px 0;}
-  .menu-v2-links{gap:14px;}
-  .menu-v2-links a{font-size:11px;}
-  .menu-v2-language{justify-content:center;}
+  .menu-v2-nav{
+    flex-direction:column;
+    gap:12px;
+    padding:14px 0;
+  }
+
+  .menu-v2-links{
+    gap:14px;
+  }
+
+  .menu-v2-links a{
+    font-size:11px;
+  }
+
+  .menu-v2-language{
+    justify-content:center;
+  }
 }
 
-/* Hero: 기존 V2 hero 스타일과 충돌하지 않도록 전용 클래스 */
-.menu-hero{position:relative;height:78svh;min-height:650px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;}
-.menu-hero-bg{position:absolute;inset:0;background-image:url("menu1.jpg");background-position:center;background-size:cover;filter:brightness(.38);transform:scale(1.03);}
-.menu-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.12),rgba(0,0,0,.80));}
-.menu-hero-content{position:relative;z-index:2;width:min(92%,900px);padding-top:80px;}
-.menu-hero-eyebrow{font-size:13px;letter-spacing:4px;color:var(--menu-gold);margin-bottom:22px;}
-.menu-hero-title{font-family:'Noto Serif KR',serif;font-size:clamp(42px,6vw,76px);line-height:1.35;margin-bottom:24px;font-weight:600;}
-.menu-hero-desc{font-size:18px;color:rgba(255,255,255,.82);max-width:760px;margin:auto;line-height:1.8;}
+/* Hero */
+.menu-hero{
+  position:relative;
+  height:78svh;
+  min-height:650px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.menu-hero-bg{
+  position:absolute;
+  inset:0;
+  background-image:url("menu1.jpg");
+  background-position:center;
+  background-size:cover;
+  filter:brightness(.38);
+  transform:scale(1.03);
+}
+
+.menu-hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.12),
+    rgba(0,0,0,.80)
+  );
+}
+
+.menu-hero-content{
+  position:relative;
+  z-index:2;
+  width:min(92%,900px);
+  padding-top:80px;
+}
+
+.menu-hero-eyebrow{
+  font-size:13px;
+  letter-spacing:4px;
+  color:var(--menu-gold);
+  margin-bottom:22px;
+}
+
+.menu-hero-title{
+  font-family:'Noto Serif KR',serif;
+  font-size:clamp(42px,6vw,76px);
+  line-height:1.35;
+  margin-bottom:24px;
+  font-weight:600;
+}
+
+.menu-hero-desc{
+  font-size:18px;
+  color:rgba(255,255,255,.82);
+  max-width:760px;
+  margin:auto;
+  line-height:1.8;
+}
 
 /* Intro */
-.menu-intro{padding:115px 0 55px;text-align:center;background:var(--menu-bg);}
-.menu-container{width:min(1180px,92%);margin:auto;}
-.menu-section-eyebrow{font-size:13px;letter-spacing:3px;color:var(--menu-gold);margin-bottom:18px;font-weight:600;}
-.menu-intro-title{font-family:'Noto Serif KR',serif;font-size:clamp(34px,4vw,50px);line-height:1.5;margin-bottom:28px;font-weight:600;}
-.menu-intro-desc{font-size:18px;color:var(--menu-sub);max-width:760px;margin:auto;line-height:1.9;}
+.menu-intro{
+  padding:115px 0 55px;
+  text-align:center;
+  background:var(--menu-bg);
+}
+
+.menu-container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+.menu-section-eyebrow{
+  font-size:13px;
+  letter-spacing:3px;
+  color:var(--menu-gold);
+  margin-bottom:18px;
+  font-weight:600;
+}
+
+.menu-intro-title{
+  font-family:'Noto Serif KR',serif;
+  font-size:clamp(34px,4vw,50px);
+  line-height:1.5;
+  margin-bottom:28px;
+  font-weight:600;
+}
+
+.menu-intro-desc{
+  font-size:18px;
+  color:var(--menu-sub);
+  max-width:760px;
+  margin:auto;
+  line-height:1.9;
+}
 
 /* Category navigation */
-.menu-category-nav{position:sticky;top:0;z-index:100;background:rgba(15,15,15,.94);border-top:1px solid var(--menu-line);border-bottom:1px solid var(--menu-line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}
-.menu-category-list{width:min(1180px,92%);margin:auto;display:flex;justify-content:center;gap:10px;overflow-x:auto;scrollbar-width:none;padding:12px 0;}
-.menu-category-list::-webkit-scrollbar{display:none;}
-.menu-category-list button{flex:0 0 auto;padding:9px 16px;border:1px solid rgba(255,255,255,.10);border-radius:999px;background:transparent;color:#aaa;font-size:12px;cursor:pointer;transition:.3s;}
-.menu-category-list button.active,.menu-category-list button:hover{color:var(--menu-gold);border-color:rgba(214,185,138,.45);background:rgba(214,185,138,.05);}
-
-#menuArea{background:var(--menu-bg);}
-.menu-category{padding:100px 0 0;scroll-margin-top:65px;}
-.menu-category-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:30px;}
-.menu-category-title{font-family:'Noto Serif KR',serif;font-size:clamp(30px,4vw,42px);line-height:1.45;}
-.menu-category-count{color:#777;font-size:11px;letter-spacing:1px;white-space:nowrap;}
-
-.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-.menu-card{background:var(--menu-card);border-radius:28px;overflow:hidden;transition:.4s;border:1px solid var(--menu-line);position:relative;cursor:pointer;}
-.menu-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(212,175,55,.12);}
-.menu-image{overflow:hidden;position:relative;background:#1b1b1b;aspect-ratio:4/3;}
-.menu-image img{width:100%;height:100%;display:block;object-fit:cover;transition:.5s;}
-.menu-card:hover .menu-image img{transform:scale(1.05);}
-.menu-image-missing{height:100%;min-height:250px;display:flex;align-items:center;justify-content:center;color:#777;font-size:11px;letter-spacing:.12em;}
-.menu-badge{position:absolute;top:18px;left:18px;background:linear-gradient(135deg,#f3c98b,#d49d5f);color:#111;padding:6px 12px;font-size:11px;border-radius:999px;font-weight:700;letter-spacing:1px;z-index:3;}
-.menu-info{padding:28px;}
-.menu-info-top{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;}
-.menu-info h3{font-family:'Noto Serif KR',serif;font-size:26px;line-height:1.45;margin:0 0 12px;}
-.menu-info p{font-size:15px;color:#c9c9c9;line-height:1.8;margin:0;}
-.menu-price{flex:0 0 auto;margin-top:2px;font-size:18px;font-weight:700;color:var(--menu-gold);white-space:nowrap;}
-
-.menu-note{width:min(1180px,92%);margin:75px auto 120px;padding:20px;border-top:1px solid var(--menu-line);text-align:center;color:#777;font-size:12px;}
-
-/* modal */
-.menu-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;padding:20px;}
-.menu-modal.open{display:flex;}
-.menu-modal-content{position:relative;text-align:center;max-width:1000px;width:100%;}
-.menu-modal img{max-width:88%;max-height:78vh;border-radius:24px;}
-.menu-modal p{color:#fff;margin-top:18px;font-size:22px;font-family:'Noto Serif KR',serif;}
-.menu-modal-close{position:absolute;right:2%;top:-42px;width:38px;height:38px;border:1px solid rgba(255,255,255,.2);border-radius:50%;background:#111;color:#fff;font-size:22px;cursor:pointer;}
-
-@media(max-width:1024px){
-  .menu-grid{grid-template-columns:1fr 1fr;}
+.menu-category-nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(15,15,15,.94);
+  border-top:1px solid var(--menu-line);
+  border-bottom:1px solid var(--menu-line);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
 }
+
+.menu-category-list{
+  width:min(1180px,92%);
+  margin:auto;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  overflow-x:auto;
+  scrollbar-width:none;
+  padding:12px 0;
+}
+
+.menu-category-list::-webkit-scrollbar{
+  display:none;
+}
+
+.menu-category-list button{
+  flex:0 0 auto;
+  padding:9px 16px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:999px;
+  background:transparent;
+  color:#aaa;
+  font-size:12px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.menu-category-list button.active,
+.menu-category-list button:hover{
+  color:var(--menu-gold);
+  border-color:rgba(214,185,138,.45);
+  background:rgba(214,185,138,.05);
+}
+
+#menuArea{
+  background:var(--menu-bg);
+}
+
+.menu-category{
+  padding:100px 0 0;
+  scroll-margin-top:65px;
+}
+
+.menu-category-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:20px;
+  margin-bottom:30px;
+}
+
+.menu-category-title{
+  font-family:'Noto Serif KR',serif;
+  font-size:clamp(30px,4vw,42px);
+  line-height:1.45;
+}
+
+.menu-category-count{
+  color:#777;
+  font-size:11px;
+  letter-spacing:1px;
+  white-space:nowrap;
+}
+
+.menu-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+
+.menu-card{
+  background:var(--menu-card);
+  border-radius:28px;
+  overflow:hidden;
+  transition:.4s;
+  border:1px solid var(--menu-line);
+  position:relative;
+  cursor:pointer;
+}
+
+.menu-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 24px 50px rgba(212,175,55,.12);
+}
+
+/* 기본 메뉴 이미지 */
+.menu-image{
+  overflow:hidden;
+  position:relative;
+  background:#1b1b1b;
+  aspect-ratio:4/3;
+}
+
+.menu-image img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:.5s;
+}
+
+.menu-card:hover .menu-image img{
+  transform:scale(1.05);
+}
+
+/* =========================================================
+   가마솥 순대전골 / 가마솥 닭볶음탕
+   원본 이미지 비율 유지
+   이미지 아래 흰색 영역 방지
+   ========================================================= */
+
+.menu-image-natural{
+  aspect-ratio:auto;
+  height:auto;
+  background:#1b1b1b;
+}
+
+.menu-image-natural img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:contain;
+  transition:.5s;
+}
+
+.menu-card:hover .menu-image-natural img{
+  transform:scale(1.03);
+}
+
+.menu-image-missing{
+  height:100%;
+  min-height:250px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#777;
+  font-size:11px;
+  letter-spacing:.12em;
+}
+
+.menu-badge{
+  position:absolute;
+  top:18px;
+  left:18px;
+  background:linear-gradient(135deg,#f3c98b,#d49d5f);
+  color:#111;
+  padding:6px 12px;
+  font-size:11px;
+  border-radius:999px;
+  font-weight:700;
+  letter-spacing:1px;
+  z-index:3;
+}
+
+.menu-info{
+  padding:28px;
+}
+
+.menu-info-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:15px;
+}
+
+.menu-info h3{
+  font-family:'Noto Serif KR',serif;
+  font-size:26px;
+  line-height:1.45;
+  margin:0 0 12px;
+}
+
+.menu-info p{
+  font-size:15px;
+  color:#c9c9c9;
+  line-height:1.8;
+  margin:0;
+}
+
+.menu-price{
+  flex:0 0 auto;
+  margin-top:2px;
+  font-size:18px;
+  font-weight:700;
+  color:var(--menu-gold);
+  white-space:nowrap;
+}
+
+.menu-note{
+  width:min(1180px,92%);
+  margin:75px auto 120px;
+  padding:20px;
+  border-top:1px solid var(--menu-line);
+  text-align:center;
+  color:#777;
+  font-size:12px;
+}
+
+/* Modal */
+.menu-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.menu-modal.open{
+  display:flex;
+}
+
+.menu-modal-content{
+  position:relative;
+  text-align:center;
+  max-width:1000px;
+  width:100%;
+}
+
+.menu-modal img{
+  max-width:88%;
+  max-height:78vh;
+  border-radius:24px;
+}
+
+.menu-modal p{
+  color:#fff;
+  margin-top:18px;
+  font-size:22px;
+  font-family:'Noto Serif KR',serif;
+}
+
+.menu-modal-close{
+  position:absolute;
+  right:2%;
+  top:-42px;
+  width:38px;
+  height:38px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:50%;
+  background:#111;
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* Tablet */
+@media(max-width:1024px){
+  .menu-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+/* Mobile */
 @media(max-width:768px){
-  .menu-hero{min-height:650px;height:72svh;}
-  .menu-hero-title{font-size:42px;}
-  .menu-hero-desc{font-size:15px;}
-  .menu-intro{padding:90px 0 45px;}
-  .menu-intro-desc{font-size:15px;}
-  .menu-category-list{justify-content:flex-start;padding:10px 4%;}
-  .menu-category{padding:72px 0 0;scroll-margin-top:55px;}
-  .menu-grid{grid-template-columns:1fr;gap:20px;}
-  .menu-info{padding:22px 20px 24px;}
-  .menu-info h3{font-size:22px;}
-  .menu-info p{font-size:13px;}
-  .menu-price{font-size:18px;}
-  .menu-note{margin:60px auto 80px;}
+
+  .menu-hero{
+    min-height:650px;
+    height:72svh;
+  }
+
+  .menu-hero-title{
+    font-size:42px;
+  }
+
+  .menu-hero-desc{
+    font-size:15px;
+  }
+
+  .menu-intro{
+    padding:90px 0 45px;
+  }
+
+  .menu-intro-desc{
+    font-size:15px;
+  }
+
+  .menu-category-list{
+    justify-content:flex-start;
+    padding:10px 4%;
+  }
+
+  .menu-category{
+    padding:72px 0 0;
+    scroll-margin-top:55px;
+  }
+
+  .menu-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .menu-info{
+    padding:22px 20px 24px;
+  }
+
+  .menu-info h3{
+    font-size:22px;
+  }
+
+  .menu-info p{
+    font-size:13px;
+  }
+
+  .menu-price{
+    font-size:18px;
+  }
+
+  .menu-note{
+    margin:60px auto 80px;
+  }
+
+  /* 가마솥 메뉴 이미지도 모바일에서 원본 비율 유지 */
+  .menu-image-natural{
+    aspect-ratio:auto;
+    height:auto;
+  }
+
+  .menu-image-natural img{
+    width:100%;
+    height:auto;
+    object-fit:contain;
+  }
 }
 </style>
+
 </head>
 
 <body>
+
 <header id="header">
   <div class="menu-v2-nav">
-    <a class="menu-v2-logo" href="index.html">감초식당</a>
-    <nav class="menu-v2-links" aria-label="주요 메뉴">
-      <a href="index.html">HOME</a>
-      <a href="menu.html" class="current">MENU</a>
-      <a href="story.html">STORY</a>
-      <a href="broadcast.html">MEDIA</a>
-      <a href="review.html">REVIEW</a>
-      <a href="location.html">LOCATION</a>
-      <a href="instagram.html">INSTAGRAM</a>
-    </nav>
-    <div class="menu-v2-language" aria-label="Language selector">
-      <button type="button" data-lang="ko">KOR</button>
-      <button type="button" data-lang="en">ENG</button>
-      <button type="button" data-lang="zh">中文</button>
-      <button type="button" data-lang="ja">日本語</button>
-    </div>
+
+```
+<a class="menu-v2-logo" href="index.html">감초식당</a>
+
+<nav class="menu-v2-links" aria-label="주요 메뉴">
+  <a href="index.html">HOME</a>
+  <a href="menu.html" class="current">MENU</a>
+  <a href="story.html">STORY</a>
+  <a href="broadcast.html">MEDIA</a>
+  <a href="review.html">REVIEW</a>
+  <a href="location.html">LOCATION</a>
+  <a href="instagram.html">INSTAGRAM</a>
+</nav>
+
+<div class="menu-v2-language" aria-label="Language selector">
+  <button type="button" data-lang="ko">KOR</button>
+  <button type="button" data-lang="en">ENG</button>
+  <button type="button" data-lang="zh">中文</button>
+  <button type="button" data-lang="ja">日本語</button>
+</div>
+```
+
   </div>
 </header>
 
 <main>
-  <section class="menu-hero">
-    <div class="menu-hero-bg"></div>
-    <div class="menu-hero-overlay"></div>
-    <div class="menu-hero-content">
-      <p class="menu-hero-eyebrow">GAMCHO RESTAURANT · MENU</p>
-      <h1 class="menu-hero-title" id="heroTitle">30년 전통 감초식당의<br>대표 메뉴</h1>
-      <p class="menu-hero-desc" id="heroDesc">1994년부터 이어온 감초식당만의 깊은 맛과 제주 로컬 감성이 담긴 메뉴를 만나보세요.</p>
-    </div>
-  </section>
 
-  <section class="menu-intro">
-    <div class="menu-container">
-      <p class="menu-section-eyebrow">MENU</p>
-      <h2 class="menu-intro-title" id="introTitle">감초식당 메뉴 안내</h2>
-      <p class="menu-intro-desc" id="introDesc">감초식당 신제주점의 대표 메뉴를 소개합니다.<br>다국어 지원으로 해외 여행객들도 편하게 확인할 수 있습니다.</p>
-    </div>
-  </section>
+<section class="menu-hero">
 
-  <nav class="menu-category-nav" aria-label="메뉴 카테고리">
-    <div class="menu-category-list" id="categoryList"></div>
-  </nav>
+  <div class="menu-hero-bg"></div>
+  <div class="menu-hero-overlay"></div>
 
-  <div id="menuArea"></div>
+  <div class="menu-hero-content">
+    <p class="menu-hero-eyebrow">GAMCHO RESTAURANT · MENU</p>
 
-  <p class="menu-note" id="menuNote">메뉴 및 가격은 매장 사정에 따라 변경될 수 있습니다.</p>
+```
+<h1 class="menu-hero-title" id="heroTitle">
+  30년 전통 감초식당의<br>대표 메뉴
+</h1>
+
+<p class="menu-hero-desc" id="heroDesc">
+  1994년부터 이어온 감초식당만의 깊은 맛과 제주 로컬 감성이 담긴 메뉴를 만나보세요.
+</p>
+```
+
+  </div>
+
+</section>
+
+<section class="menu-intro">
+
+  <div class="menu-container">
+
+```
+<p class="menu-section-eyebrow">MENU</p>
+
+<h2 class="menu-intro-title" id="introTitle">
+  감초식당 메뉴 안내
+</h2>
+
+<p class="menu-intro-desc" id="introDesc">
+  감초식당 신제주점의 대표 메뉴를 소개합니다.<br>
+  다국어 지원으로 해외 여행객들도 편하게 확인할 수 있습니다.
+</p>
+```
+
+  </div>
+
+</section>
+
+<nav class="menu-category-nav" aria-label="메뉴 카테고리">
+  <div class="menu-category-list" id="categoryList"></div>
+</nav>
+
+<div id="menuArea"></div>
+
+<p class="menu-note" id="menuNote">
+  메뉴 및 가격은 매장 사정에 따라 변경될 수 있습니다.
+</p>
+
 </main>
 
 <div class="menu-modal" id="menuModal" aria-hidden="true">
+
   <div class="menu-modal-content">
-    <button class="menu-modal-close" id="modalClose" type="button" aria-label="닫기">×</button>
-    <img id="modalImg" alt="">
-    <p id="modalText"></p>
+
+```
+<button
+  class="menu-modal-close"
+  id="modalClose"
+  type="button"
+  aria-label="닫기"
+>×</button>
+
+<img id="modalImg" alt="">
+
+<p id="modalText"></p>
+```
+
   </div>
+
 </div>
 
 <footer>
+
   <div class="container footer-inner">
-    <div>
-      <div class="footer-logo">감초식당</div>
-      <div class="footer-info">제주 로컬 국밥 전문점<br>오랜 시간 변하지 않은 한 그릇</div>
-    </div>
-    <div class="footer-info">OPEN AM 11:00 - PM 23:30<br>Last Order PM 23:00<br>정기휴무 매주 수요일<br>TEL 064-743-8988</div>
+
+```
+<div>
+  <div class="footer-logo">감초식당</div>
+
+  <div class="footer-info">
+    제주 로컬 국밥 전문점<br>
+    오랜 시간 변하지 않은 한 그릇
   </div>
+</div>
+
+<div class="footer-info">
+  OPEN AM 11:00 - PM 23:30<br>
+  Last Order PM 23:00<br>
+  정기휴무 매주 수요일<br>
+  TEL 064-743-8988
+</div>
+```
+
+  </div>
+
 </footer>
 
 <a href="tel:0647438988" class="floating-call">☎</a>
 
 <script>
+
 const menuData=[
 
+// =========================================================
 // 식사
-{
-cat:"meal",img:"images/menu/gamcho-sundae-gukbap.jpeg",best:true,
-name:{
-ko:"감초순대국밥",
-en:"Sundae Gukbap (Korean Blood Sausage Soup)",
-zh:"米肠汤饭（韩式猪血肠汤）",
-ja:"スンデクッパ"
-},
-desc:{
-ko:"30년간 이어진 변함없는 어머님의 그 맛",
-en:"Traditional Korean sausage soup with rich flavor",
-zh:"30年传承的妈妈味道",
-ja:"30年受け継がれた母の味"
-},
-price:"9,000원"
-},
+// =========================================================
 
 {
-cat:"meal",img:"images/menu/pure-pork-gukbap.png",
-name:{
-ko:"마농돼지국밥(돼지설렁탕)",
-en:"Garlic Pork Gukbap (Clear Pork Soup)",
-zh:"蒜香猪肉汤饭（清汤猪肉汤）",
-ja:"にんにく香る豚クッパ（澄んだ豚スープ）"
-},
-desc:{
-ko:"최고급사태와 담백한 머리고기, 마늘이 듬뿍! 진짜 순수돼지국밥",
-en:"Tender premium beef shank-style pork cuts, mild pork head meat, and plenty of garlic in a clean, rich pork broth.",
-zh:"精选猪腿肉、清淡爽口的猪头肉，加入满满大蒜，熬制出纯正浓郁的猪肉清汤。",
-ja:"上質な豚すね肉とあっさりした豚頭肉に、たっぷりのにんにくを加えた、すっきりコクのある本格豚クッパ。"
-},
-price:"10,000원"
-},
+  cat:"meal",
+  img:"images/menu/gamcho-sundae-gukbap.jpeg",
+  best:true,
 
- {
-cat:"meal",img:"images/menu/pork-haejangguk.png",
-name:{
-ko:"돼지해장국",
-en:"Spicy Pork Soup",
-zh:"辣猪肉汤",
-ja:"豚スープ"
-},
-desc:{
-ko:"알싸한 대정 마늘을 듬뿍넣고 칼칼하게 끓여낸 감초식 돼지 해장국",
-en:"A hearty and spicy pork soup packed with fragrant Daejeong garlic, perfect for warming you up.",
-zh:"加入济州大静地区香辣大蒜，熬制出的浓郁辛辣猪肉醒酒汤。",
-ja:"済州・大静産の香り豊かなにんにくをたっぷり使い、ピリ辛に仕上げた豚肉ヘジャンクッ。"
-},
-price:"10,000원"
-},
- 
+  name:{
+    ko:"감초순대국밥",
+    en:"Sundae Gukbap (Korean Blood Sausage Soup)",
+    zh:"米肠汤饭（韩式猪血肠汤）",
+    ja:"スンデクッパ"
+  },
 
+  desc:{
+    ko:"30년간 이어진 변함없는 어머님의 그 맛",
+    en:"Traditional Korean sausage soup with rich flavor",
+    zh:"30年传承的妈妈味道",
+    ja:"30年受け継がれた母の味"
+  },
 
-{
-cat:"meal",img:"images/menu/tasting-sundae.png",
-name:{
-ko:"맛보기순대",
-en:"Sundae",
-zh:"米肠",
-ja:"スンデ"
-},
-desc:{
-ko:"제주돼지로 직접 만든 제주식 전통 수제순대",
-en:"Jeju-Style Handmade Blood Sausage",
-zh:"济州传统手工血肠",
-ja:"済州産 手作りスンデ"
-},
-price:"10,000원"
-},
-
- {
-cat:"meal",img:"images/menu/haejangnoodle.png",
-name:{
-ko:"해장칼국밥",
-en:"Hangover Kalguksu & Rice",
-zh:"醒酒刀切面汤饭",
-ja:"ヘジャンクッカルグクス＆ご飯"
-},
-desc:{
-ko:"해장국밥을 칼국수+밥 메뉴로 드실수 있어요",
-en:"Enjoy our hearty hangover soup with both handmade-style noodles and rice.",
-zh:"将暖胃醒酒汤与刀切面和米饭一起享用，更加满足的一餐。",
-ja:"ヘジャンクッにカルグクスとご飯を合わせて、満足感たっぷりに楽しめます。"
-},
-price:"11,000원"
+  price:"9,000원"
 },
 
 {
-cat:"meal",img:"images/menu/garlic-pork-noodles.png",
-name:{
-ko:"마농돼지칼국밥",
-en:"Garlic Pork Kalguksu & Rice",
-zh:"蒜香猪肉刀切面汤饭",
-ja:"にんにく豚カルグクス＆ご飯"
-},
-desc:{
-ko:"돼지사골 칼국수 먼저 드신뒤 국밥으로 즐기세요",
-en:"Start with chewy noodles in rich pork bone broth, then enjoy the flavorful broth with rice.",
-zh:"先品尝浓郁猪骨汤里的刀切面，再加入米饭享用香浓汤饭。",
-ja:"豚骨の旨みたっぷりのカルグクスを先に楽しみ、その後はご飯を加えてクッパとしてどうぞ。"
-},
-price:"11,000원"
-},
- 
- 
+  cat:"meal",
+  img:"images/menu/pure-pork-gukbap.png",
 
- 
- 
+  name:{
+    ko:"마농돼지국밥(돼지설렁탕)",
+    en:"Garlic Pork Gukbap (Clear Pork Soup)",
+    zh:"蒜香猪肉汤饭（清汤猪肉汤）",
+    ja:"にんにく香る豚クッパ（澄んだ豚スープ）"
+  },
 
+  desc:{
+    ko:"최고급사태와 담백한 머리고기, 마늘이 듬뿍! 진짜 순수돼지국밥",
+    en:"Tender premium beef shank-style pork cuts, mild pork head meat, and plenty of garlic in a clean, rich pork broth.",
+    zh:"精选猪腿肉、清淡爽口的猪头肉，加入满满大蒜，熬制出纯正浓郁的猪肉清汤。",
+    ja:"上質な豚すね肉とあっさりした豚頭肉に、たっぷりのにんにくを加えた、すっきりコクのある本格豚クッパ。"
+  },
 
- 
-// 가마솥전골
-{
-cat:"hotpot",img:"images/menu/sundae-naejang-jeongol.png",best:true,
-name:{ko:"가마솥순대전골",en:"Iron Pot Sundae Hotpot",zh:"砂锅米肠火锅",ja:"釜炊きスンデ鍋"},
-desc:{ko:"제주순대와 신선한 머릿고기, 내장을 잔~하고 얼큰하게! ",en:"Jeju sundae, tender pork head meat, and fresh offal simmered together in a rich and spicy broth",zh:"济州米肠、鲜嫩猪头肉和新鲜内脏一起炖煮，汤汁浓郁香辣。",ja:"済州スンデ、やわらかな豚頭肉、新鮮なホルモンを、旨辛スープでじっくり煮込んだ鍋。"},
-price:"35,000원"
+  price:"10,000원"
 },
 
 {
-cat:"hotpot",img:"images/menu/chiken.png",best:true,
-name:{ko:"가마솥 닭볶음탕",en:"Iron Pot Spicy Braised Chicken",zh:"砂锅香辣炖鸡",ja:"釜炊きピリ辛鶏煮込み"},
-desc:{ko:"닭볶음탕 전문점을 따로 준비해도 될정도의 맛",en:"A deeply flavorful spicy braised chicken dish that's good enough to be a specialty on its own.",zh:"味道浓郁到足以单独开一家鸡肉炖锅专门店的招牌料理。",ja:"専門店を開けるほどの美味しさを誇る、旨辛鶏煮込み。"},
-price:"35,000원"
+  cat:"meal",
+  img:"images/menu/pork-haejangguk.png",
+
+  name:{
+    ko:"돼지해장국",
+    en:"Spicy Pork Soup",
+    zh:"辣猪肉汤",
+    ja:"豚スープ"
+  },
+
+  desc:{
+    ko:"알싸한 대정 마늘을 듬뿍넣고 칼칼하게 끓여낸 감초식 돼지 해장국",
+    en:"A hearty and spicy pork soup packed with fragrant Daejeong garlic, perfect for warming you up.",
+    zh:"加入济州大静地区香辣大蒜，熬制出的浓郁辛辣猪肉醒酒汤。",
+    ja:"済州・大静産の香り豊かなにんにくをたっぷり使い、ピリ辛に仕上げた豚肉ヘジャンクッ。"
+  },
+
+  price:"10,000원"
 },
 
 {
-cat:"hotpot",img:"images/menu/pork-haejang-jeongol.png",
-name:{ko:"가마솥돼지해장전골",en:"Iron Pot Spicy Pork Hotpot",zh:"砂锅香辣猪肉醒酒锅",ja:"釜炊きピリ辛豚肉ヘジャンクッ鍋"},
-desc:{ko:"푸짐한 돼지고기! 깊고 칼칼한 해장육수로 끓여낸 얼큰한 전골",en:"A generous serving of pork simmered in a deep, spicy hangover broth.",zh:"满满猪肉加入浓郁辛辣的醒酒汤底炖煮而成，热辣又满足。",ja:"たっぷりの豚肉を、コクのあるピリ辛ヘジャンクッスープで煮込んだ、旨辛鍋。"},
-price:"35,000원"
+  cat:"meal",
+  img:"images/menu/tasting-sundae.png",
+
+  name:{
+    ko:"맛보기순대",
+    en:"Sundae",
+    zh:"米肠",
+    ja:"スンデ"
+  },
+
+  desc:{
+    ko:"제주돼지로 직접 만든 제주식 전통 수제순대",
+    en:"Jeju-Style Handmade Blood Sausage",
+    zh:"济州传统手工血肠",
+    ja:"済州産 手作りスンデ"
+  },
+
+  price:"10,000원"
 },
 
+{
+  cat:"meal",
+  img:"images/menu/haejangnoodle.png",
 
+  name:{
+    ko:"해장칼국밥",
+    en:"Hangover Kalguksu & Rice",
+    zh:"醒酒刀切面汤饭",
+    ja:"ヘジャンクッカルグクス＆ご飯"
+  },
+
+  desc:{
+    ko:"해장국밥을 칼국수+밥 메뉴로 드실수 있어요",
+    en:"Enjoy our hearty hangover soup with both handmade-style noodles and rice.",
+    zh:"将暖胃醒酒汤与刀切面和米饭一起享用，更加满足的一餐。",
+    ja:"ヘジャンクッにカルグクスとご飯を合わせて、満足感たっぷりに楽しめます。"
+  },
+
+  price:"11,000원"
+},
+
+{
+  cat:"meal",
+  img:"images/menu/garlic-pork-noodles.png",
+
+  name:{
+    ko:"마농돼지칼국밥",
+    en:"Garlic Pork Kalguksu & Rice",
+    zh:"蒜香猪肉刀切面汤饭",
+    ja:"にんにく豚カルグクス＆ご飯"
+  },
+
+  desc:{
+    ko:"돼지사골 칼국수 먼저 드신뒤 국밥으로 즐기세요",
+    en:"Start with chewy noodles in rich pork bone broth, then enjoy the flavorful broth with rice.",
+    zh:"先品尝浓郁猪骨汤里的刀切面，再加入米饭享用香浓汤饭。",
+    ja:"豚骨の旨みたっぷりのカルグクスを先に楽しみ、その後はご飯を加えてクッパとしてどうぞ。"
+  },
+
+  price:"11,000원"
+},
+
+// =========================================================
+// 가마솥 전골
+// =========================================================
+
+{
+  cat:"hotpot",
+  img:"images/menu/sundae-naejang-jeongol.png",
+  best:true,
+
+  name:{
+    ko:"가마솥순대전골",
+    en:"Iron Pot Sundae Hotpot",
+    zh:"砂锅米肠火锅",
+    ja:"釜炊きスンデ鍋"
+  },
+
+  desc:{
+    ko:"제주순대와 신선한 머릿고기, 내장을 잔~하고 얼큰하게!",
+    en:"Jeju sundae, tender pork head meat, and fresh offal simmered together in a rich and spicy broth",
+    zh:"济州米肠、鲜嫩猪头肉和新鲜内脏一起炖煮，汤汁浓郁香辣。",
+    ja:"済州スンデ、やわらかな豚頭肉、新鮮なホルモンを、旨辛スープでじっくり煮込んだ鍋。"
+  },
+
+  price:"35,000원"
+},
+
+{
+  cat:"hotpot",
+  img:"images/menu/chiken.png",
+  best:true,
+
+  name:{
+    ko:"가마솥 닭볶음탕",
+    en:"Iron Pot Spicy Braised Chicken",
+    zh:"砂锅香辣炖鸡",
+    ja:"釜炊きピリ辛鶏煮込み"
+  },
+
+  desc:{
+    ko:"닭볶음탕 전문점을 따로 준비해도 될정도의 맛",
+    en:"A deeply flavorful spicy braised chicken dish that's good enough to be a specialty on its own.",
+    zh:"味道浓郁到足以单独开一家鸡肉炖锅专门店的招牌料理。",
+    ja:"専門店を開けるほどの美味しさを誇る、旨辛鶏煮込み。"
+  },
+
+  price:"35,000원"
+},
+
+{
+  cat:"hotpot",
+  img:"images/menu/pork-haejang-jeongol.png",
+
+  name:{
+    ko:"가마솥돼지해장전골",
+    en:"Iron Pot Spicy Pork Hotpot",
+    zh:"砂锅香辣猪肉醒酒锅",
+    ja:"釜炊きピリ辛豚肉ヘジャンクッ鍋"
+  },
+
+  desc:{
+    ko:"푸짐한 돼지고기! 깊고 칼칼한 해장육수로 끓여낸 얼큰한 전골",
+    en:"A generous serving of pork simmered in a deep, spicy hangover broth.",
+    zh:"满满猪肉加入浓郁辛辣的醒酒汤底炖煮而成，热辣又满足。",
+    ja:"たっぷりの豚肉を、コクのあるピリ辛ヘジャンクッスープで煮込んだ、旨辛鍋。"
+  },
+
+  price:"35,000원"
+},
+
+// =========================================================
 // 세트
+// =========================================================
+
 {
-cat:"set",img:"images/menu/set-a.jpeg",
-name:{ko:"A세트",en:"Set A",zh:"A套餐",ja:"Aセット"},
-desc:{ko:"순대+머리고기",en:"Blood Sausage + Pork",zh:"血肠 + 猪肉",ja:"スンデ + 豚肉"},
-price:"15,000원"
+  cat:"set",
+  img:"images/menu/set-a.jpeg",
+
+  name:{
+    ko:"A세트",
+    en:"Set A",
+    zh:"A套餐",
+    ja:"Aセット"
+  },
+
+  desc:{
+    ko:"순대+머리고기",
+    en:"Blood Sausage + Pork",
+    zh:"血肠 + 猪肉",
+    ja:"スンデ + 豚肉"
+  },
+
+  price:"15,000원"
 },
 
 {
-cat:"set",img:"images/menu/set-b.jpeg",
-name:{ko:"B세트",en:"Set B",zh:"B套餐",ja:"Bセット"},
-desc:{ko:"순대+머리고기+내장",en:"Blood Sausage + Pork + Intestines",zh:"血肠 + 猪肉 + 内脏",ja:"スンデ + 豚肉 + 内臓"},
-price:"20,000원"
+  cat:"set",
+  img:"images/menu/set-b.jpeg",
+
+  name:{
+    ko:"B세트",
+    en:"Set B",
+    zh:"B套餐",
+    ja:"Bセット"
+  },
+
+  desc:{
+    ko:"순대+머리고기+내장",
+    en:"Blood Sausage + Pork + Intestines",
+    zh:"血肠 + 猪肉 + 内脏",
+    ja:"スンデ + 豚肉 + 内臓"
+  },
+
+  price:"20,000원"
 },
 
 {
-cat:"set",img:"images/menu/set-c.jpeg",best:true,
-name:{ko:"C세트",en:"Set C",zh:"C套餐",ja:"Cセット"},
-desc:{ko:"순대+머리고기+내장+막창",en:"Blood Sausage + Pork + Intestines + Makchang",zh:"血肠 + 猪肉 + 内脏 + 大肠",ja:"スンデ + 豚肉 + 内臓 + ホルモン"},
-price:"25,000원"
+  cat:"set",
+  img:"images/menu/set-c.jpeg",
+  best:true,
+
+  name:{
+    ko:"C세트",
+    en:"Set C",
+    zh:"C套餐",
+    ja:"Cセット"
+  },
+
+  desc:{
+    ko:"순대+머리고기+내장+막창",
+    en:"Blood Sausage + Pork + Intestines + Makchang",
+    zh:"血肠 + 猪肉 + 内脏 + 大肠",
+    ja:"スンデ + 豚肉 + 内臓 + ホルモン"
+  },
+
+  price:"25,000원"
 },
 
 {
-cat:"set",img:"images/menu/babypig.png",
-name:{ko:"아강발",en:"Jeju-Style Braised Pig Trotter",zh:"济州风味猪蹄",ja:"済州風豚足"},
-desc:{ko:"인공색소를 사용하지 않은 깊은 풍미와 쫀득한 식감",en:"Rich natural flavor and a delightfully chewy texture, made without artificial coloring.",zh:"不使用人工色素，拥有浓郁自然的风味和Q弹有嚼劲的口感。",ja:"人工着色料を使わず、素材本来の深い味わいともちもちした食感を楽しめます。"},
-price:"23,000원"
+  cat:"set",
+  img:"images/menu/babypig.png",
+
+  name:{
+    ko:"아강발",
+    en:"Jeju-Style Braised Pig Trotter",
+    zh:"济州风味猪蹄",
+    ja:"済州風豚足"
+  },
+
+  desc:{
+    ko:"인공색소를 사용하지 않은 깊은 풍미와 쫀득한 식감",
+    en:"Rich natural flavor and a delightfully chewy texture, made without artificial coloring.",
+    zh:"不使用人工色素，拥有浓郁自然的风味和Q弹有嚼劲的口感。",
+    ja:"人工着色料を使わず、素材本来の深い味わいともちもちした食感を楽しめます。"
+  },
+
+  price:"23,000원"
 }
- 
+
 ];
+
 const categoryNames={
-meal:"🍲 식사 메뉴",
-hotpot:"🍖 가마솥 전골 / 요리",
-set:"🍢 세트 메뉴"
+  meal:"🍲 식사 메뉴",
+  hotpot:"🍖 가마솥 전골 / 요리",
+  set:"🍢 세트 메뉴"
 };
 
+const pageText={
 
-const pageText = {
   ko:{
     heroTitle:"30년 전통 감초식당의<br>대표 메뉴",
     heroDesc:"1994년부터 이어온 감초식당만의 깊은 맛과 제주 로컬 감성이 담긴 메뉴를 만나보세요.",
     introTitle:"감초식당 메뉴 안내",
     introDesc:"감초식당 신제주점의 대표 메뉴를 소개합니다.<br>다국어 지원으로 해외 여행객들도 편하게 확인할 수 있습니다.",
-    count:"메뉴", note:"메뉴 및 가격은 매장 사정에 따라 변경될 수 있습니다."
+    count:"메뉴",
+    note:"메뉴 및 가격은 매장 사정에 따라 변경될 수 있습니다."
   },
+
   en:{
     heroTitle:"Gamcho Restaurant's<br>Signature Menu",
     heroDesc:"Discover the deep flavors and local Jeju spirit that Gamcho Restaurant has carried on since 1994.",
     introTitle:"Gamcho Restaurant Menu",
     introDesc:"Explore the signature dishes of Gamcho Restaurant Sinjeju.<br>Available in multiple languages for international travelers.",
-    count:"ITEMS", note:"Menu items and prices are subject to change depending on restaurant circumstances."
+    count:"ITEMS",
+    note:"Menu items and prices are subject to change depending on restaurant circumstances."
   },
+
   zh:{
     heroTitle:"甘草食堂30年传统<br>招牌菜单",
     heroDesc:"一起品尝自1994年延续至今的甘草食堂深厚味道与济州本地风情。",
     introTitle:"甘草食堂菜单",
     introDesc:"介绍甘草食堂新济州店的招牌菜单。<br>支持多种语言，方便海外游客查看。",
-    count:"道菜", note:"菜单及价格可能根据餐厅实际情况有所调整。"
+    count:"道菜",
+    note:"菜单及价格可能根据餐厅实际情况有所调整。"
   },
+
   ja:{
     heroTitle:"30年の伝統、甘草食堂の<br>代表メニュー",
     heroDesc:"1994年から受け継がれてきた甘草食堂ならではの深い味わいと済州のローカルな魅力をお楽しみください。",
     introTitle:"甘草食堂 メニュー",
     introDesc:"甘草食堂 新済州店の代表メニューをご紹介します。<br>海外からのお客様にも分かりやすい多言語対応です。",
-    count:"品", note:"メニュー・価格は店舗の事情により変更される場合があります。"
+    count:"品",
+    note:"メニュー・価格は店舗の事情により変更される場合があります。"
   }
+
 };
 
 let currentLang=localStorage.getItem("gamcho-language")||"ko";
+
 const langs=["ko","en","zh","ja"];
 
 function esc(v){
-  return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+  return String(v??"").replace(
+    /[&<>"']/g,
+    c=>({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#039;"
+    }[c])
+  );
 }
-function t(v){return v?.[currentLang] ?? v?.ko ?? "";}
-function imgExists(src){return new Promise(resolve=>{const i=new Image();i.onload=()=>resolve(true);i.onerror=()=>resolve(false);i.src=src;});}
+
+function t(v){
+  return v?.[currentLang] ?? v?.ko ?? "";
+}
+
+function imgExists(src){
+  return new Promise(resolve=>{
+    const i=new Image();
+    i.onload=()=>resolve(true);
+    i.onerror=()=>resolve(false);
+    i.src=src;
+  });
+}
 
 async function renderMenu(){
+
   const area=document.getElementById("menuArea");
+
   area.innerHTML="";
 
-  for(const [index,[cat,catName]] of Object.entries(categoryNames).entries()){
+  for(
+    const [index,[cat,catName]]
+    of Object.entries(categoryNames).entries()
+  ){
+
     const items=menuData.filter(m=>m.cat===cat);
+
     const section=document.createElement("section");
+
     section.className="menu-category";
     section.id="menu-cat-"+cat;
 
-    section.innerHTML=`<div class="menu-container">
-      <div class="menu-category-heading">
-        <div>
-          <p class="menu-section-eyebrow">0${Number(index)+1}</p>
-          <h2 class="menu-category-title">${esc(catName)}</h2>
+    section.innerHTML=`
+      <div class="menu-container">
+
+        <div class="menu-category-heading">
+
+          <div>
+            <p class="menu-section-eyebrow">
+              0${Number(index)+1}
+            </p>
+
+            <h2 class="menu-category-title">
+              ${esc(catName)}
+            </h2>
+          </div>
+
+          <span class="menu-category-count">
+            ${items.length} ${pageText[currentLang].count}
+          </span>
+
         </div>
-        <span class="menu-category-count">${items.length} ${pageText[currentLang].count}</span>
+
+        <div class="menu-grid"></div>
+
       </div>
-      <div class="menu-grid"></div>
-    </div>`;
+    `;
 
     const grid=section.querySelector(".menu-grid");
 
     for(const item of items){
+
       const card=document.createElement("article");
+
       card.className="menu-card";
       card.tabIndex=0;
+
       const name=t(item.name);
       const desc=t(item.desc);
 
+      /*
+       * 가마솥 순대전골 / 닭볶음탕만
+       * 원본 비율 유지 클래스 적용
+       */
+      const naturalImage=
+        item.img.includes("sundae-naejang-jeongol") ||
+        item.img.includes("chiken");
+
       card.innerHTML=`
-        ${item.best?'<span class="menu-badge">BEST</span>':''}
-        <div class="menu-image">
-          <img src="${esc(item.img)}" alt="${esc(name)}" loading="lazy">
-          <div class="menu-image-missing" hidden>MENU IMAGE</div>
-        </div>
-        <div class="menu-info">
-          <div class="menu-info-top">
-            <h3>${esc(name)}</h3>
-            <span class="menu-price">${esc(item.price)}</span>
+
+        ${item.best ? '<span class="menu-badge">BEST</span>' : ''}
+
+        <div class="menu-image ${naturalImage ? 'menu-image-natural' : ''}">
+
+          <img
+            src="${esc(item.img)}"
+            alt="${esc(name)}"
+            loading="lazy"
+          >
+
+          <div class="menu-image-missing" hidden>
+            MENU IMAGE
           </div>
+
+        </div>
+
+        <div class="menu-info">
+
+          <div class="menu-info-top">
+
+            <h3>${esc(name)}</h3>
+
+            <span class="menu-price">
+              ${esc(item.price)}
+            </span>
+
+          </div>
+
           <p>${esc(desc)}</p>
-        </div>`;
+
+        </div>
+      `;
 
       const image=card.querySelector("img");
       const missing=card.querySelector(".menu-image-missing");
-      image.addEventListener("error",()=>{image.hidden=true;missing.hidden=false;},{once:true});
+
+      image.addEventListener(
+        "error",
+        ()=>{
+          image.hidden=true;
+          missing.hidden=false;
+        },
+        {once:true}
+      );
 
       const open=()=>{
+
         if(image.hidden)return;
+
         document.getElementById("modalImg").src=image.src;
+
         document.getElementById("modalImg").alt=name;
+
         document.getElementById("modalText").textContent=name;
-        document.getElementById("menuModal").classList.add("open");
-        document.getElementById("menuModal").setAttribute("aria-hidden","false");
+
+        document
+          .getElementById("menuModal")
+          .classList.add("open");
+
+        document
+          .getElementById("menuModal")
+          .setAttribute("aria-hidden","false");
+
         document.body.style.overflow="hidden";
       };
+
       card.addEventListener("click",open);
-      card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open();}});
+
+      card.addEventListener(
+        "keydown",
+        e=>{
+          if(e.key==="Enter" || e.key===" "){
+            e.preventDefault();
+            open();
+          }
+        }
+      );
+
       grid.appendChild(card);
     }
+
     area.appendChild(section);
   }
 }
 
 function renderCategories(){
+
   const list=document.getElementById("categoryList");
+
   list.innerHTML="";
-  Object.entries(categoryNames).forEach(([cat,name],i)=>{
-    const b=document.createElement("button");
-    b.type="button";
-    b.textContent=name;
-    b.addEventListener("click",()=>document.getElementById("menu-cat-"+cat)?.scrollIntoView({behavior:"smooth",block:"start"}));
-    list.appendChild(b);
-  });
+
+  Object.entries(categoryNames).forEach(
+    ([cat,name])=>{
+
+      const b=document.createElement("button");
+
+      b.type="button";
+      b.textContent=name;
+
+      b.addEventListener(
+        "click",
+        ()=>{
+          document
+            .getElementById("menu-cat-"+cat)
+            ?.scrollIntoView({
+              behavior:"smooth",
+              block:"start"
+            });
+        }
+      );
+
+      list.appendChild(b);
+    }
+  );
 }
 
 function applyLanguage(lang){
+
   if(!langs.includes(lang))return;
+
   currentLang=lang;
-  localStorage.setItem("gamcho-language",lang);
+
+  localStorage.setItem(
+    "gamcho-language",
+    lang
+  );
+
   document.documentElement.lang=lang;
 
   const t=pageText[lang];
+
   document.getElementById("heroTitle").innerHTML=t.heroTitle;
+
   document.getElementById("heroDesc").textContent=t.heroDesc;
+
   document.getElementById("introTitle").textContent=t.introTitle;
+
   document.getElementById("introDesc").innerHTML=t.introDesc;
+
   document.getElementById("menuNote").textContent=t.note;
 
-  document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
+  document
+    .querySelectorAll("[data-lang]")
+    .forEach(
+      b=>b.classList.toggle(
+        "active",
+        b.dataset.lang===lang
+      )
+    );
+
   renderCategories();
   renderMenu();
 }
 
 function closeModal(){
-  document.getElementById("menuModal").classList.remove("open");
-  document.getElementById("menuModal").setAttribute("aria-hidden","true");
+
+  document
+    .getElementById("menuModal")
+    .classList.remove("open");
+
+  document
+    .getElementById("menuModal")
+    .setAttribute("aria-hidden","true");
+
   document.body.style.overflow="";
 }
 
-document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>applyLanguage(b.dataset.lang)));
-document.getElementById("modalClose").addEventListener("click",closeModal);
-document.getElementById("menuModal").addEventListener("click",e=>{if(e.target.id==="menuModal")closeModal();});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
+document
+  .querySelectorAll("[data-lang]")
+  .forEach(
+    b=>b.addEventListener(
+      "click",
+      ()=>applyLanguage(b.dataset.lang)
+    )
+  );
+
+document
+  .getElementById("modalClose")
+  .addEventListener(
+    "click",
+    closeModal
+  );
+
+document
+  .getElementById("menuModal")
+  .addEventListener(
+    "click",
+    e=>{
+      if(e.target.id==="menuModal"){
+        closeModal();
+      }
+    }
+  );
+
+document.addEventListener(
+  "keydown",
+  e=>{
+    if(e.key==="Escape"){
+      closeModal();
+    }
+  }
+);
 
 applyLanguage(currentLang);
+
 </script>
+
 </body>
 </html>
