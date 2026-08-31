@@ -375,21 +375,23 @@ body{
 
 /* =========================================================
    가마솥 순대전골 / 가마솥 닭볶음탕
-   원본 이미지 비율 유지
-   이미지 아래 흰색 영역 방지
+   두 이미지도 다른 메뉴와 동일한 이미지 영역으로 통일
+   좌우/상하 여백 및 카드 높이 차이 방지
    ========================================================= */
 
 .menu-image-natural{
-  aspect-ratio:auto;
+  aspect-ratio:4/3;
   height:auto;
+  overflow:hidden;
   background:#1b1b1b;
 }
 
 .menu-image-natural img{
   width:100%;
-  height:auto;
+  height:100%;
   display:block;
-  object-fit:contain;
+  object-fit:cover;
+  object-position:center center;
   transition:.5s;
 }
 
@@ -582,16 +584,18 @@ body{
     margin:60px auto 80px;
   }
 
-  /* 가마솥 메뉴 이미지도 모바일에서 원본 비율 유지 */
+  /* 가마솥 메뉴 이미지도 모바일에서 다른 메뉴와 동일한 비율 유지 */
   .menu-image-natural{
-    aspect-ratio:auto;
+    aspect-ratio:4/3;
     height:auto;
+    overflow:hidden;
   }
 
   .menu-image-natural img{
     width:100%;
-    height:auto;
-    object-fit:contain;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
   }
 }
 </style>
