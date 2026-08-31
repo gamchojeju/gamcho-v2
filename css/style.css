@@ -625,7 +625,13 @@ button {
 
     background: #e8e4dd;
 }
-
+.menu-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
 .menu-image.placeholder {
     display: flex;
     align-items: center;
