@@ -1,0 +1,1309 @@
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>감초식당 LOCATION | 오시는 길</title>
+
+<meta name="description" content="감초식당 신제주점 위치, 영업시간, 주차 및 오시는 길 안내입니다.">
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="감초식당 LOCATION">
+<meta property="og:description" content="감초식당 신제주점 오시는 길 안내">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.gamchojeju.com/location.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<style>
+
+/* =========================================================
+   GAMCHO LOCATION
+   LOCATION PAGE — RENEWAL
+   ========================================================= */
+
+:root{
+    --bg:#0f0f0f;
+    --card:#171717;
+    --text:#f5f5f5;
+    --sub:#bdbdbd;
+    --gold:#d6b98a;
+    --gold-dark:#2a2116;
+}
+
+/* ---------------------------------------------------------
+   BASE
+--------------------------------------------------------- */
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Pretendard',sans-serif;
+    line-height:1.8;
+    overflow-x:hidden;
+    word-break:keep-all;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* ---------------------------------------------------------
+   HEADER
+   INDEX와 동일한 리뉴얼 헤더
+--------------------------------------------------------- */
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    background:rgba(15,15,15,0.82);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    transition:0.35s;
+}
+
+header.scrolled{
+    background:rgba(0,0,0,0.96);
+    padding:2px 0;
+}
+
+.nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 0;
+    gap:20px;
+    transition:0.35s;
+}
+
+.logo{
+    font-family:'Noto Serif KR',serif;
+    font-size:24px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.menu{
+    display:flex;
+    gap:24px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.menu a{
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:1px;
+    opacity:.88;
+    transition:.3s;
+    position:relative;
+}
+
+.menu a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:1px;
+    background:var(--gold);
+    transition:.3s;
+}
+
+.menu a:hover{
+    opacity:1;
+}
+
+.menu a:hover::after{
+    width:100%;
+}
+
+/* LANGUAGE */
+
+.media-language{
+    display:flex;
+    gap:6px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.media-language button{
+    border:1px solid rgba(255,255,255,.12);
+    background:transparent;
+    color:#fff;
+    padding:6px 9px;
+    border-radius:999px;
+    font-size:10px;
+    cursor:pointer;
+    opacity:.75;
+    transition:.3s;
+}
+
+.media-language button.active,
+.media-language button:hover{
+    opacity:1;
+    border-color:var(--gold);
+    color:var(--gold);
+}
+
+/* ---------------------------------------------------------
+   HERO
+--------------------------------------------------------- */
+
+.location-hero{
+    position:relative;
+    height:88svh;
+    min-height:720px;
+    overflow:hidden;
+}
+
+.location-hero-background{
+    position:absolute;
+    inset:0;
+    background:
+        url("location-main.jpg")
+        center center /
+        cover
+        no-repeat;
+    transform:scale(1.03);
+    filter:brightness(.36);
+}
+
+.location-hero-overlay{
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.15),
+            rgba(0,0,0,.82)
+        );
+}
+
+.location-hero-content{
+    position:absolute;
+    top:55%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:min(92%,900px);
+    text-align:center;
+    z-index:2;
+}
+
+.hero-eyebrow{
+    font-size:13px;
+    letter-spacing:4px;
+    color:var(--gold);
+    margin-bottom:22px;
+    font-weight:600;
+}
+
+.location-hero-title{
+    font-family:'Noto Serif KR',serif;
+    font-size:clamp(42px,6vw,76px);
+    line-height:1.4;
+    font-weight:600;
+    margin-bottom:26px;
+}
+
+.location-hero-description{
+    font-size:18px;
+    color:rgba(255,255,255,.82);
+    max-width:760px;
+    margin:auto;
+    line-height:1.9;
+}
+
+/* ---------------------------------------------------------
+   COMMON SECTION
+--------------------------------------------------------- */
+
+.location-section{
+    padding:120px 0;
+    background:var(--bg);
+}
+
+.section-eyebrow{
+    font-size:13px;
+    letter-spacing:3px;
+    color:var(--gold);
+    margin-bottom:18px;
+    font-weight:600;
+}
+
+.section-title{
+    font-family:'Noto Serif KR',serif;
+    font-size:clamp(34px,4vw,50px);
+    line-height:1.5;
+    margin-bottom:28px;
+    font-weight:600;
+}
+
+.section-description{
+    font-size:18px;
+    color:var(--sub);
+    max-width:760px;
+}
+
+/* ---------------------------------------------------------
+   LOCATION INFO
+--------------------------------------------------------- */
+
+.info-grid{
+    margin-top:60px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.info-card{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:26px;
+    padding:34px 28px;
+    transition:.35s;
+}
+
+.info-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(214,185,138,.28);
+}
+
+.info-icon{
+    font-size:30px;
+    margin-bottom:18px;
+}
+
+.info-title{
+    font-family:'Noto Serif KR',serif;
+    font-size:23px;
+    margin-bottom:12px;
+}
+
+.info-text{
+    font-size:15px;
+    color:#cfcfcf;
+    line-height:1.9;
+}
+
+/* ---------------------------------------------------------
+   MAP
+--------------------------------------------------------- */
+
+.map-section{
+    background:#141414;
+}
+
+.map-box{
+    margin-top:60px;
+    background:#171717;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:30px;
+    overflow:hidden;
+    padding:38px;
+}
+
+.map-heading{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.map-heading h3{
+    font-family:'Noto Serif KR',serif;
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.map-heading p{
+    color:var(--sub);
+    font-size:15px;
+}
+
+.map-buttons{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.map-button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:62px;
+    padding:16px 20px;
+    border-radius:999px;
+    font-size:15px;
+    font-weight:600;
+    border:1px solid rgba(255,255,255,.08);
+    background:#101010;
+    transition:.35s;
+}
+
+.map-button:hover{
+    transform:translateY(-3px);
+    border-color:var(--gold);
+    color:var(--gold);
+}
+
+.map-button.naver:hover{
+    background:#161b17;
+}
+
+.map-button.kakao:hover{
+    background:#1b1a13;
+}
+
+.map-button.google:hover{
+    background:#171717;
+}
+
+.map-note{
+    text-align:center;
+    color:#888;
+    font-size:13px;
+    margin-top:22px;
+}
+
+/* ---------------------------------------------------------
+   HOW TO VISIT
+--------------------------------------------------------- */
+
+.guide-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    margin-top:60px;
+}
+
+.guide-card{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:28px;
+    padding:38px;
+    transition:.35s;
+}
+
+.guide-card:hover{
+    transform:translateY(-5px);
+}
+
+.guide-icon{
+    font-size:30px;
+    margin-bottom:18px;
+}
+
+.guide-card h3{
+    font-family:'Noto Serif KR',serif;
+    font-size:27px;
+    margin-bottom:18px;
+}
+
+.guide-card p{
+    font-size:15px;
+    color:#cfcfcf;
+    line-height:2;
+}
+
+/* ---------------------------------------------------------
+   JEJU TRAVEL ROUTE
+--------------------------------------------------------- */
+
+.route-section{
+    background:#0f0f0f;
+}
+
+.route{
+    margin-top:65px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:0;
+}
+
+.route-item{
+    text-align:center;
+    width:230px;
+}
+
+.route-icon{
+    width:74px;
+    height:74px;
+    margin:0 auto 18px;
+    border-radius:50%;
+    background:var(--card);
+    border:1px solid rgba(214,185,138,.25);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+}
+
+.route-title{
+    font-family:'Noto Serif KR',serif;
+    font-size:22px;
+    margin-bottom:6px;
+}
+
+.route-text{
+    color:#aaa;
+    font-size:14px;
+}
+
+.route-line{
+    width:90px;
+    height:1px;
+    background:linear-gradient(
+        to right,
+        rgba(214,185,138,.15),
+        rgba(214,185,138,.7),
+        rgba(214,185,138,.15)
+    );
+}
+
+/* ---------------------------------------------------------
+   CTA
+--------------------------------------------------------- */
+
+.location-cta{
+    padding:150px 20px;
+    background:#161616;
+    text-align:center;
+}
+
+.location-cta h2{
+    font-family:'Noto Serif KR',serif;
+    font-size:clamp(36px,5vw,60px);
+    line-height:1.5;
+    margin-bottom:24px;
+}
+
+.location-cta p{
+    font-size:18px;
+    color:#cfcfcf;
+    margin-bottom:40px;
+}
+
+.cta-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:16px;
+    flex-wrap:wrap;
+}
+
+.cta-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:150px;
+    padding:16px 26px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    transition:.35s;
+}
+
+.cta-btn.primary{
+    background:var(--gold);
+    color:#111;
+}
+
+.cta-btn.dark{
+    background:#202020;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.cta-btn:hover{
+    transform:translateY(-4px);
+}
+
+/* ---------------------------------------------------------
+   FOOTER
+--------------------------------------------------------- */
+
+.site-footer{
+    background:#090909;
+    padding:70px 0;
+    border-top:1px solid rgba(255,255,255,.05);
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.footer-brand{
+    display:flex;
+    flex-direction:column;
+}
+
+.footer-brand strong{
+    font-family:'Noto Serif KR',serif;
+    font-size:30px;
+    margin-bottom:6px;
+}
+
+.footer-brand span{
+    color:#888;
+    font-size:12px;
+    letter-spacing:1px;
+}
+
+.footer-info{
+    color:#bdbdbd;
+    font-size:14px;
+    line-height:2;
+}
+
+.copyright{
+    width:100%;
+    padding-top:25px;
+    margin-top:20px;
+    border-top:1px solid rgba(255,255,255,.05);
+    color:#777;
+    font-size:12px;
+}
+
+/* ---------------------------------------------------------
+   TABLET
+--------------------------------------------------------- */
+
+@media(max-width:1024px){
+
+    .info-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .guide-grid{
+        grid-template-columns:1fr;
+    }
+
+    .route-item{
+        width:190px;
+    }
+
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media(max-width:768px){
+
+    .nav{
+        flex-direction:column;
+        gap:14px;
+        padding:14px 0;
+    }
+
+    .menu{
+        gap:14px;
+    }
+
+    .menu a{
+        font-size:11px;
+    }
+
+    .media-language{
+        justify-content:center;
+    }
+
+    .location-hero{
+        min-height:680px;
+    }
+
+    .location-hero-content{
+        width:88%;
+    }
+
+    .location-hero-title{
+        font-size:42px;
+        line-height:1.45;
+    }
+
+    .location-hero-description{
+        font-size:15px;
+        line-height:1.9;
+    }
+
+    .location-section{
+        padding:90px 0;
+    }
+
+    .section-title{
+        font-size:34px;
+    }
+
+    .section-description{
+        font-size:16px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+        gap:16px;
+        margin-top:45px;
+    }
+
+    .info-card{
+        padding:28px 24px;
+    }
+
+    .map-box{
+        padding:24px 18px;
+        margin-top:45px;
+        border-radius:24px;
+    }
+
+    .map-heading h3{
+        font-size:26px;
+    }
+
+    .map-buttons{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .map-button{
+        min-height:58px;
+    }
+
+    .guide-grid{
+        margin-top:45px;
+    }
+
+    .guide-card{
+        padding:30px 26px;
+    }
+
+    .route{
+        flex-direction:column;
+        gap:0;
+    }
+
+    .route-item{
+        width:100%;
+    }
+
+    .route-line{
+        width:1px;
+        height:55px;
+        background:linear-gradient(
+            to bottom,
+            rgba(214,185,138,.15),
+            rgba(214,185,138,.7),
+            rgba(214,185,138,.15)
+        );
+    }
+
+    .location-cta{
+        padding:110px 20px;
+    }
+
+    .location-cta h2{
+        font-size:34px;
+    }
+
+    .location-cta p{
+        font-size:16px;
+    }
+
+    .cta-buttons{
+        flex-direction:column;
+    }
+
+    .cta-btn{
+        width:100%;
+        max-width:280px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header id="header">
+
+    <div class="container nav">
+
+        <div class="logo">감초식당</div>
+
+        <nav class="menu">
+            <a href="index.html">HOME</a>
+            <a href="menu.html">MENU</a>
+            <a href="story.html">STORY</a>
+            <a href="broadcast.html">MEDIA</a>
+            <a href="review.html">REVIEW</a>
+            <a href="location.html">LOCATION</a>
+            <a href="instagram.html">INSTAGRAM</a>
+        </nav>
+
+        <div class="media-language" aria-label="Language selector">
+            <button type="button" data-lang="ko">KOR</button>
+            <button type="button" data-lang="en">ENG</button>
+            <button type="button" data-lang="zh">中文</button>
+            <button type="button" data-lang="ja">日本語</button>
+        </div>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="location-hero">
+
+    <div class="location-hero-background"></div>
+    <div class="location-hero-overlay"></div>
+
+    <div class="location-hero-content">
+
+        <p class="hero-eyebrow"
+           data-i18n="location.hero.eyebrow">
+            GAMCHO LOCATION
+        </p>
+
+        <h1 class="location-hero-title"
+            data-i18n="location.hero.title">
+            제주의 여행길 끝에서<br>
+            따뜻한 한 끼를 만나다
+        </h1>
+
+        <p class="location-hero-description"
+           data-i18n="location.hero.description">
+            제주공항 근처 신제주에 위치한 감초식당 신제주점에서<br>
+            제주를 담은 따뜻한 한 끼를 만나보세요.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LOCATION INFO
+===================================================== -->
+
+<section class="location-section">
+
+    <div class="container">
+
+        <p class="section-eyebrow"
+           data-i18n="location.info.eyebrow">
+            LOCATION INFO
+        </p>
+
+        <h2 class="section-title"
+            data-i18n="location.info.title">
+            감초식당 신제주점
+        </h2>
+
+        <p class="section-description"
+           data-i18n="location.info.description">
+            제주공항과 가까운 신제주에 위치해 여행 중 편하게 방문하실 수 있습니다.
+        </p>
+
+
+        <div class="info-grid">
+
+            <div class="info-card">
+
+                <div class="info-icon">📍</div>
+
+                <div class="info-title"
+                     data-i18n="location.info.addressTitle">
+                    주소
+                </div>
+
+                <div class="info-text"
+                     data-i18n="location.info.address">
+                    제주시 노연로 144 1층<br>
+                    (구 코스모스호텔사거리)
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-icon">📞</div>
+
+                <div class="info-title"
+                     data-i18n="location.info.phoneTitle">
+                    전화번호
+                </div>
+
+                <div class="info-text">
+                    <a href="tel:0647438988">
+                        064-743-8988
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-icon">🕒</div>
+
+                <div class="info-title"
+                     data-i18n="location.info.hoursTitle">
+                    영업시간
+                </div>
+
+                <div class="info-text"
+                     data-i18n="location.info.hours">
+                    OPEN AM 11:00 — PM 23:30<br>
+                    Last Order PM 23:00<br>
+                    매주 수요일 휴무
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-icon">🚗</div>
+
+                <div class="info-title"
+                     data-i18n="location.info.parkingTitle">
+                    주차 안내
+                </div>
+
+                <div class="info-text"
+                     data-i18n="location.info.parking">
+                    매장 뒤 주차 가능합니다.<br>
+                    편하게 방문하세요.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAP
+===================================================== -->
+
+<section class="location-section map-section">
+
+    <div class="container">
+
+        <p class="section-eyebrow"
+           data-i18n="location.map.eyebrow">
+            FIND US
+        </p>
+
+        <h2 class="section-title"
+            data-i18n="location.map.title">
+            원하는 지도로 찾아오세요
+        </h2>
+
+        <p class="section-description"
+           data-i18n="location.map.description">
+            자주 사용하는 지도 서비스를 선택하면 감초식당 신제주점 위치를 확인할 수 있습니다.
+        </p>
+
+
+        <div class="map-box">
+
+            <div class="map-heading">
+
+                <h3 data-i18n="location.map.heading">
+                    MAP SERVICES
+                </h3>
+
+                <p data-i18n="location.map.sub">
+                    한국과 해외에서 편리하게 이용할 수 있는 지도를 준비했습니다.
+                </p>
+
+            </div>
+
+
+            <div class="map-buttons">
+
+                <!-- NAVER MAP -->
+                <a
+                    class="map-button naver"
+                    href="https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%EB%85%B8%EC%97%B0%EB%A1%9C%20144%20%EA%B0%90%EC%B4%88%EC%8B%9D%EB%8B%B9"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    NAVER MAP
+                </a>
+
+
+                <!-- KAKAO MAP -->
+                <a
+                    class="map-button kakao"
+                    href="https://map.kakao.com/?q=%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%EB%85%B8%EC%97%B0%EB%A1%9C%20144%20%EA%B0%90%EC%B4%88%EC%8B%9D%EB%8B%B9"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    KAKAO MAP
+                </a>
+
+
+                <!-- GOOGLE MAPS -->
+                <a
+                    class="map-button google"
+                    href="https://www.google.com/maps/search/?api=1&query=%EA%B0%90%EC%B4%88%EC%8B%9D%EB%8B%B9%20%EC%8B%A0%EC%A0%9C%EC%A3%BC%EC%A0%90%20%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%EB%85%B8%EC%97%B0%EB%A1%9C%20144"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    GOOGLE MAP
+                </a>
+
+            </div>
+
+
+            <p class="map-note"
+               data-i18n="location.map.note">
+                감초식당 신제주점 · 제주시 노연로 144 1층
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HOW TO VISIT
+===================================================== -->
+
+<section class="location-section">
+
+    <div class="container">
+
+        <p class="section-eyebrow"
+           data-i18n="location.guide.eyebrow">
+            HOW TO VISIT
+        </p>
+
+        <h2 class="section-title"
+            data-i18n="location.guide.title">
+            감초식당으로 오시는 방법
+        </h2>
+
+
+        <div class="guide-grid">
+
+
+            <div class="guide-card">
+
+                <div class="guide-icon">✈️</div>
+
+                <h3 data-i18n="location.guide.airport.title">
+                    제주공항에서
+                </h3>
+
+                <p data-i18n="location.guide.airport.text">
+                    제주공항에서 차량으로 약 10분 거리입니다.<br>
+                    제주 도착 후 첫 식사 또는 여행 마지막 식사로 편하게 방문하실 수 있습니다.
+                </p>
+
+            </div>
+
+
+            <div class="guide-card">
+
+                <div class="guide-icon">🚗</div>
+
+                <h3 data-i18n="location.guide.car.title">
+                    차량 이용
+                </h3>
+
+                <p data-i18n="location.guide.car.text">
+                    네이버지도, 카카오맵 또는 Google Maps에서<br>
+                    ‘감초식당 신제주점’을 검색해주세요.<br>
+                    매장 뒤 주차가 가능합니다.
+                </p>
+
+            </div>
+
+
+            <div class="guide-card">
+
+                <div class="guide-icon">🚌</div>
+
+                <h3 data-i18n="location.guide.bus.title">
+                    대중교통
+                </h3>
+
+                <p data-i18n="location.guide.bus.text">
+                    신제주 및 연동 주요 버스노선을 이용할 수 있으며<br>
+                    주변에서 도보로 접근하기 편리한 위치입니다.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     JEJU TRAVEL ROUTE
+===================================================== -->
+
+<section class="location-section route-section">
+
+    <div class="container">
+
+        <p class="section-eyebrow"
+           data-i18n="location.route.eyebrow">
+            JEJU TRAVEL ROUTE
+        </p>
+
+        <h2 class="section-title"
+            data-i18n="location.route.title">
+            여행의 시작과 끝,<br>
+            감초식당과 함께
+        </h2>
+
+        <p class="section-description"
+           data-i18n="location.route.description">
+            제주공항과 가까운 신제주에서 든든한 제주 한 끼를 만나보세요.
+        </p>
+
+
+        <div class="route">
+
+
+            <div class="route-item">
+
+                <div class="route-icon">✈️</div>
+
+                <div class="route-title"
+                     data-i18n="location.route.airport.title">
+                    제주공항
+                </div>
+
+                <div class="route-text"
+                     data-i18n="location.route.airport.text">
+                    약 10분
+                </div>
+
+            </div>
+
+
+            <div class="route-line"></div>
+
+
+            <div class="route-item">
+
+                <div class="route-icon">🍲</div>
+
+                <div class="route-title"
+                     data-i18n="location.route.gamcho.title">
+                    감초식당
+                </div>
+
+                <div class="route-text"
+                     data-i18n="location.route.gamcho.text">
+                    제주 한 끼
+                </div>
+
+            </div>
+
+
+            <div class="route-line"></div>
+
+
+            <div class="route-item">
+
+                <div class="route-icon">🌴</div>
+
+                <div class="route-title"
+                     data-i18n="location.route.yeondong.title">
+                    신제주·연동
+                </div>
+
+                <div class="route-text"
+                     data-i18n="location.route.yeondong.text">
+                    제주 여행
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="location-cta">
+
+    <h2 data-i18n="location.cta.title">
+        감초식당에서<br>
+        따뜻한 제주 한 끼를 만나보세요
+    </h2>
+
+    <p data-i18n="location.cta.description">
+        오랜 시간 변하지 않은 한 그릇의 정성을 준비하고 있습니다.
+    </p>
+
+
+    <div class="cta-buttons">
+
+        <a
+            href="tel:0647438988"
+            class="cta-btn primary"
+            data-i18n="location.cta.phone">
+            📞 전화하기
+        </a>
+
+
+        <a
+            href="https://www.google.com/maps/search/?api=1&query=%EA%B0%90%EC%B4%88%EC%8B%9D%EB%8B%B9%20%EC%8B%A0%EC%A0%9C%EC%A3%BC%EC%A0%90%20%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%EB%85%B8%EC%97%B0%EB%A1%9C%20144"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-btn dark"
+            data-i18n="location.cta.map">
+            📍 길찾기
+        </a>
+
+
+        <a
+            href="menu.html"
+            class="cta-btn dark"
+            data-i18n="location.cta.menu">
+            🍲 메뉴보기
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container footer-inner">
+
+        <div class="footer-brand">
+
+            <strong>감초식당</strong>
+
+            <span>
+                GAMCHO RESTAURANT
+            </span>
+
+        </div>
+
+
+        <div class="footer-info">
+
+            <p data-i18n="footer.restaurant">
+                감초식당 신제주점
+            </p>
+
+            <p data-i18n="footer.address">
+                제주시 노연로 144 1층
+            </p>
+
+            <p data-i18n="footer.phone">
+                TEL 064-743-8988
+            </p>
+
+        </div>
+
+
+        <div class="footer-info">
+
+            <p data-i18n="footer.hours">
+                OPEN AM 11:00 — PM 23:30
+            </p>
+
+            <p data-i18n="footer.lastOrder">
+                Last Order PM 23:00
+            </p>
+
+            <p data-i18n="footer.closed">
+                매주 수요일 휴무
+            </p>
+
+        </div>
+
+
+        <p class="copyright">
+            © GAMCHO RESTAURANT. ALL RIGHTS RESERVED.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="data/translations.js"></script>
+<script src="data/menu-data.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
+```
