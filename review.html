@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>감초식당 신제주점 | REVIEW</title>
+<meta content="감초식당 신제주점을 찾아주신 분들의 이야기" name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&amp;family=Pretendard:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+ --bg:#0f0f0f; --card:#171717; --text:#f5f5f5; --sub:#bdbdbd;
+ --gold:#d6b98a; --gold-dark:#2a2116; --line:rgba(255,255,255,.06);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Pretendard,sans-serif;line-height:1.8;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%}
+.container,.section-inner{width:min(1180px,92%);margin:auto}
+
+/* HEADER — same visual language as current HOME/MEDIA/STORY */
+header{
+ position:fixed;top:0;left:0;width:100%;z-index:999;
+ background:rgba(15,15,15,.82);backdrop-filter:blur(14px);
+ -webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.05);
+ transition:.35s;
+}
+header.scrolled{background:rgba(0,0,0,.96)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:20px}
+.logo{font-family:'Noto Serif KR',serif;font-size:24px;font-weight:700;letter-spacing:1px}
+.menu{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
+.menu a{font-size:13px;font-weight:600;letter-spacing:1px;opacity:.88;position:relative;transition:.3s}
+.menu a:hover,.menu a.active{opacity:1}
+.menu a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold);transition:.3s}
+.menu a:hover::after,.menu a.active::after{width:100%}
+.media-language{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.media-language button{
+ border:1px solid rgba(255,255,255,.12);background:transparent;color:#fff;
+ padding:6px 9px;border-radius:999px;font-size:10px;cursor:pointer;opacity:.75
+}
+.media-language button.active,.media-language button:hover{opacity:1;border-color:var(--gold);color:var(--gold)}
+
+/* HERO */
+.hero{position:relative;height:92svh;min-height:680px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url("images/review/review-main.jpg") center/cover no-repeat;transform:scale(1.03);filter:brightness(.36)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.15),rgba(0,0,0,.78))}
+.hero-content{
+ position:absolute;top:55%;left:50%;transform:translate(-50%,-50%);
+ width:min(92%,900px);text-align:center;z-index:2
+}
+.eyebrow{font-size:13px;letter-spacing:4px;color:var(--gold);margin-bottom:22px;font-weight:600}
+.hero h1{font-family:'Noto Serif KR',serif;font-size:clamp(42px,6vw,82px);line-height:1.35;font-weight:600;margin-bottom:24px}
+.hero-desc{font-size:18px;color:rgba(255,255,255,.82)}
+.hero-scroll{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:7px;color:#aaa;font-size:9px;letter-spacing:3px}
+.scroll-line{width:1px;height:42px;background:rgba(255,255,255,.35)}
+
+/* COMMON */
+section{padding:120px 0}
+.section-eyebrow{font-size:13px;letter-spacing:3px;color:var(--gold);margin-bottom:18px;font-weight:600}
+h2{font-family:'Noto Serif KR',serif;font-size:clamp(34px,4vw,50px);line-height:1.5;font-weight:600;margin-bottom:22px}
+.section-desc{font-size:18px;color:var(--sub);max-width:760px}
+
+/* REVIEW INTRO */
+.review-intro{text-align:center}
+.review-intro .section-desc{margin:auto}
+.review-mark{font-family:'Noto Serif KR',serif;color:var(--gold);font-size:54px;line-height:1;margin-bottom:22px}
+
+/* BEST REVIEWS */
+.best-review{background:#111}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:58px}
+.review-card{
+ background:var(--card);border:1px solid var(--line);border-radius:24px;
+ padding:38px 32px;min-height:330px;display:flex;flex-direction:column;
+ transition:.35s
+}
+.review-card:hover{transform:translateY(-5px);border-color:rgba(214,185,138,.28)}
+.review-source{font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:14px}
+.stars{color:var(--gold);letter-spacing:2px;font-size:15px;margin-bottom:20px}
+.review-text{font-size:16px;color:#d0d0d0;line-height:2;margin-bottom:28px}
+.review-meta{margin-top:auto;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px}
+.review-user{font-size:13px;color:#f5f5f5}
+.review-menu{font-size:12px;color:var(--gold);text-align:right}
+
+/* PHOTO */
+.photo-review{background:#161616}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:58px}
+.photo-card{height:470px;border-radius:28px;overflow:hidden;position:relative;background:#111}
+.photo-card img{height:100%;object-fit:cover;transition:.5s}
+.photo-card:hover img{transform:scale(1.04)}
+.photo-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8),transparent 62%);display:flex;align-items:flex-end;padding:28px}
+.photo-caption{font-family:'Noto Serif KR',serif;font-size:18px;line-height:1.7}
+
+/* PLATFORM */
+.platform{text-align:center}
+.platform .section-desc{margin:0 auto 38px}
+.buttons{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 28px;border-radius:999px;font-size:13px;font-weight:600;transition:.35s}
+.btn:hover{transform:translateY(-4px)}
+.btn-gold{background:var(--gold);color:#111}
+.btn-dark{background:#1f1f1f;border:1px solid rgba(255,255,255,.08);color:#fff}
+
+/* CTA */
+.cta{padding:120px 0}
+.cta-box{background:linear-gradient(145deg,#181818,#101010);padding:76px 40px;border-radius:34px;border:1px solid var(--line);text-align:center}
+.cta-box p{color:#bdbdbd;margin-bottom:34px}
+
+/* FOOTER */
+footer{background:#090909;padding:70px 0;margin-top:0;border-top:1px solid rgba(255,255,255,.05)}
+.footer-inner{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.footer-logo{font-family:'Noto Serif KR',serif;font-size:30px;margin-bottom:12px}
+.footer-info{font-size:15px;line-height:2;color:#bdbdbd}
+.copyright{width:100%;font-size:11px;color:#777;margin-top:15px}
+
+/* MOBILE */
+@media(max-width:1024px){
+ .nav{flex-wrap:wrap}.review-grid,.photo-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+ .nav{flex-direction:column;gap:14px;padding:14px 0}
+ .menu{gap:14px}.menu a{font-size:11px}
+ .media-language{justify-content:center}
+ .hero{min-height:680px}.hero h1{font-size:42px}.hero-desc{font-size:15px}
+ section{padding:90px 0}
+ .review-grid,.photo-grid{grid-template-columns:1fr}
+ .review-card{padding:32px 28px;min-height:300px}
+ .photo-card{height:390px}
+ .cta{padding:90px 0}.cta-box{padding:60px 24px}
+ .footer-inner{flex-direction:column}
+}
+</style>
+<link href="css/site-common.css" rel="stylesheet"/></head>
+<body>
+<header class="site-header" id="header"><div class="header-inner"><a aria-label="감초식당 홈" class="logo" href="index.html"><span class="logo-ko">감초식당</span><span class="logo-en">GAMCHO RESTAURANT</span></a><nav aria-label="주요 메뉴" class="main-nav"><a data-i18n="nav.home" href="index.html">HOME</a><a data-i18n="nav.story" href="story.html">STORY</a><a data-i18n="nav.menu" href="menu.html">MENU</a><a data-i18n="nav.media" href="broadcast.html">MEDIA</a><a aria-current="page" class="active" data-i18n="nav.review" href="review.html">REVIEW</a><a data-i18n="nav.instagram" href="instagram.html">INSTAGRAM</a><a data-i18n="nav.location" href="location.html">LOCATION</a></nav><div aria-label="Language selector" class="media-language"><button aria-expanded="false" class="language-button" type="button">KOR</button><div class="language-menu"><button class="active" data-lang="ko" type="button">KOR</button><button data-lang="en" type="button">ENG</button><button data-lang="zh" type="button">中文</button><button data-lang="ja" type="button">日本語</button></div></div><button aria-expanded="false" aria-label="메뉴 열기" class="mobile-menu-button" type="button"><span></span><span></span><span></span></button></div></header>
+<main>
+<section class="hero">
+<div class="hero-bg"></div><div class="hero-overlay"></div>
+<div class="hero-content">
+<p class="eyebrow" data-i18n="hero.eyebrow">GAMCHO RESTAURANT · JEJU</p>
+<h1 data-i18n="hero.title">감초식당을<br/>찾아주신 이야기</h1>
+<p class="hero-desc" data-i18n="hero.description">한 그릇의 맛과 함께 오래 남은 소중한 이야기</p>
+</div>
+<div class="hero-scroll"><span>SCROLL</span><span class="scroll-line"></span></div>
+</section>
+<section class="review-intro">
+<div class="section-inner">
+<div class="review-mark">“</div>
+<p class="section-eyebrow" data-i18n="intro.eyebrow">REVIEW</p>
+<h2 data-i18n="intro.title">감초식당을 찾아주신<br/>소중한 이야기</h2>
+<p class="section-desc" data-i18n="intro.description">제주에서의 따뜻한 한 끼가 좋은 기억으로 남을 수 있도록,<br/>손님들이 남겨주신 이야기를 담았습니다.</p>
+</div>
+</section>
+<section class="best-review">
+<div class="section-inner">
+<p class="section-eyebrow" data-i18n="best.eyebrow">BEST REVIEW</p>
+<h2 data-i18n="best.title">손님들의 한마디</h2>
+<p class="section-desc" data-i18n="best.description">감초식당을 직접 경험한 분들의 이야기입니다.</p>
+<div class="review-grid">
+<article class="review-card">
+<div class="review-source">NAVER REVIEW</div>
+<div class="stars">★★★★★</div>
+<p class="review-text" data-i18n="review.1">“제주 여행 마지막날 우연히 들렸는데 정말 맛있게 먹었습니다. 따뜻한 국물 한 그릇이 여행의 마지막을 더 좋게 만들어줬어요.”</p>
+<div class="review-meta"><span class="review-user" data-i18n="review.visitor">네이버 방문자</span><span class="review-menu" data-i18n="review.menu1">돼지해장국</span></div>
+</article>
+<article class="review-card">
+<div class="review-source">VISITOR REVIEW</div>
+<div class="stars">★★★★★</div>
+<p class="review-text" data-i18n="review.2">“관광객만 가는 식당이 아니라 제주 로컬의 분위기를 느낄 수 있어서 좋았습니다. 음식도 맛있고 직원분들도 친절했어요.”</p>
+<div class="review-meta"><span class="review-user" data-i18n="review.guest">제주 방문객</span><span class="review-menu" data-i18n="review.menu2">감초순대국밥</span></div>
+</article>
+<article class="review-card">
+<div class="review-source">VISITOR REVIEW</div>
+<div class="stars">★★★★★</div>
+<p class="review-text" data-i18n="review.3">“방문하고 나서 왜 오래 사랑받는 곳인지 알 것 같았습니다. 제주에서 든든하게 한 끼 먹고 싶을 때 다시 찾고 싶어요.”</p>
+<div class="review-meta"><span class="review-user" data-i18n="review.customer">방문 고객</span><span class="review-menu" data-i18n="review.menu3">순대술국</span></div>
+</article>
+</div>
+</div>
+</section>
+<section class="photo-review">
+<div class="section-inner">
+<p class="section-eyebrow" data-i18n="photo.eyebrow">PHOTO REVIEW</p>
+<h2 data-i18n="photo.title">사진으로 남겨주신<br/>감초식당의 순간</h2>
+<p class="section-desc" data-i18n="photo.description">손님들의 소중한 순간을 사진으로 만나보세요.</p>
+<div class="photo-grid">
+<article class="photo-card"><img alt="감초식당 방문 후기 사진" src="images/review/review1.jpg"/><div class="photo-overlay"><p class="photo-caption" data-i18n="photo.1">“제주에서 만난 따뜻한 한 끼”</p></div></article>
+<article class="photo-card"><img alt="감초식당 음식 후기 사진" src="images/review/review2.jpg"/><div class="photo-overlay"><p class="photo-caption" data-i18n="photo.2">“다음 제주 여행에도 다시 찾고 싶은 곳”</p></div></article>
+<article class="photo-card"><img alt="감초식당 방문 사진" src="images/review/review3.jpg"/><div class="photo-overlay"><p class="photo-caption" data-i18n="photo.3">“한 그릇 가득 느껴지는 제주”</p></div></article>
+</div>
+</div>
+</section>
+<section class="platform">
+<div class="section-inner">
+<p class="section-eyebrow" data-i18n="platform.eyebrow">REVIEW WITH US</p>
+<h2 data-i18n="platform.title">여러분의 이야기도 남겨주세요</h2>
+<p class="section-desc" data-i18n="platform.description">감초식당에서의 소중한 경험을 다른 분들과도 나눠주세요.</p>
+<div class="buttons">
+<a class="btn btn-gold" data-i18n="platform.naver" href="https://m.place.naver.com/my" rel="noopener noreferrer" target="_blank">NAVER REVIEW</a>
+<a class="btn btn-dark" data-i18n="platform.home" href="index.html">GAMCHO HOME</a>
+</div>
+</div>
+</section>
+<section class="cta">
+<div class="section-inner">
+<div class="cta-box">
+<p class="section-eyebrow" data-i18n="cta.eyebrow">VISIT GAMCHO</p>
+<h2 data-i18n="cta.title">제주에서 만나요</h2>
+<p data-i18n="cta.description">감초식당 신제주점에서 따뜻한 한 끼를 만나보세요.</p>
+<div class="buttons">
+<a class="btn btn-gold" data-i18n="cta.menu" href="menu.html">MENU</a>
+<a class="btn btn-dark" data-i18n="cta.location" href="location.html">LOCATION</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container footer-inner">
+<div><div class="footer-logo">감초식당</div><div class="footer-info" data-i18n="footer.restaurant">감초식당 신제주점</div></div>
+<div class="footer-info" data-i18n="footer.country">Jeju, Korea</div>
+<p class="copyright">© GAMCHO RESTAURANT. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<script>
+const translations={
+ko:{
+"hero.eyebrow":"GAMCHO RESTAURANT · JEJU","hero.title":"감초식당을<br>찾아주신 이야기","hero.description":"한 그릇의 맛과 함께 오래 남은 소중한 이야기",
+"intro.eyebrow":"REVIEW","intro.title":"감초식당을 찾아주신<br>소중한 이야기","intro.description":"제주에서의 따뜻한 한 끼가 좋은 기억으로 남을 수 있도록,<br>손님들이 남겨주신 이야기를 담았습니다.",
+"best.eyebrow":"BEST REVIEW","best.title":"손님들의 한마디","best.description":"감초식당을 직접 경험한 분들의 이야기입니다.",
+"review.1":"“제주 여행 마지막날 우연히 들렸는데 정말 맛있게 먹었습니다. 따뜻한 국물 한 그릇이 여행의 마지막을 더 좋게 만들어줬어요.”","review.2":"“관광객만 가는 식당이 아니라 제주 로컬의 분위기를 느낄 수 있어서 좋았습니다. 음식도 맛있고 직원분들도 친절했어요.”","review.3":"“방문하고 나서 왜 오래 사랑받는 곳인지 알 것 같았습니다. 제주에서 든든하게 한 끼 먹고 싶을 때 다시 찾고 싶어요.”","review.visitor":"네이버 방문자","review.guest":"제주 방문객","review.customer":"방문 고객","review.menu1":"돼지해장국","review.menu2":"감초순대국밥","review.menu3":"순대술국",
+"photo.eyebrow":"PHOTO REVIEW","photo.title":"사진으로 남겨주신<br>감초식당의 순간","photo.description":"손님들의 소중한 순간을 사진으로 만나보세요.","photo.1":"“제주에서 만난 따뜻한 한 끼”","photo.2":"“다음 제주 여행에도 다시 찾고 싶은 곳”","photo.3":"“한 그릇 가득 느껴지는 제주”",
+"platform.eyebrow":"REVIEW WITH US","platform.title":"여러분의 이야기도 남겨주세요","platform.description":"감초식당에서의 소중한 경험을 다른 분들과도 나눠주세요.","platform.naver":"NAVER REVIEW","platform.home":"GAMCHO HOME",
+"cta.eyebrow":"VISIT GAMCHO","cta.title":"제주에서 만나요","cta.description":"감초식당 신제주점에서 따뜻한 한 끼를 만나보세요.","cta.menu":"MENU","cta.location":"LOCATION","footer.restaurant":"감초식당 신제주점","footer.country":"Jeju, Korea"
+},
+en:{
+"hero.eyebrow":"GAMCHO RESTAURANT · JEJU","hero.title":"Stories<br>from Our Guests","hero.description":"Warm memories that remain long after the last bowl",
+"intro.eyebrow":"REVIEW","intro.title":"Stories from<br>Our Guests","intro.description":"A warm meal in Jeju can become a lasting memory.<br>Here are the stories shared by our guests.",
+"best.eyebrow":"BEST REVIEW","best.title":"Words from Our Guests","best.description":"Stories from people who experienced Gamcho Restaurant.",
+"review.1":"“We stopped by on the last day of our Jeju trip and had such a comforting meal. That warm bowl made the final day even better.”","review.2":"“It felt like a true local Jeju restaurant, not just a tourist spot. The food was delicious and everyone was kind.”","review.3":"“Now I understand why this place has been loved for so long. I would definitely come back for a hearty meal in Jeju.”","review.visitor":"Naver Visitor","review.guest":"Jeju Visitor","review.customer":"Guest","review.menu1":"Pork Hangover Soup","review.menu2":"Sundae Gukbap","review.menu3":"Sundae Soup",
+"photo.eyebrow":"PHOTO REVIEW","photo.title":"Moments<br>Shared by Our Guests","photo.description":"Take a look at the moments our guests captured.","photo.1":"“A warm meal in Jeju”","photo.2":"“A place to return to on our next Jeju trip”","photo.3":"“A bowl full of Jeju”",
+"platform.eyebrow":"REVIEW WITH US","platform.title":"Share Your Story","platform.description":"Share your experience at Gamcho Restaurant with fellow travelers.","platform.naver":"NAVER REVIEW","platform.home":"GAMCHO HOME",
+"cta.eyebrow":"VISIT GAMCHO","cta.title":"See You in Jeju","cta.description":"Enjoy a warm meal at Gamcho Restaurant, Sinjeju.","cta.menu":"MENU","cta.location":"LOCATION"
+},
+zh:{
+"hero.eyebrow":"GAMCHO RESTAURANT · JEJU","hero.title":"来自客人们的<br>温暖故事","hero.description":"一碗美味之后，依然留在心里的温暖回忆",
+"intro.eyebrow":"顾客评价","intro.title":"客人们留下的<br>珍贵故事","intro.description":"济州的一顿温暖饭菜，也可以成为旅途中长久的回忆。<br>这里记录着客人们分享的故事。",
+"best.eyebrow":"精选评价","best.title":"客人们的一句话","best.description":"来自亲自体验甘草餐厅的客人们。",
+"review.1":"“济州旅行最后一天偶然来到这里，吃得非常满足。一碗热汤让旅程的最后一天更加美好。”","review.2":"“这里很有真正济州当地餐厅的感觉，不只是游客餐厅。食物很好吃，工作人员也很亲切。”","review.3":"“终于明白为什么这家店一直受到喜爱。下次来济州，还想再来吃一顿暖暖的饭。”","review.visitor":"Naver 访客","review.guest":"济州游客","review.customer":"到访客人","review.menu1":"济州猪肉醒酒汤","review.menu2":"血肠汤饭","review.menu3":"血肠汤",
+"photo.eyebrow":"照片评价","photo.title":"客人留下的<br>美好瞬间","photo.description":"一起看看客人记录下来的珍贵瞬间。","photo.1":"“在济州遇见的温暖一餐”","photo.2":"“下次来济州还想再来的地方”","photo.3":"“一碗满满的济州味道”",
+"platform.eyebrow":"与我们分享评价","platform.title":"也留下您的故事吧","platform.description":"欢迎分享您在甘草餐厅的美好体验。","platform.naver":"NAVER 评价","platform.home":"甘草餐厅首页",
+"cta.eyebrow":"到访甘草餐厅","cta.title":"在济州与您相见","cta.description":"欢迎来到甘草餐厅新济州店，享受温暖的一餐。","cta.menu":"菜单","cta.location":"位置"
+},
+ja:{
+"hero.eyebrow":"GAMCHO RESTAURANT · JEJU","hero.title":"お客様からいただいた<br>温かな物語","hero.description":"一杯の味とともに、いつまでも心に残る思い出",
+"intro.eyebrow":"レビュー","intro.title":"お客様からいただいた<br>大切な物語","intro.description":"済州での温かな一食が、旅の素敵な思い出になりますように。<br>お客様からいただいた声をご紹介します。",
+"best.eyebrow":"おすすめレビュー","best.title":"お客様のひとこと","best.description":"甘草食堂を訪れたお客様からいただいた声です。",
+"review.1":"「済州旅行の最終日に偶然立ち寄りましたが、とても美味しくいただきました。温かいスープが旅の最後をさらに素敵にしてくれました。」","review.2":"「観光客向けだけのお店ではなく、済州のローカルな雰囲気を感じられて良かったです。料理も美味しく、スタッフも親切でした。」","review.3":"「長く愛されている理由が分かりました。済州でしっかり食事をしたい時に、また訪れたいです。」","review.visitor":"Naver 訪問者","review.guest":"済州旅行者","review.customer":"お客様","review.menu1":"豚肉ヘジャンクク","review.menu2":"スンデクッパ","review.menu3":"スンデスープ",
+"photo.eyebrow":"PHOTO REVIEW","photo.title":"お客様が残してくれた<br>甘草食堂のひととき","photo.description":"お客様が撮影した大切な瞬間をご覧ください。","photo.1":"「済州で出会った温かな一食」","photo.2":"「次の済州旅行でもまた訪れたい場所」","photo.3":"「一杯に詰まった済州の味」",
+"platform.eyebrow":"REVIEW WITH US","platform.title":"あなたの物語も聞かせてください","platform.description":"甘草食堂での素敵な思い出を、ぜひシェアしてください。","platform.naver":"NAVER レビュー","platform.home":"甘草食堂 HOME",
+"cta.eyebrow":"VISIT GAMCHO","cta.title":"済州でお会いしましょう","cta.description":"甘草食堂 新済州店で、温かな一食をお楽しみください。","cta.menu":"メニュー","cta.location":"LOCATION"
+}
+};
+function applyLanguage(lang){
+ const t=translations[lang]||translations.ko;
+ document.querySelectorAll("[data-i18n]").forEach(el=>{
+  const k=el.dataset.i18n;if(t[k]!==undefined)el.innerHTML=t[k];
+ });
+ document.querySelectorAll(".media-language button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
+ document.documentElement.lang=lang==="zh"?"zh-CN":lang;
+ try{localStorage.setItem("gamcho-language",lang)}catch(e){}
+}
+document.querySelectorAll(".media-language button").forEach(b=>b.addEventListener("click",()=>applyLanguage(b.dataset.lang)));
+let saved="ko";try{saved=localStorage.getItem("gamcho-language")||"ko"}catch(e){}
+applyLanguage(saved);
+
+window.addEventListener("scroll",()=>{
+ const h=document.getElementById("header");if(h)h.classList.toggle("scrolled",window.scrollY>30);
+});
+</script>
+<script defer="True" src="js/site-common.js"></script><script src="data/translations.js"></script><script src="data/menu-data.js"></script><script src="js/main.js"></script></body>
+</html>
