@@ -1,0 +1,413 @@
+/* =========================================================
+   GAMCHO RESTAURANT 2.0
+   Responsive Style
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   TABLET
+--------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+
+    :root {
+        --header-height: 76px;
+        --section-padding: 110px;
+    }
+
+    .header-inner {
+        width: min(
+            calc(100% - 50px),
+            var(--container)
+        );
+    }
+
+    .main-nav {
+        gap: 20px;
+    }
+
+    .main-nav a {
+        font-size: 10px;
+    }
+
+    .hero-content {
+        width: min(
+            calc(100% - 60px),
+            var(--container)
+        );
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 6vw, 64px);
+    }
+
+    .menu-preview {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    :root {
+        --header-height: 68px;
+        --section-padding: 85px;
+    }
+
+
+    /* ---------------------------------------------
+       COMMON
+    --------------------------------------------- */
+
+    .section-inner {
+        width: calc(100% - 40px);
+    }
+
+
+    /* ---------------------------------------------
+       HEADER
+    --------------------------------------------- */
+
+    .site-header {
+        height: var(--header-height);
+    }
+
+    .header-inner {
+        width: calc(100% - 40px);
+    }
+
+    .logo-ko {
+        font-size: 19px;
+    }
+
+    .logo-en {
+        font-size: 7px;
+    }
+
+
+    /* Navigation */
+
+    .main-nav {
+        position: fixed;
+
+        top: var(--header-height);
+        left: 0;
+
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+
+        padding: 45px 30px;
+
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        gap: 0;
+
+        background: var(--color-bg);
+
+        color: var(--color-text);
+
+        transform: translateX(100%);
+
+        transition: transform 0.4s ease;
+
+        overflow-y: auto;
+    }
+
+    .main-nav.is-open {
+        transform: translateX(0);
+    }
+
+    .main-nav a {
+        width: 100%;
+
+        padding: 17px 0;
+
+        border-bottom: 1px solid var(--color-border);
+
+        font-family: var(--font-sans);
+        font-size: 13px;
+
+        letter-spacing: 0.12em;
+    }
+
+    .main-nav a::after {
+        display: none;
+    }
+
+
+    /* Language */
+
+    .language-selector {
+        margin-left: auto;
+    }
+
+    .language-menu {
+        position: fixed;
+
+        top: calc(var(--header-height) + 10px);
+        right: 20px;
+    }
+
+
+    /* Mobile menu */
+
+    .mobile-menu-button {
+        display: flex;
+    }
+
+
+    /* ---------------------------------------------
+       HERO
+    --------------------------------------------- */
+
+    .hero {
+        min-height: 100svh;
+
+        align-items: flex-end;
+
+        padding-bottom: 85px;
+    }
+
+    .hero-background {
+        background-position: 58% center;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.12) 0%,
+                rgba(0, 0, 0, 0.32) 42%,
+                rgba(0, 0, 0, 0.72) 100%
+            );
+    }
+
+    .hero-content {
+        width: calc(100% - 40px);
+
+        padding-top: 0;
+    }
+
+    .hero-eyebrow {
+        margin-bottom: 16px;
+
+        font-size: 9px;
+
+        letter-spacing: 0.18em;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+
+        font-size: clamp(36px, 10vw, 48px);
+
+        line-height: 1.35;
+    }
+
+    .hero-description {
+        margin-top: 20px;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    .hero-buttons {
+        margin-top: 30px;
+
+        gap: 8px;
+    }
+
+    .btn {
+        min-width: 120px;
+        min-height: 45px;
+
+        padding: 0 18px;
+
+        font-size: 10px;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+
+    /* ---------------------------------------------
+       INTRO
+    --------------------------------------------- */
+
+    .intro {
+        padding: var(--section-padding) 0;
+    }
+
+    .section-eyebrow {
+        margin-bottom: 14px;
+
+        font-size: 10px;
+    }
+
+    .intro h2,
+    .signature-menu h2,
+    .media-preview h2,
+    .review-preview h2,
+    .location-cta h2 {
+        font-size: clamp(29px, 8vw, 38px);
+
+        line-height: 1.5;
+    }
+
+    .intro-text {
+        margin-top: 24px;
+
+        font-size: 13px;
+
+        line-height: 1.9;
+    }
+
+    .intro .text-link {
+        margin-top: 28px;
+    }
+
+
+    /* ---------------------------------------------
+       SIGNATURE MENU
+    --------------------------------------------- */
+
+    .signature-menu {
+        padding: var(--section-padding) 0;
+    }
+
+    .section-heading {
+        display: block;
+
+        margin-bottom: 35px;
+    }
+
+    .section-heading .text-link {
+        margin-top: 20px;
+    }
+
+    .menu-preview {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .menu-info {
+        padding: 20px;
+    }
+
+    .menu-info h3 {
+        font-size: 20px;
+    }
+
+    .menu-info p {
+        font-size: 12px;
+    }
+
+
+    /* ---------------------------------------------
+       STORY
+    --------------------------------------------- */
+
+    .story-cta {
+        min-height: 520px;
+    }
+
+    .story-cta-background {
+        background-position: center;
+    }
+
+    .story-cta h2 {
+        font-size: clamp(30px, 8vw, 40px);
+
+        line-height: 1.55;
+    }
+
+
+    /* ---------------------------------------------
+       MEDIA
+    --------------------------------------------- */
+
+    .media-preview,
+    .review-preview {
+        padding: var(--section-padding) 0;
+    }
+
+
+    /* ---------------------------------------------
+       LOCATION
+    --------------------------------------------- */
+
+    .location-cta {
+        padding: 90px 0;
+    }
+
+
+    /* ---------------------------------------------
+       FOOTER
+    --------------------------------------------- */
+
+    .site-footer {
+        padding: 50px 0 35px;
+    }
+
+    .footer-inner {
+        width: calc(100% - 40px);
+    }
+
+    .footer-brand {
+        margin-bottom: 25px;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   SMALL MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 420px) {
+
+    .section-inner {
+        width: calc(100% - 32px);
+    }
+
+    .header-inner {
+        width: calc(100% - 32px);
+    }
+
+    .hero-content {
+        width: calc(100% - 32px);
+    }
+
+    .hero {
+        padding-bottom: 70px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        flex: 1;
+        min-width: 0;
+    }
+
+}
