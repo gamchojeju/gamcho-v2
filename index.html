@@ -874,7 +874,55 @@ footer{
     }
 }
 </style>
-<link href="css/site-common.css" rel="stylesheet"/></head>
+<link href="css/site-common.css" rel="stylesheet"/><style id="gamcho-home-center-final">
+/* HOME FINAL CENTER ALIGNMENT — intentionally loaded last */
+main .hero-content,
+main .hero-content h1,
+main .hero-content p,
+main .hero-buttons,
+main .intro .section-inner,
+main .intro .section-inner > *,
+main .signature-menu .section-inner,
+main .signature-menu .section-heading,
+main .signature-menu .section-heading > *,
+main .story-cta-content,
+main .media-preview .section-inner,
+main .review-preview .section-inner,
+main .location-cta .section-inner {
+  text-align: center !important;
+}
+main .section-inner,
+main .hero-content,
+main .story-cta-content,
+main .media-preview .section-inner,
+main .review-preview .section-inner,
+main .location-cta .section-inner {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+main .section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+main .section-heading .text-link,
+main .section-inner .text-link {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+main .menu-preview {
+  justify-content: center !important;
+}
+main .menu-preview-card,
+main .menu-preview-card .menu-info,
+main .menu-preview-card h3,
+main .menu-preview-card p {
+  text-align: center !important;
+}
+</style>
+</head>
 <body>
 <header class="site-header" id="header"><div class="header-inner"><a aria-label="감초식당 홈" class="logo" href="index.html"><span class="logo-ko">감초식당</span><span class="logo-en">GAMCHO RESTAURANT</span></a><nav aria-label="주요 메뉴" class="main-nav"><a aria-current="page" class="active" data-i18n="nav.home" href="index.html">HOME</a><a data-i18n="nav.story" href="story.html">STORY</a><a data-i18n="nav.menu" href="menu.html">MENU</a><a data-i18n="nav.media" href="broadcast.html">MEDIA</a><a data-i18n="nav.review" href="review.html">REVIEW</a><a data-i18n="nav.instagram" href="instagram.html">INSTAGRAM</a><a data-i18n="nav.location" href="location.html">LOCATION</a></nav><div aria-label="Language selector" class="media-language"><button aria-expanded="false" class="language-button" type="button">KOR</button><div class="language-menu"><button class="active" data-lang="ko" type="button">KOR</button><button data-lang="en" type="button">ENG</button><button data-lang="zh" type="button">中文</button><button data-lang="ja" type="button">日本語</button></div></div><button aria-expanded="false" aria-label="메뉴 열기" class="mobile-menu-button" type="button"><span></span><span></span><span></span></button></div></header>
 <main>
@@ -945,7 +993,7 @@ footer{
 <div class="section-inner">
 <p class="section-eyebrow" data-i18n="media.eyebrow">MEDIA</p>
 <h2 data-i18n="media.title">방송과 미디어에서 만난 감초식당</h2>
-<a class="text-link" data-i18n="media.link" href="media.html">MEDIA 더보기 <span>→</span></a>
+<a class="text-link" data-i18n="media.link" href="broadcast.html">MEDIA 더보기 <span>→</span></a>
 </div>
 </section>
 <section class="review-preview">
