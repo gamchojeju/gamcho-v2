@@ -330,6 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         if (
+            typeof supportedLanguages === "undefined" ||
             !supportedLanguages.includes(language)
         ) {
 
@@ -397,10 +398,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         if (languageButton) {
+            languageButton.textContent = languageLabels[language] || "KOR";
+            languageButton.setAttribute("aria-expanded", "false");
+        }
 
-            languageButton.textContent =
-                languageLabels[language];
-
+        if (languageSelector) {
+            languageSelector.querySelectorAll("[data-lang]").forEach((option) => {
+                const active = option.dataset.lang === language;
+                option.classList.toggle("active", active);
+                option.setAttribute("aria-pressed", active ? "true" : "false");
+            });
         }
 
 
@@ -552,11 +559,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const initialLanguage =
         savedLanguage &&
-        supportedLanguages.includes(
-            savedLanguage
-        )
+        typeof supportedLanguages !== "undefined" &&
+        supportedLanguages.includes(savedLanguage)
             ? savedLanguage
-            : defaultLanguage;
+            : (typeof defaultLanguage !== "undefined" ? defaultLanguage : "ko");
 
 
     applyLanguage(initialLanguage);
