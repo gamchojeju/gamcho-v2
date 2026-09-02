@@ -1,4 +1,4 @@
-/* =========================================================
+   /* =========================================================
    GAMCHO RESTAURANT 2.0
    MENU DATA
 
@@ -112,7 +112,7 @@ const menuData = [
     {
         id: "tasting-sundae",
         category: "meal",
-        image: "images/menu/tasting-sundae.jpg",
+        image: "images/menu/tasting-sundae.png",
 
         name: {
             ko: "맛보기순대",
@@ -233,7 +233,7 @@ const menuData = [
     {
         id: "pork-haejang-jeongol",
         category: "hotpot",
-        image: "images/menu/pork-haejang-jeongol.jpg",
+        image: "images/menu/pork-haejang-jeongol.png",
 
         name: {
             ko: "돼지해장전골",
@@ -260,7 +260,7 @@ const menuData = [
     {
         id: "set-a",
         category: "set",
-        image: "images/menu/set-a.jpg",
+        image: "images/menu/set-a.jpeg",
 
         name: {
             ko: "A세트",
@@ -283,7 +283,7 @@ const menuData = [
     {
         id: "set-b",
         category: "set",
-        image: "images/menu/set-b.jpg",
+        image: "images/menu/set-b.jpeg",
 
         name: {
             ko: "B세트",
@@ -306,7 +306,7 @@ const menuData = [
     {
         id: "set-c",
         category: "set",
-        image: "images/menu/set-c.jpg",
+        image: "images/menu/set-c.jpeg",
         best: true,
 
         name: {
