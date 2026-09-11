@@ -1,0 +1,1039 @@
+/* =========================================================
+   GAMCHO RESTAURANT 2.0 — SHARED DESIGN SYSTEM
+   모든 페이지 공통 헤더 / 타이포 / 정렬 / 버튼 / 푸터
+   ========================================================= */
+
+:root {
+  --gamcho-bg: #0f0f0f;
+  --gamcho-surface: #171717;
+  --gamcho-surface-2: #1d1d1d;
+  --gamcho-text: #f5f5f5;
+  --gamcho-sub: #bdbdbd;
+  --gamcho-muted: #8f8f8f;
+  --gamcho-gold: #d6b98a;
+  --gamcho-gold-dark: #2a2116;
+  --gamcho-border: rgba(255,255,255,.09);
+  --gamcho-container: 1180px;
+  --gamcho-header: 76px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--gamcho-bg) !important;
+  color: var(--gamcho-text) !important;
+  font-family: 'Pretendard', sans-serif;
+  word-break: keep-all;
+}
+
+/* ---------- HEADER ---------- */
+.site-header,
+#header {
+  position: fixed !important;
+  inset: 0 0 auto 0;
+  width: 100%;
+  height: var(--gamcho-header);
+  z-index: 9999;
+  background: rgba(15,15,15,.78) !important;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: background .35s ease, box-shadow .35s ease, height .35s ease;
+}
+
+.site-header.scrolled,
+#header.scrolled {
+  background: rgba(10,10,10,.96) !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,.18);
+}
+
+.header-inner,
+#header .nav,
+#header .menu-v2-nav {
+  width: min(calc(100% - 48px), var(--gamcho-container));
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo,
+.logo-ko,
+.menu-v2-logo {
+  color: var(--gamcho-text) !important;
+  font-family: 'Noto Serif KR', serif !important;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  font-size: 21px;
+  flex-shrink: 0;
+}
+
+.logo-en {
+  margin-top: 4px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 7px;
+  letter-spacing: .2em;
+  opacity: .62;
+}
+
+.main-nav,
+#header .menu,
+#header .menu-v2-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 0 auto;
+}
+
+.main-nav a,
+#header .menu a,
+#header .menu-v2-links a {
+  position: relative;
+  padding: 8px 0;
+  color: rgba(255,255,255,.82) !important;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-decoration: none;
+  transition: color .3s ease, opacity .3s ease;
+}
+
+.main-nav a::after,
+#header .menu a::after,
+#header .menu-v2-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  margin: auto;
+  background: var(--gamcho-gold);
+  transition: width .3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active,
+#header .menu a:hover,
+#header .menu a.active,
+#header .menu-v2-links a:hover,
+#header .menu-v2-links a.current {
+  color: var(--gamcho-gold) !important;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after,
+#header .menu a:hover::after,
+#header .menu a.active::after,
+#header .menu-v2-links a:hover::after,
+#header .menu-v2-links a.current::after { width: 100%; }
+
+/* Language selector: desktop compact pill / mobile dropdown */
+.media-language {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.media-language .language-button {
+  min-width: 46px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 999px;
+  color: rgba(255,255,255,.9);
+  background: rgba(255,255,255,.03);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.media-language .language-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 96px;
+  padding: 7px;
+  border: 1px solid var(--gamcho-border);
+  border-radius: 14px;
+  background: rgba(20,20,20,.98);
+  box-shadow: 0 16px 35px rgba(0,0,0,.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: .25s ease;
+}
+
+.media-language.is-open .language-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.media-language .language-menu button {
+  display: block;
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: 9px;
+  color: #ddd;
+  background: transparent;
+  font-size: 10px;
+  text-align: center;
+}
+.media-language .language-menu button:hover,
+.media-language .language-menu button.active { color: var(--gamcho-gold); background: rgba(214,185,138,.08); }
+
+/* legacy pages: direct language buttons */
+.media-language > button[data-lang] {
+  padding: 6px 8px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  color: #fff;
+  background: transparent;
+  font-size: 9px;
+}
+
+.mobile-menu-button {
+  display: none;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  color: #fff;
+}
+.mobile-menu-button span { width: 21px; height: 1px; background: currentColor; transition: .3s ease; }
+.mobile-menu-button.is-active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.mobile-menu-button.is-active span:nth-child(2) { opacity: 0; }
+.mobile-menu-button.is-active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ---------- TYPOGRAPHY / CENTER-FIRST RULE ---------- */
+main { text-align: center; }
+main h1, main h2, main h3, main h4,
+main .section-title, main .section-heading,
+main .section-eyebrow, main .section-label,
+main .section-desc, main .hero-text, main .hero-content,
+main .hero-title, main .hero-desc, main .hero-sub,
+main .hero-description, main .location-hero-content {
+  text-align: center;
+}
+
+main .section-inner,
+main > section > .container,
+main > section > .content,
+main .hero-buttons,
+main .hero-actions,
+main .cta-actions {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main p { margin-left: auto; margin-right: auto; }
+main .btn, main .hero-btn, main button.cta, main .text-link { justify-content: center; }
+
+/* Cards: text centered by default */
+main article,
+main .card,
+main .menu-card,
+main .menu-preview-card,
+main .trust-box,
+main .review-card,
+main .feature-card,
+main .media-card,
+main .instagram-card,
+main .value-card { text-align: center; }
+
+/* Keep practical address/map blocks readable while maintaining centered presentation */
+main .address, main .contact-info, main .location-info { text-align: center; }
+
+/* ---------- FOOTER ---------- */
+/* 푸터는 각 페이지의 기존 레이아웃을 유지합니다.
+   공통 CSS에서는 배경/색상/테두리만 통일하고,
+   text-align / flex 정렬은 페이지별 CSS에 맡깁니다. */
+footer,
+.site-footer {
+  background: #0a0a0a !important;
+  color: #ddd !important;
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+
+footer .footer-inner,
+.site-footer .footer-inner {
+  width: min(calc(100% - 48px), var(--gamcho-container));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer .footer-logo,
+.site-footer .footer-brand,
+.site-footer .footer-brand strong {
+  font-family: 'Noto Serif KR', serif;
+  color: #fff;
+}
+
+footer .footer-info,
+footer .copyright,
+.site-footer .footer-info,
+.site-footer .copyright {
+  color: #999;
+  line-height: 1.8;
+}
+
+/* ---------- GENERIC BUTTON CONSISTENCY ---------- */
+main .btn,
+main .hero-btn,
+main .cta-btn,
+main .button,
+main a[class*='btn'] {
+  border-radius: 999px;
+  transition: transform .3s ease, background .3s ease, border-color .3s ease;
+}
+main .btn:hover,
+main .hero-btn:hover,
+main .cta-btn:hover,
+main .button:hover,
+main a[class*='btn']:hover { transform: translateY(-2px); }
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 900px) {
+  :root { --gamcho-header: 68px; }
+  #header .menu,
+  #header .menu-v2-links,
+  .main-nav {
+    position: fixed;
+    top: var(--gamcho-header);
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: calc(100dvh - var(--gamcho-header));
+    margin: 0;
+    padding: 28px 28px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    background: rgba(12,12,12,.98);
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform .35s ease;
+    z-index: 9998;
+  }
+  #header .menu.is-open,
+  #header .menu-v2-links.is-open,
+  .main-nav.is-open { transform: translateX(0); }
+  #header .menu a,
+  #header .menu-v2-links a,
+  .main-nav a {
+    width: min(100%, 420px);
+    padding: 16px 10px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: .16em;
+  }
+  #header .menu a::after,
+  #header .menu-v2-links a::after,
+  .main-nav a::after { display: none; }
+
+  #header .nav,
+  #header .menu-v2-nav,
+  .header-inner {
+    width: calc(100% - 32px);
+    gap: 12px;
+  }
+  .mobile-menu-button { display: flex; }
+  .media-language { margin-left: auto; }
+  .media-language .language-menu { right: -2px; }
+  body.menu-open { overflow: hidden; }
+
+  main { padding-top: 0; }
+  main .section-inner,
+  main > section > .container { width: calc(100% - 36px); }
+
+  footer .footer-inner,
+  .site-footer .footer-inner { width: calc(100% - 36px); }
+}
+
+@media (max-width: 560px) {
+  #header .nav,
+  #header .menu-v2-nav,
+  .header-inner { width: calc(100% - 24px); }
+  .logo, .logo-ko, .menu-v2-logo { font-size: 18px !important; }
+  .logo-en { font-size: 6px; }
+  .media-language {
+    display: flex;
+    margin-left: auto;
+  }
+  .mobile-menu-button {
+    margin-left: 0;
+  }
+  main .section-inner,
+  main > section > .container { width: calc(100% - 28px); }
+}
+
+
+/* =========================================================
+   GAMCHO V2 — FINAL ALIGNMENT / LAYOUT STABILIZER
+   2026-09-11
+   목적:
+   - 푸터를 제외한 모든 본문 콘텐츠의 중심축 통일
+   - 페이지별 CSS가 가진 서로 다른 container 폭 충돌 방지
+   - grid / flex 영역의 좌우 밀림 방지
+   - 데스크톱 언어 선택기를 항상 눈에 보이게
+   - 모바일에서는 기존 KOR 드롭다운 방식 유지
+   ========================================================= */
+
+/* ---------- GLOBAL BOX MODEL ---------- */
+main,
+main *,
+main *::before,
+main *::after {
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* ---------- ONE CENTRAL CONTENT AXIS ---------- */
+main > section > .section-inner,
+main > section > .container,
+main > section > .content,
+main > section > .menu-container,
+main > .section-inner,
+main > .container {
+  width: min(1180px, calc(100% - 48px));
+  max-width: 1180px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+main > section {
+  width: 100%;
+}
+
+/* Sections that use a full-bleed background still keep their
+   actual text/content centered inside their inner wrapper. */
+main .section-inner,
+main .container,
+main .menu-container,
+main .hero-content,
+main .story-cta-content {
+  margin-inline: auto !important;
+}
+
+/* ---------- HEADINGS / TEXT ---------- */
+main .section-heading,
+main .menu-category-heading,
+main .hero-content,
+main .hero-text,
+main .story-cta-content,
+main .cta-box,
+main .location-hero-content {
+  text-align: center !important;
+}
+
+main h1,
+main h2,
+main h3,
+main h4,
+main p,
+main .section-eyebrow,
+main .section-label,
+main .section-desc,
+main .intro-text,
+main .hero-description,
+main .hero-desc,
+main .text-link {
+  text-align: center !important;
+}
+
+/* Prevent max-width elements from appearing visually off-center. */
+main h1,
+main h2,
+main .section-title,
+main .section-desc,
+main .intro-text,
+main .hero-description,
+main .hero-desc,
+main .text-link {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ---------- BUTTON GROUPS ---------- */
+main .hero-buttons,
+main .hero-actions,
+main .cta-buttons,
+main .cta-actions,
+main .buttons,
+main .map-buttons {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  justify-content: center !important;
+  align-items: center;
+}
+
+main .hero-buttons,
+main .cta-buttons,
+main .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- HOME SIGNATURE / CARD GRIDS ---------- */
+main .menu-preview,
+main .review-grid,
+main .photo-grid,
+main .trust-wrap,
+main .video-grid,
+main .value-grid,
+main .instagram-grid,
+main .instagram-wrap,
+main .info-grid,
+main .guide-grid,
+main .landmark-wrap {
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+main .menu-preview,
+main .review-grid,
+main .photo-grid,
+main .trust-wrap,
+main .video-grid,
+main .value-grid,
+main .instagram-grid,
+main .instagram-wrap,
+main .info-grid,
+main .guide-grid,
+main .landmark-wrap {
+  justify-items: stretch;
+}
+
+/* Center cards themselves without changing their intended columns. */
+main .menu-preview-card,
+main .review-card,
+main .photo-card,
+main .trust-box,
+main .video-card,
+main .value-card,
+main .instagram-card,
+main .info-card,
+main .guide-card,
+main .landmark-card {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- MENU PAGE ---------- */
+main .menu-category {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main .menu-category .menu-container {
+  width: min(1180px, calc(100% - 48px));
+  max-width: 1180px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+main .menu-category-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center !important;
+  gap: 14px;
+}
+
+main .menu-category-heading > *,
+main .menu-category-title,
+main .menu-category-count {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+main .menu-grid {
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ---------- LANGUAGE SELECTOR ----------
+   Desktop: KOR + ENG + 中文 + 日本語 are visible.
+   Mobile: compact KOR button opens the existing dropdown.
+*/
+@media (min-width: 901px) {
+  .media-language {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+
+  .media-language .language-button {
+    min-width: 44px;
+    cursor: pointer;
+  }
+
+  .media-language .language-menu {
+    position: static !important;
+    min-width: auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center;
+    gap: 4px;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .media-language .language-menu button {
+    width: auto;
+    min-width: 38px;
+    padding: 6px 7px;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 999px;
+    background: rgba(255,255,255,.025);
+  }
+
+  .media-language .language-menu button.active {
+    border-color: var(--gamcho-gold);
+    color: var(--gamcho-gold);
+  }
+}
+
+@media (max-width: 900px) {
+  .media-language {
+    display: flex !important;
+    align-items: center;
+  }
+
+  .media-language .language-menu {
+    position: absolute !important;
+    top: calc(100% + 10px);
+    right: 0;
+    display: block !important;
+  }
+
+  .media-language .language-menu button {
+    width: 100%;
+  }
+
+  main > section > .section-inner,
+  main > section > .container,
+  main > section > .content,
+  main > section > .menu-container,
+  main .menu-category .menu-container {
+    width: calc(100% - 32px);
+    max-width: 1180px;
+  }
+}
+
+@media (max-width: 560px) {
+  main > section > .section-inner,
+  main > section > .container,
+  main > section > .content,
+  main > section > .menu-container,
+  main .menu-category .menu-container {
+    width: calc(100% - 24px);
+  }
+
+  main .hero-buttons,
+  main .cta-buttons,
+  main .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ---------- DO NOT TOUCH FOOTER ALIGNMENT ----------
+   No footer text/flex rules are intentionally added here. */
+
+
+/* =========================================================
+   GAMCHO V2 FINAL CONSISTENCY OVERRIDES
+   2026-09-11
+   - Footer is one shared layout on every page.
+   - Menu card descriptions are intentionally left-aligned.
+   ========================================================= */
+
+/* ---------- SHARED FOOTER ---------- */
+.site-footer {
+  background: #090909 !important;
+  color: #f5f5f5 !important;
+  padding: 64px 0 42px !important;
+  margin-top: 0 !important;
+  border-top: 1px solid rgba(255,255,255,.07) !important;
+}
+
+.site-footer .footer-inner {
+  width: min(1180px, calc(100% - 48px)) !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+.site-footer .footer-brand {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  margin: 0 0 28px !important;
+  text-align: left !important;
+}
+
+.site-footer .footer-brand strong {
+  font-family: 'Noto Serif KR', serif !important;
+  font-size: 26px !important;
+  line-height: 1.35 !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+}
+
+.site-footer .footer-brand span {
+  color: #888 !important;
+  font-size: 9px !important;
+  letter-spacing: .2em !important;
+}
+
+.site-footer .footer-columns {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 40px !important;
+  align-items: start !important;
+  padding-bottom: 28px !important;
+}
+
+.site-footer .footer-info {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 13px !important;
+  line-height: 1.9 !important;
+  color: #aaa !important;
+  text-align: left !important;
+}
+
+.site-footer .footer-info p {
+  margin: 0 !important;
+}
+
+.site-footer .footer-hours {
+  text-align: right !important;
+}
+
+.site-footer .copyright {
+  width: 100% !important;
+  margin: 0 !important;
+  padding-top: 22px !important;
+  border-top: 1px solid rgba(255,255,255,.08) !important;
+  color: #666 !important;
+  font-size: 9px !important;
+  line-height: 1.6 !important;
+  letter-spacing: .08em !important;
+  text-align: left !important;
+}
+
+/* ---------- MENU CARD TEXT ---------- */
+/* Global card centering is intentionally overridden for menu descriptions. */
+main .menu-card,
+main .menu-card .menu-info,
+main .menu-card .menu-info-top {
+  text-align: left !important;
+}
+
+main .menu-card .menu-info p,
+main .menu-card .menu-info h3 {
+  text-align: left !important;
+}
+
+main .menu-card .menu-price {
+  text-align: right !important;
+}
+
+/* Keep menu intro / category navigation centered. */
+.menu-intro,
+.menu-intro .menu-container,
+.menu-hero-content {
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .site-footer {
+    padding: 50px 0 34px !important;
+  }
+
+  .site-footer .footer-inner {
+    width: calc(100% - 40px) !important;
+  }
+
+  .site-footer .footer-columns {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .site-footer .footer-hours {
+    text-align: left !important;
+  }
+
+  .site-footer .copyright {
+    font-size: 8px !important;
+  }
+}
+
+
+/* =========================================================
+   GAMCHO V2 FINAL FOOTER + MOBILE MENU FIX
+   2026-09-11
+   ========================================================= */
+
+/* ---------- FOOTER: ONE SHARED LAYOUT ON EVERY PAGE ---------- */
+.site-footer {
+  background: #090909 !important;
+  color: #f5f5f5 !important;
+  padding: 56px 0 24px !important;
+  margin-top: 0 !important;
+  border-top: 1px solid rgba(255,255,255,.07) !important;
+}
+
+.site-footer .footer-inner {
+  width: min(1180px, calc(100% - 48px)) !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+}
+
+.site-footer .footer-columns {
+  display: grid !important;
+  grid-template-columns: 1.35fr 1fr 1fr !important;
+  gap: 56px !important;
+  align-items: center !important;
+  padding: 0 0 42px !important;
+}
+
+.site-footer .footer-brand,
+.site-footer .footer-block {
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.site-footer .footer-brand {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  gap: 4px !important;
+}
+
+.site-footer .footer-brand strong {
+  font-family: 'Noto Serif KR', serif !important;
+  font-size: 28px !important;
+  line-height: 1.3 !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+}
+
+.site-footer .footer-brand > span {
+  color: #888 !important;
+  font-size: 9px !important;
+  letter-spacing: .2em !important;
+  margin-bottom: 16px !important;
+}
+
+.site-footer .footer-address {
+  color: #aaa !important;
+  font-size: 13px !important;
+  line-height: 1.8 !important;
+}
+
+.site-footer .footer-address p {
+  margin: 0 !important;
+}
+
+.site-footer .footer-tel {
+  display: inline-block !important;
+  margin-top: 14px !important;
+  color: #d6b98a !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  letter-spacing: .02em !important;
+}
+
+.site-footer .footer-block {
+  text-align: left !important;
+}
+
+.site-footer .footer-block h3 {
+  margin: 0 0 13px !important;
+  color: #eee !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: .08em !important;
+}
+
+.site-footer .footer-block p {
+  margin: 0 !important;
+  color: #aaa !important;
+  font-size: 13px !important;
+  line-height: 1.9 !important;
+}
+
+.site-footer .footer-block .footer-subtitle {
+  margin-top: 13px !important;
+  margin-bottom: 2px !important;
+  color: #d6b98a !important;
+  font-size: 11px !important;
+  letter-spacing: .06em !important;
+}
+
+.site-footer .copyright {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 18px 0 0 !important;
+  border-top: 1px solid rgba(255,255,255,.08) !important;
+  color: #666 !important;
+  font-size: 9px !important;
+  line-height: 1.6 !important;
+  letter-spacing: .08em !important;
+  text-align: left !important;
+}
+
+/* ---------- MENU: PREVENT TITLE / PRICE CLIPPING ---------- */
+main .menu-card,
+main .menu-card * {
+  box-sizing: border-box;
+}
+
+main .menu-card .menu-info {
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+main .menu-card .menu-info-top {
+  display: flex !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+}
+
+main .menu-card .menu-info-top h3 {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  margin: 0 0 12px !important;
+  overflow-wrap: break-word !important;
+  word-break: keep-all !important;
+}
+
+main .menu-card .menu-price {
+  flex: 0 0 auto !important;
+  max-width: 40% !important;
+  white-space: nowrap !important;
+  text-align: right !important;
+}
+
+main .menu-card .menu-info p {
+  max-width: 100% !important;
+  overflow-wrap: break-word !important;
+  word-break: keep-all !important;
+}
+
+@media (max-width: 700px) {
+  .site-footer {
+    padding: 42px 0 18px !important;
+  }
+
+  .site-footer .footer-inner {
+    width: calc(100% - 32px) !important;
+  }
+
+  .site-footer .footer-columns {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .site-footer .footer-brand,
+  .site-footer .footer-block {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .site-footer .footer-brand strong {
+    font-size: 25px !important;
+  }
+
+  .site-footer .footer-brand > span {
+    margin-bottom: 12px !important;
+  }
+
+  .site-footer .copyright {
+    padding-top: 14px !important;
+    font-size: 8px !important;
+  }
+
+  main .menu-card .menu-info {
+    padding: 20px 18px 22px !important;
+  }
+
+  main .menu-card .menu-info-top {
+    gap: 8px !important;
+  }
+
+  main .menu-card .menu-info-top h3 {
+    font-size: 20px !important;
+    line-height: 1.4 !important;
+  }
+
+  main .menu-card .menu-price {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    max-width: 44% !important;
+  }
+
+  main .menu-card .menu-info p {
+    font-size: 13px !important;
+    line-height: 1.75 !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .site-footer .footer-inner {
+    width: calc(100% - 28px) !important;
+  }
+
+  main .menu-card .menu-info {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  main .menu-card .menu-info-top h3 {
+    font-size: 18px !important;
+  }
+
+  main .menu-card .menu-price {
+    font-size: 15px !important;
+  }
+}
