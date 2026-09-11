@@ -1,0 +1,11 @@
+GAMCHO V2 FINAL — SHARED FOOTER + MOBILE MENU FIX
+Checked: 2026-09-11
+
+1. Replaced the footer markup on all 7 pages with one identical 3-column structure.
+2. Reduced footer vertical padding and removed the excessive lower whitespace.
+3. Footer columns: brand/address/phone, hours/last order, weekly closing day.
+4. Added Korean/English/Chinese/Japanese footer translations without changing menu data.
+5. Fixed mobile menu title/price clipping by allowing the title flex item to shrink and wrap safely.
+6. Reduced mobile menu title/price sizing and card padding for narrow screens.
+7. Kept menu names, descriptions, images and prices from the supplied project data unchanged.
+8. Footer alignment is intentionally independent from main-content centering.

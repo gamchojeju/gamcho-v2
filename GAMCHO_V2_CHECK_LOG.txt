@@ -1,0 +1,41 @@
+GAMCHO RESTAURANT V2 — RENEWAL CHECK / FIX LOG
+================================================
+
+Checked pages:
+- index.html
+- menu.html
+- story.html
+- broadcast.html
+- review.html
+- instagram.html
+- location.html
+
+Fixed:
+1. Unified shared header behavior through js/site-common.js.
+2. Removed duplicate header/mobile/language event handling from js/main.js.
+   (Prevents double-toggle issues on PC/mobile navigation and language dropdown.)
+3. Added page-specific 4-language translations for Instagram, Location and Review.
+4. Connected story.html to the shared language data so header navigation also translates.
+5. Fixed story page language button label (KOR/ENG/中文/日本語).
+6. Fixed broadcast page translation controller compatibility and language button label.
+7. Added shared navigation/footer translation handling to menu.html.
+8. Added multilingual category names to menu.html.
+9. Kept menu item names/descriptions using the existing 4-language menu data.
+10. Fixed mobile language selector being hidden below 560px.
+11. Fixed broken CSS image paths:
+    - story CTA -> images/story/story-main.jpeg
+    - main hero fallback -> images/menu/gamcho-sundae-gukbap.jpeg
+    - menu hero fallback -> images/story/story-food.jpeg
+12. Verified JavaScript syntax and internal HTML links/image references.
+
+Notes:
+- The archive did not contain a dedicated main hero image (main-hero.jpg) or menu1.jpg.
+  Existing project images were used as safe fallbacks so there are no broken image requests.
+  If a dedicated hero/menu hero photo is supplied later, only those image paths need to be swapped.
+
+
+Additional alignment check (2026-09-08):
+- Removed the shared footer text/flex centering override from site-common.css.
+- Footer alignment/layout is now controlled by each page's own CSS, preventing the shared rule from forcing all footer content into a centered column.
+- Kept shared footer background, text color and border styling only.
+- Main content center rules remain in place; footer is intentionally excluded from the center-first rule.
