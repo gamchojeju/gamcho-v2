@@ -123,6 +123,8 @@ body{
   color:var(--menu-gold);
 }
 
+.menu-serving{font-size:11px;padding:4px 9px;margin-bottom:10px;}
+
 @media(max-width:1100px){
   .menu-v2-nav{
     flex-wrap:wrap;
@@ -430,6 +432,21 @@ body{
   justify-content:space-between;
   align-items:flex-start;
   gap:15px;
+}
+
+.menu-serving{
+  display:inline-flex;
+  align-items:center;
+  width:fit-content;
+  margin:0 0 12px;
+  padding:5px 11px;
+  border:1px solid rgba(214,185,138,.55);
+  border-radius:999px;
+  color:var(--menu-gold);
+  font-size:12px;
+  font-weight:700;
+  line-height:1.2;
+  letter-spacing:.02em;
 }
 
 .menu-info h3{
@@ -816,6 +833,13 @@ const menuData=[
     ja:"釜炊きスンデ鍋"
   },
 
+  serving:{
+    ko:"3~4인분",
+    en:"Serves 3–4",
+    zh:"3–4人份",
+    ja:"3～4人前"
+  },
+
   desc:{
     ko:"제주순대와 신선한 머릿고기, 내장을 잔~하고 얼큰하게!",
     en:"Jeju sundae, tender pork head meat, and fresh offal simmered together in a rich and spicy broth",
@@ -838,6 +862,13 @@ const menuData=[
     ja:"釜炊きピリ辛鶏煮込み"
   },
 
+  serving:{
+    ko:"3~4인분",
+    en:"Serves 3–4",
+    zh:"3–4人份",
+    ja:"3～4人前"
+  },
+
   desc:{
     ko:"닭볶음탕 전문점을 따로 준비해도 될정도의 맛",
     en:"A deeply flavorful spicy braised chicken dish that's good enough to be a specialty on its own.",
@@ -857,6 +888,13 @@ const menuData=[
     en:"Iron Pot Spicy Pork Hotpot",
     zh:"砂锅香辣猪肉醒酒锅",
     ja:"釜炊きピリ辛豚肉ヘジャンクッ鍋"
+  },
+
+  serving:{
+    ko:"3~4인분",
+    en:"Serves 3–4",
+    zh:"3–4人份",
+    ja:"3～4人前"
   },
 
   desc:{
@@ -1107,6 +1145,7 @@ async function renderMenu(){
 
       const name=t(item.name);
       const desc=t(item.desc);
+      const serving=item.serving ? t(item.serving) : "";
 
       /*
        * 가마솥 순대전골 / 닭볶음탕만
@@ -1145,6 +1184,8 @@ async function renderMenu(){
             </span>
 
           </div>
+
+          ${serving ? `<div class="menu-serving">${esc(serving)}</div>` : ''}
 
           <p>${esc(desc)}</p>
 
