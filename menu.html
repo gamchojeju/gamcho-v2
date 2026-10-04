@@ -6,16 +6,18 @@
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>감초식당 신제주점 | MENU</title>
 <meta content="제주에서 30년 전통을 이어온 감초식당 신제주점의 메뉴입니다." name="description"/>
+
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&amp;family=Pretendard:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
 <link href="css/style.css" rel="stylesheet"/>
 <link href="css/responsive.css" rel="stylesheet"/>
+
 <style>
+
 /* =========================================================
    GAMCHO V2 MENU — CLEAN REBUILD
-   원본 menu.html의 메뉴 데이터/문구를 그대로 사용.
-   V2 INDEX의 header / dark-gold visual language만 적용.
    ========================================================= */
 
 :root{
@@ -27,7 +29,8 @@
   --menu-line:rgba(255,255,255,.06);
 }
 
-html,body{
+html,
+body{
   background:var(--menu-bg)!important;
   color:var(--menu-text)!important;
 }
@@ -37,7 +40,10 @@ body{
   word-break:keep-all;
 }
 
-/* Header */
+/* =========================================================
+   HEADER
+   ========================================================= */
+
 #header{
   position:fixed;
   top:0;
@@ -123,9 +129,8 @@ body{
   color:var(--menu-gold);
 }
 
-.menu-serving{font-size:11px;padding:4px 9px;margin-bottom:10px;}
-
 @media(max-width:1100px){
+
   .menu-v2-nav{
     flex-wrap:wrap;
     justify-content:center;
@@ -138,6 +143,7 @@ body{
 }
 
 @media(max-width:768px){
+
   .menu-v2-nav{
     flex-direction:column;
     gap:12px;
@@ -157,7 +163,10 @@ body{
   }
 }
 
-/* Hero */
+/* =========================================================
+   HERO
+   ========================================================= */
+
 .menu-hero{
   position:relative;
   height:78svh;
@@ -219,7 +228,10 @@ body{
   line-height:1.8;
 }
 
-/* Intro */
+/* =========================================================
+   INTRO
+   ========================================================= */
+
 .menu-intro{
   padding:115px 0 55px;
   text-align:center;
@@ -255,7 +267,10 @@ body{
   line-height:1.9;
 }
 
-/* Category navigation */
+/* =========================================================
+   CATEGORY NAVIGATION
+   ========================================================= */
+
 .menu-category-nav{
   position:sticky;
   top:0;
@@ -331,6 +346,10 @@ body{
   white-space:nowrap;
 }
 
+/* =========================================================
+   MENU GRID
+   ========================================================= */
+
 .menu-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -352,7 +371,10 @@ body{
   box-shadow:0 24px 50px rgba(212,175,55,.12);
 }
 
-/* 기본 메뉴 이미지 */
+/* =========================================================
+   MENU IMAGE
+   ========================================================= */
+
 .menu-image{
   overflow:hidden;
   position:relative;
@@ -373,9 +395,7 @@ body{
 }
 
 /* =========================================================
-   가마솥 순대전골 / 가마솥 닭볶음탕
-   두 이미지도 다른 메뉴와 동일한 이미지 영역으로 통일
-   좌우/상하 여백 및 카드 높이 차이 방지
+   가마솥 메뉴 이미지
    ========================================================= */
 
 .menu-image-natural{
@@ -409,6 +429,10 @@ body{
   letter-spacing:.12em;
 }
 
+/* =========================================================
+   BEST BADGE
+   ========================================================= */
+
 .menu-badge{
   position:absolute;
   top:18px;
@@ -423,6 +447,10 @@ body{
   z-index:3;
 }
 
+/* =========================================================
+   MENU INFO
+   ========================================================= */
+
 .menu-info{
   padding:28px;
 }
@@ -432,21 +460,6 @@ body{
   justify-content:space-between;
   align-items:flex-start;
   gap:15px;
-}
-
-.menu-serving{
-  display:inline-flex;
-  align-items:center;
-  width:fit-content;
-  margin:0 0 12px;
-  padding:5px 11px;
-  border:1px solid rgba(214,185,138,.55);
-  border-radius:999px;
-  color:var(--menu-gold);
-  font-size:12px;
-  font-weight:700;
-  line-height:1.2;
-  letter-spacing:.02em;
 }
 
 .menu-info h3{
@@ -472,6 +485,30 @@ body{
   white-space:nowrap;
 }
 
+/* =========================================================
+   ⭐ 인분 표시
+   전골 3개 메뉴용
+   ========================================================= */
+
+.menu-serving{
+  display:inline-flex !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  align-items:center;
+  width:fit-content;
+  margin:0 0 12px;
+  padding:5px 11px;
+  border:1px solid rgba(214,185,138,.55);
+  border-radius:999px;
+  color:var(--menu-gold);
+  background:rgba(214,185,138,.06);
+  font-size:12px;
+  font-weight:700;
+  line-height:1.2;
+  letter-spacing:.02em;
+  box-sizing:border-box;
+}
+
 .menu-note{
   width:min(1180px,92%);
   margin:75px auto 120px;
@@ -482,7 +519,10 @@ body{
   font-size:12px;
 }
 
-/* Modal */
+/* =========================================================
+   MODAL
+   ========================================================= */
+
 .menu-modal{
   display:none;
   position:fixed;
@@ -532,14 +572,21 @@ body{
   cursor:pointer;
 }
 
-/* Tablet */
+/* =========================================================
+   TABLET
+   ========================================================= */
+
 @media(max-width:1024px){
+
   .menu-grid{
     grid-template-columns:1fr 1fr;
   }
 }
 
-/* Mobile */
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media(max-width:768px){
 
   .menu-hero{
@@ -594,11 +641,16 @@ body{
     font-size:18px;
   }
 
+  .menu-serving{
+    font-size:11px;
+    padding:5px 10px;
+    margin-bottom:10px;
+  }
+
   .menu-note{
     margin:60px auto 80px;
   }
 
-  /* 가마솥 메뉴 이미지도 모바일에서 다른 메뉴와 동일한 비율 유지 */
   .menu-image-natural{
     aspect-ratio:4/3;
     height:auto;
@@ -612,83 +664,314 @@ body{
     object-position:center center;
   }
 }
+
 </style>
-<link href="css/site-common.css" rel="stylesheet"/></head>
+
+<link href="css/site-common.css" rel="stylesheet"/>
+
+</head>
+
 <body>
-<header class="site-header" id="header"><div class="header-inner"><a aria-label="감초식당 홈" class="logo" href="index.html"><span class="logo-ko">감초식당</span><span class="logo-en">GAMCHO RESTAURANT</span></a><nav aria-label="주요 메뉴" class="main-nav"><a data-i18n="nav.home" href="index.html">HOME</a><a data-i18n="nav.story" href="story.html">STORY</a><a aria-current="page" class="active" data-i18n="nav.menu" href="menu.html">MENU</a><a data-i18n="nav.media" href="broadcast.html">MEDIA</a><a data-i18n="nav.review" href="review.html">REVIEW</a><a data-i18n="nav.instagram" href="instagram.html">INSTAGRAM</a><a data-i18n="nav.location" href="location.html">LOCATION</a></nav><div aria-label="Language selector" class="media-language"><button aria-expanded="false" class="language-button" type="button">KOR</button><div class="language-menu"><button class="active" data-lang="ko" type="button">KOR</button><button data-lang="en" type="button">ENG</button><button data-lang="zh" type="button">中文</button><button data-lang="ja" type="button">日本語</button></div></div><button aria-expanded="false" aria-label="메뉴 열기" class="mobile-menu-button" type="button"><span></span><span></span><span></span></button></div></header>
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="site-header" id="header">
+
+  <div class="header-inner">
+
+    <a aria-label="감초식당 홈" class="logo" href="index.html">
+      <span class="logo-ko">감초식당</span>
+      <span class="logo-en">GAMCHO RESTAURANT</span>
+    </a>
+
+    <nav aria-label="주요 메뉴" class="main-nav">
+
+      <a data-i18n="nav.home" href="index.html">HOME</a>
+
+      <a data-i18n="nav.story" href="story.html">STORY</a>
+
+      <a aria-current="page"
+         class="active"
+         data-i18n="nav.menu"
+         href="menu.html">
+        MENU
+      </a>
+
+      <a data-i18n="nav.media" href="broadcast.html">MEDIA</a>
+
+      <a data-i18n="nav.review" href="review.html">REVIEW</a>
+
+      <a data-i18n="nav.instagram" href="instagram.html">INSTAGRAM</a>
+
+      <a data-i18n="nav.location" href="location.html">LOCATION</a>
+
+    </nav>
+
+    <div aria-label="Language selector" class="media-language">
+
+      <button
+        aria-expanded="false"
+        class="language-button"
+        type="button">
+        KOR
+      </button>
+
+      <div class="language-menu">
+
+        <button class="active" data-lang="ko" type="button">
+          KOR
+        </button>
+
+        <button data-lang="en" type="button">
+          ENG
+        </button>
+
+        <button data-lang="zh" type="button">
+          中文
+        </button>
+
+        <button data-lang="ja" type="button">
+          日本語
+        </button>
+
+      </div>
+
+    </div>
+
+    <button
+      aria-expanded="false"
+      aria-label="메뉴 열기"
+      class="mobile-menu-button"
+      type="button">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
+
+</header>
+
+
 <main>
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
 <section class="menu-hero">
-<div class="menu-hero-bg"></div>
-<div class="menu-hero-overlay"></div>
-<div class="menu-hero-content">
-<p class="menu-hero-eyebrow">GAMCHO RESTAURANT · MENU</p><h1 class="menu-hero-title" id="heroTitle">
-  30년 전통 감초식당의<br/>대표 메뉴
-</h1>
-<p class="menu-hero-desc" id="heroDesc">
-  1994년부터 이어온 감초식당만의 깊은 맛과 제주 로컬 감성이 담긴 메뉴를 만나보세요.
-</p></div>
+
+  <div class="menu-hero-bg"></div>
+
+  <div class="menu-hero-overlay"></div>
+
+  <div class="menu-hero-content">
+
+    <p class="menu-hero-eyebrow">
+      GAMCHO RESTAURANT · MENU
+    </p>
+
+    <h1 class="menu-hero-title" id="heroTitle">
+      30년 전통 감초식당의<br/>
+      대표 메뉴
+    </h1>
+
+    <p class="menu-hero-desc" id="heroDesc">
+      1994년부터 이어온 감초식당만의 깊은 맛과 제주 로컬 감성이 담긴 메뉴를 만나보세요.
+    </p>
+
+  </div>
+
 </section>
+
+
+<!-- =========================================================
+     INTRO
+     ========================================================= -->
+
 <section class="menu-intro">
-<div class="menu-container"><p class="menu-section-eyebrow">MENU</p>
-<h2 class="menu-intro-title" id="introTitle">
-  감초식당 메뉴 안내
-</h2>
-<p class="menu-intro-desc" id="introDesc">
-  감초식당 신제주점의 대표 메뉴를 소개합니다.<br/>
-  다국어 지원으로 해외 여행객들도 편하게 확인할 수 있습니다.
-</p></div>
+
+  <div class="menu-container">
+
+    <p class="menu-section-eyebrow">
+      MENU
+    </p>
+
+    <h2 class="menu-intro-title" id="introTitle">
+      감초식당 메뉴 안내
+    </h2>
+
+    <p class="menu-intro-desc" id="introDesc">
+      감초식당 신제주점의 대표 메뉴를 소개합니다.<br/>
+      다국어 지원으로 해외 여행객들도 편하게 확인할 수 있습니다.
+    </p>
+
+  </div>
+
 </section>
+
+
+<!-- =========================================================
+     CATEGORY NAVIGATION
+     ========================================================= -->
+
 <nav aria-label="메뉴 카테고리" class="menu-category-nav">
-<div class="menu-category-list" id="categoryList"></div>
+
+  <div class="menu-category-list" id="categoryList"></div>
+
 </nav>
+
+
+<!-- =========================================================
+     MENU AREA
+     ========================================================= -->
+
 <div id="menuArea"></div>
+
+
 <p class="menu-note" id="menuNote">
   메뉴 및 가격은 매장 사정에 따라 변경될 수 있습니다.
 </p>
+
 </main>
+
+
+<!-- =========================================================
+     MODAL
+     ========================================================= -->
+
 <div aria-hidden="true" class="menu-modal" id="menuModal">
-<div class="menu-modal-content"><button aria-label="닫기" class="menu-modal-close" id="modalClose" type="button">×</button>
-<img alt="" id="modalImg"/>
-<p id="modalText"></p></div>
+
+  <div class="menu-modal-content">
+
+    <button
+      aria-label="닫기"
+      class="menu-modal-close"
+      id="modalClose"
+      type="button">
+      ×
+    </button>
+
+    <img alt="" id="modalImg"/>
+
+    <p id="modalText"></p>
+
+  </div>
+
 </div>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
 <footer class="site-footer">
+
   <div class="footer-inner">
+
     <div class="footer-columns">
+
       <div class="footer-brand">
+
         <strong>감초식당</strong>
+
         <span>GAMCHO RESTAURANT</span>
+
         <div class="footer-address">
-          <p data-i18n="footer.restaurant">감초식당 신제주점</p>
-          <p data-i18n="footer.country">Jeju, Korea</p>
+
+          <p data-i18n="footer.restaurant">
+            감초식당 신제주점
+          </p>
+
+          <p data-i18n="footer.country">
+            Jeju, Korea
+          </p>
+
         </div>
-        <a class="footer-tel" href="tel:0647438988" data-i18n="footer.tel">TEL 064-743-8988</a>
+
+        <a
+          class="footer-tel"
+          href="tel:0647438988"
+          data-i18n="footer.tel">
+          TEL 064-743-8988
+        </a>
+
       </div>
+
 
       <div class="footer-block footer-hours">
-        <h3 data-i18n="footer.hoursTitle">영업시간</h3>
-        <p data-i18n="footer.open">OPEN AM 11:00 - PM 23:30</p>
-        <p class="footer-subtitle" data-i18n="footer.lastOrderTitle">Last Order</p>
-        <p data-i18n="footer.lastOrder">안주류 PM 23:00<br>국밥류 PM 23:30</p>
+
+        <h3 data-i18n="footer.hoursTitle">
+          영업시간
+        </h3>
+
+        <p data-i18n="footer.open">
+          OPEN AM 11:00 - PM 23:30
+        </p>
+
+        <p class="footer-subtitle" data-i18n="footer.lastOrderTitle">
+          Last Order
+        </p>
+
+        <p data-i18n="footer.lastOrder">
+          안주류 PM 23:00<br>
+          국밥류 PM 23:30
+        </p>
+
       </div>
+
 
       <div class="footer-block footer-closed">
-        <h3 data-i18n="footer.closedTitle">정기휴무</h3>
-        <p data-i18n="footer.closed">매주 수요일</p>
+
+        <h3 data-i18n="footer.closedTitle">
+          정기휴무
+        </h3>
+
+        <p data-i18n="footer.closed">
+          매주 수요일
+        </p>
+
       </div>
+
     </div>
 
-    <p class="copyright">© GAMCHO RESTAURANT. ALL RIGHTS RESERVED.</p>
+    <p class="copyright">
+      © GAMCHO RESTAURANT. ALL RIGHTS RESERVED.
+    </p>
+
   </div>
+
 </footer>
-<a class="floating-call" href="tel:0647438988">☎</a>
+
+
+<a class="floating-call" href="tel:0647438988">
+  ☎
+</a>
+
+
+<!-- =========================================================
+     TRANSLATIONS
+     ========================================================= -->
+
 <script src="data/translations.js"></script>
+
+
 <script>
 
-const menuData=[
+/* =========================================================
+   MENU DATA
+   현재 menu.html에서 실제 사용하는 데이터
+   ========================================================= */
 
-// =========================================================
-// 식사
-// =========================================================
+const menuData = [
+
+/* =========================================================
+   식사
+   ========================================================= */
 
 {
   cat:"meal",
@@ -712,6 +995,7 @@ const menuData=[
   price:"9,000원"
 },
 
+
 {
   cat:"meal",
   img:"images/menu/pure-pork-gukbap.png",
@@ -732,6 +1016,7 @@ const menuData=[
 
   price:"10,000원"
 },
+
 
 {
   cat:"meal",
@@ -754,6 +1039,7 @@ const menuData=[
   price:"10,000원"
 },
 
+
 {
   cat:"meal",
   img:"images/menu/tasting-sundae.png",
@@ -774,6 +1060,7 @@ const menuData=[
 
   price:"10,000원"
 },
+
 
 {
   cat:"meal",
@@ -796,6 +1083,7 @@ const menuData=[
   price:"11,000원"
 },
 
+
 {
   cat:"meal",
   img:"images/menu/garlic-pork-noodles.png",
@@ -817,9 +1105,10 @@ const menuData=[
   price:"11,000원"
 },
 
-// =========================================================
-// 가마솥 전골
-// =========================================================
+
+/* =========================================================
+   가마솥 전골
+   ========================================================= */
 
 {
   cat:"hotpot",
@@ -850,6 +1139,7 @@ const menuData=[
   price:"35,000원"
 },
 
+
 {
   cat:"hotpot",
   img:"images/menu/chiken.png",
@@ -879,6 +1169,7 @@ const menuData=[
   price:"35,000원"
 },
 
+
 {
   cat:"hotpot",
   img:"images/menu/pork-haejang-jeongol.png",
@@ -907,9 +1198,10 @@ const menuData=[
   price:"35,000원"
 },
 
-// =========================================================
-// 세트
-// =========================================================
+
+/* =========================================================
+   세트
+   ========================================================= */
 
 {
   cat:"set",
@@ -932,6 +1224,7 @@ const menuData=[
   price:"15,000원"
 },
 
+
 {
   cat:"set",
   img:"images/menu/set-b.jpeg",
@@ -952,6 +1245,7 @@ const menuData=[
 
   price:"20,000원"
 },
+
 
 {
   cat:"set",
@@ -974,6 +1268,7 @@ const menuData=[
 
   price:"25,000원"
 },
+
 
 {
   cat:"set",
@@ -998,26 +1293,40 @@ const menuData=[
 
 ];
 
+
+/* =========================================================
+   CATEGORY NAMES
+   ========================================================= */
+
 const categoryNames={
+
   meal:{
     ko:"🍲 식사 메뉴",
     en:"🍲 MEALS",
     zh:"🍲 汤饭与主食",
     ja:"🍲 お食事メニュー"
   },
+
   hotpot:{
     ko:"🍖 가마솥 전골 / 요리",
     en:"🍖 IRON POT HOTPOT & DISHES",
     zh:"🍖 砂锅火锅 / 料理",
     ja:"🍖 釜炊き鍋・料理"
   },
+
   set:{
     ko:"🍢 세트 메뉴",
     en:"🍢 SET MENUS",
     zh:"🍢 套餐菜单",
     ja:"🍢 セットメニュー"
   }
+
 };
+
+
+/* =========================================================
+   PAGE TEXT
+   ========================================================= */
 
 const pageText={
 
@@ -1059,14 +1368,26 @@ const pageText={
 
 };
 
-let currentLang=localStorage.getItem("gamcho-language")||"ko";
+
+/* =========================================================
+   LANGUAGE
+   ========================================================= */
+
+let currentLang =
+  localStorage.getItem("gamcho-language") || "ko";
 
 const langs=["ko","en","zh","ja"];
 
+
+/* =========================================================
+   ESCAPE
+   ========================================================= */
+
 function esc(v){
-  return String(v??"").replace(
+
+  return String(v ?? "").replace(
     /[&<>"']/g,
-    c=>({
+    c => ({
       "&":"&amp;",
       "<":"&lt;",
       ">":"&gt;",
@@ -1074,20 +1395,45 @@ function esc(v){
       "'":"&#039;"
     }[c])
   );
+
 }
+
+
+/* =========================================================
+   TRANSLATION
+   ========================================================= */
 
 function t(v){
+
   return v?.[currentLang] ?? v?.ko ?? "";
+
 }
 
+
+/* =========================================================
+   IMAGE CHECK
+   ========================================================= */
+
 function imgExists(src){
+
   return new Promise(resolve=>{
+
     const i=new Image();
+
     i.onload=()=>resolve(true);
+
     i.onerror=()=>resolve(false);
+
     i.src=src;
+
   });
+
 }
+
+
+/* =========================================================
+   RENDER MENU
+   ========================================================= */
 
 async function renderMenu(){
 
@@ -1095,25 +1441,37 @@ async function renderMenu(){
 
   area.innerHTML="";
 
+
   for(
     const [index,[cat,catNameData]]
     of Object.entries(categoryNames).entries()
   ){
 
-    const items=menuData.filter(m=>m.cat===cat);
-    const catName=catNameData?.[currentLang] || catNameData?.ko || "";
+    const items=menuData.filter(
+      m=>m.cat===cat
+    );
+
+    const catName =
+      catNameData?.[currentLang] ||
+      catNameData?.ko ||
+      "";
+
 
     const section=document.createElement("section");
 
     section.className="menu-category";
+
     section.id="menu-cat-"+cat;
 
+
     section.innerHTML=`
+
       <div class="menu-container">
 
         <div class="menu-category-heading">
 
           <div>
+
             <p class="menu-section-eyebrow">
               0${Number(index)+1}
             </p>
@@ -1121,6 +1479,7 @@ async function renderMenu(){
             <h2 class="menu-category-title">
               ${esc(catName)}
             </h2>
+
           </div>
 
           <span class="menu-category-count">
@@ -1132,34 +1491,94 @@ async function renderMenu(){
         <div class="menu-grid"></div>
 
       </div>
+
     `;
 
-    const grid=section.querySelector(".menu-grid");
+
+    const grid =
+      section.querySelector(".menu-grid");
+
 
     for(const item of items){
 
-      const card=document.createElement("article");
+      const card =
+        document.createElement("article");
+
 
       card.className="menu-card";
+
       card.tabIndex=0;
 
+
       const name=t(item.name);
+
       const desc=t(item.desc);
-      const serving=item.serving ? t(item.serving) : "";
+
 
       /*
-       * 가마솥 순대전골 / 닭볶음탕만
-       * 원본 비율 유지 클래스 적용
+       * =====================================================
+       * ⭐ 인분 표시
+       *
+       * 기존 serving 데이터가 있으면 사용하고,
+       * 혹시 데이터가 빠져도 전골 3개는 자동으로
+       * 3~4인분을 표시하도록 안전장치 적용
+       * =====================================================
        */
-      const naturalImage=
-        item.img.includes("sundae-naejang-jeongol") ||
-        item.img.includes("chiken");
+
+      const hotpotServingNames = [
+        "가마솥순대전골",
+        "가마솥 닭볶음탕",
+        "가마솥돼지해장전골"
+      ];
+
+
+      const serving =
+        item.serving
+          ? t(item.serving)
+          : (
+              hotpotServingNames.includes(
+                item.name?.ko
+              )
+                ? (
+                    currentLang === "en"
+                      ? "Serves 3–4"
+                      : currentLang === "zh"
+                        ? "3–4人份"
+                        : currentLang === "ja"
+                          ? "3～4人前"
+                          : "3~4인분"
+                  )
+                : ""
+            );
+
+
+      /*
+       * 가마솥 순대전골 / 닭볶음탕
+       * 이미지 비율 유지
+       */
+
+      const naturalImage =
+        item.img.includes(
+          "sundae-naejang-jeongol"
+        ) ||
+        item.img.includes(
+          "chiken"
+        );
+
 
       card.innerHTML=`
 
-        ${item.best ? '<span class="menu-badge">BEST</span>' : ''}
+        ${
+          item.best
+            ? '<span class="menu-badge">BEST</span>'
+            : ''
+        }
 
-        <div class="menu-image ${naturalImage ? 'menu-image-natural' : ''}">
+        <div class="menu-image ${
+          naturalImage
+            ? 'menu-image-natural'
+            : ''
+        }">
 
           <img
             src="${esc(item.img)}"
@@ -1167,17 +1586,22 @@ async function renderMenu(){
             loading="lazy"
           >
 
-          <div class="menu-image-missing" hidden>
+          <div
+            class="menu-image-missing"
+            hidden>
             MENU IMAGE
           </div>
 
         </div>
 
+
         <div class="menu-info">
 
           <div class="menu-info-top">
 
-            <h3>${esc(name)}</h3>
+            <h3>
+              ${esc(name)}
+            </h3>
 
             <span class="menu-price">
               ${esc(item.price)}
@@ -1185,158 +1609,345 @@ async function renderMenu(){
 
           </div>
 
-          ${serving ? `<div class="menu-serving">${esc(serving)}</div>` : ''}
 
-          <p>${esc(desc)}</p>
+          ${
+            serving
+              ? `
+                <div
+                  class="menu-serving"
+                  aria-label="${esc(serving)}">
+                  ${esc(serving)}
+                </div>
+              `
+              : ''
+          }
+
+
+          <p>
+            ${esc(desc)}
+          </p>
 
         </div>
+
       `;
 
-      const image=card.querySelector("img");
-      const missing=card.querySelector(".menu-image-missing");
+
+      const image =
+        card.querySelector("img");
+
+      const missing =
+        card.querySelector(
+          ".menu-image-missing"
+        );
+
 
       image.addEventListener(
         "error",
         ()=>{
+
           image.hidden=true;
+
           missing.hidden=false;
+
         },
         {once:true}
       );
+
 
       const open=()=>{
 
         if(image.hidden)return;
 
-        document.getElementById("modalImg").src=image.src;
 
-        document.getElementById("modalImg").alt=name;
+        document.getElementById(
+          "modalImg"
+        ).src=image.src;
 
-        document.getElementById("modalText").textContent=name;
+
+        document.getElementById(
+          "modalImg"
+        ).alt=name;
+
+
+        document.getElementById(
+          "modalText"
+        ).textContent=name;
+
 
         document
           .getElementById("menuModal")
           .classList.add("open");
 
+
         document
           .getElementById("menuModal")
-          .setAttribute("aria-hidden","false");
+          .setAttribute(
+            "aria-hidden",
+            "false"
+          );
 
-        document.body.style.overflow="hidden";
+
+        document.body.style.overflow=
+          "hidden";
+
       };
 
-      card.addEventListener("click",open);
+
+      card.addEventListener(
+        "click",
+        open
+      );
+
 
       card.addEventListener(
         "keydown",
         e=>{
-          if(e.key==="Enter" || e.key===" "){
+
+          if(
+            e.key==="Enter" ||
+            e.key===" "
+          ){
+
             e.preventDefault();
+
             open();
+
           }
+
         }
       );
 
+
       grid.appendChild(card);
+
     }
 
+
     area.appendChild(section);
+
   }
+
 }
+
+
+/* =========================================================
+   RENDER CATEGORY
+   ========================================================= */
 
 function renderCategories(){
 
-  const list=document.getElementById("categoryList");
+  const list =
+    document.getElementById(
+      "categoryList"
+    );
+
 
   list.innerHTML="";
 
-  Object.entries(categoryNames).forEach(
+
+  Object.entries(
+    categoryNames
+  ).forEach(
     ([cat,nameData])=>{
 
-      const b=document.createElement("button");
+      const b =
+        document.createElement(
+          "button"
+        );
+
 
       b.type="button";
-      b.textContent=nameData?.[currentLang] || nameData?.ko || "";
+
+
+      b.textContent =
+        nameData?.[currentLang] ||
+        nameData?.ko ||
+        "";
+
 
       b.addEventListener(
         "click",
         ()=>{
+
           document
-            .getElementById("menu-cat-"+cat)
+            .getElementById(
+              "menu-cat-"+cat
+            )
             ?.scrollIntoView({
               behavior:"smooth",
               block:"start"
             });
+
         }
       );
 
+
       list.appendChild(b);
+
     }
   );
+
 }
+
+
+/* =========================================================
+   APPLY LANGUAGE
+   ========================================================= */
 
 function applyLanguage(lang){
 
-  if(!langs.includes(lang))return;
+  if(!langs.includes(lang)){
+    return;
+  }
+
 
   currentLang=lang;
 
-  /* 공통 헤더 / 푸터 번역 */
-  if (typeof translations !== "undefined" && translations[lang]) {
-    const getValue = (object, path) =>
-      path.split(".").reduce(
-        (current, key) =>
-          current && Object.prototype.hasOwnProperty.call(current, key)
-            ? current[key]
-            : undefined,
-        object
+
+  /*
+   * 공통 헤더 / 푸터 번역
+   */
+
+  if(
+    typeof translations !== "undefined" &&
+    translations[lang]
+  ){
+
+    const getValue =
+      (object,path)=>
+        path.split(".").reduce(
+          (current,key)=>
+            current &&
+            Object.prototype.hasOwnProperty.call(
+              current,
+              key
+            )
+              ? current[key]
+              : undefined,
+          object
+        );
+
+
+    document
+      .querySelectorAll("[data-i18n]")
+      .forEach(
+        element=>{
+
+          const value =
+            getValue(
+              translations[lang],
+              element.dataset.i18n
+            );
+
+
+          if(
+            value !== undefined
+          ){
+
+            element.innerHTML=value;
+
+          }
+
+        }
       );
 
-    document.querySelectorAll("[data-i18n]").forEach((element) => {
-      const value = getValue(translations[lang], element.dataset.i18n);
-      if (value !== undefined) element.innerHTML = value;
-    });
   }
+
 
   localStorage.setItem(
     "gamcho-language",
     lang
   );
 
-  document.documentElement.lang=lang;
 
-  const t=pageText[lang];
+  document.documentElement.lang=
+    lang;
 
-  document.getElementById("heroTitle").innerHTML=t.heroTitle;
 
-  document.getElementById("heroDesc").textContent=t.heroDesc;
+  const page =
+    pageText[lang];
 
-  document.getElementById("introTitle").textContent=t.introTitle;
 
-  document.getElementById("introDesc").innerHTML=t.introDesc;
+  document.getElementById(
+    "heroTitle"
+  ).innerHTML =
+    page.heroTitle;
 
-  document.getElementById("menuNote").textContent=t.note;
+
+  document.getElementById(
+    "heroDesc"
+  ).textContent =
+    page.heroDesc;
+
+
+  document.getElementById(
+    "introTitle"
+  ).textContent =
+    page.introTitle;
+
+
+  document.getElementById(
+    "introDesc"
+  ).innerHTML =
+    page.introDesc;
+
+
+  document.getElementById(
+    "menuNote"
+  ).textContent =
+    page.note;
+
 
   document
     .querySelectorAll("[data-lang]")
     .forEach(
-      b=>b.classList.toggle(
-        "active",
-        b.dataset.lang===lang
-      )
+      b=>
+        b.classList.toggle(
+          "active",
+          b.dataset.lang===lang
+        )
     );
 
-  const languageButton=document.querySelector(".language-button");
-  const languageLabels={ko:"KOR",en:"ENG",zh:"中文",ja:"日本語"};
+
+  const languageButton =
+    document.querySelector(
+      ".language-button"
+    );
+
+
+  const languageLabels={
+    ko:"KOR",
+    en:"ENG",
+    zh:"中文",
+    ja:"日本語"
+  };
+
 
   if(languageButton){
-    languageButton.textContent=languageLabels[lang]||"KOR";
-    languageButton.setAttribute("aria-expanded","false");
+
+    languageButton.textContent =
+      languageLabels[lang] ||
+      "KOR";
+
+
+    languageButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
   }
 
+
   renderCategories();
+
   renderMenu();
+
 }
+
+
+/* =========================================================
+   CLOSE MODAL
+   ========================================================= */
 
 function closeModal(){
 
@@ -1344,21 +1955,42 @@ function closeModal(){
     .getElementById("menuModal")
     .classList.remove("open");
 
+
   document
     .getElementById("menuModal")
-    .setAttribute("aria-hidden","true");
+    .setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
 
   document.body.style.overflow="";
+
 }
+
+
+/* =========================================================
+   LANGUAGE BUTTON EVENTS
+   ========================================================= */
 
 document
   .querySelectorAll("[data-lang]")
   .forEach(
-    b=>b.addEventListener(
-      "click",
-      ()=>applyLanguage(b.dataset.lang)
-    )
+    b=>
+      b.addEventListener(
+        "click",
+        ()=>{
+          applyLanguage(
+            b.dataset.lang
+          );
+        }
+      )
   );
+
+
+/* =========================================================
+   MODAL EVENTS
+   ========================================================= */
 
 document
   .getElementById("modalClose")
@@ -1367,28 +1999,52 @@ document
     closeModal
   );
 
+
 document
   .getElementById("menuModal")
   .addEventListener(
     "click",
     e=>{
-      if(e.target.id==="menuModal"){
+
+      if(
+        e.target.id==="menuModal"
+      ){
+
         closeModal();
+
       }
+
     }
   );
+
 
 document.addEventListener(
   "keydown",
   e=>{
+
     if(e.key==="Escape"){
+
       closeModal();
+
     }
+
   }
 );
+
+
+/* =========================================================
+   INITIALIZE
+   ========================================================= */
 
 applyLanguage(currentLang);
 
 </script>
-<script defer="True" src="js/site-common.js"></script></body>
+
+
+<script
+  defer="True"
+  src="js/site-common.js">
+</script>
+
+</body>
 </html>
