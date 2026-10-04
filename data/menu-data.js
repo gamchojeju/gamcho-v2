@@ -202,7 +202,14 @@ const menuData = [
             ja: "内臓とスンデの盛り合わせ"
         },
 
-        price: "35,000원"
+        price: "35,000원",
+
+        serving: {
+            ko: "3~4인분",
+            en: "Serves 3–4",
+            zh: "3–4人份",
+            ja: "3～4人前"
+        }
     },
 
 
@@ -226,7 +233,14 @@ const menuData = [
             ja: "ピリ辛鶏煮込み"
         },
 
-        price: "35,000원"
+        price: "35,000원",
+
+        serving: {
+            ko: "3~4인분",
+            en: "Serves 3–4",
+            zh: "3–4人份",
+            ja: "3～4人前"
+        }
     },
 
 
@@ -249,7 +263,14 @@ const menuData = [
             ja: "ボリューム満点鍋（ラーメンサービス）"
         },
 
-        price: "22,000원"
+        price: "22,000원",
+
+        serving: {
+            ko: "3~4인분",
+            en: "Serves 3–4",
+            zh: "3–4人份",
+            ja: "3～4人前"
+        }
     },
 
 
